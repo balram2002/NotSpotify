@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+body {
+    background-color: rgb(255, 0, 0);
+}
+
+.mainDiv {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    background-color: black;
+    max-width: 240px;
+    width: 17.5%;
+}
+
+.availArea {
+    background-color: rgb(30, 30, 30);
+    width: 85.5%;
+    height: auto;
+    position: relative;
+    overflow: overlay;
+}
+
+.nav {
+    height: 64px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.50);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.contentCtnr {
+    max-width: 1955px;
+    padding: 20px;
+}
+
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    border: 2px solid transparent;
+    background-color: rgba(255, 255, 255, 0.28);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.48);
+}
