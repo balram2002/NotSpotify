@@ -3,10 +3,12 @@
     margin: 0;
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.5);
+    font-family: sans-serif;
 }
 
+
 body {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(30, 30, 30);
 }
 
 .mainDiv {
@@ -23,6 +25,61 @@ body {
     width: 17.5%;
 }
 
+.navLinkTop {
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navLinkTop .logo {
+    width: fit-content;
+    height: 40px;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.navItem a {
+    text-decoration: none;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 700;
+}
+
+.navItem img {
+    color: white;
+    margin-right: 14px;
+}
+
+.navItem a:hover {
+    color: white;
+}
+
+.space {
+    padding: 13px 0;
+}
+
+.navItem .createPlaylist {
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.70);
+    margin-right: 14px;
+}
+
+.navItem .likedSongs {
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+    background-image: linear-gradient();
+    margin-right: 14px;
+}
+
 /* Side NavigationBar End */
 
 
@@ -34,6 +91,7 @@ body {
     position: relative;
     overflow: overlay;
 }
+
 /* Available Area End */
 
 
@@ -56,9 +114,10 @@ body {
     padding: 20px 38px 20px 20px;
 }
 
-.contentCtnr p{
-text-align: justify;
+.contentCtnr p {
+    text-align: justify;
 }
+
 /* Content Area End */
 
 
@@ -78,4 +137,5 @@ text-align: justify;
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.48);
 }
+
 /* Custom Scrollbar End */
