@@ -15,12 +15,18 @@ body {
     display: flex;
 }
 
+
+/* Side NavigationBar Start */
 .sidebar {
     background-color: black;
     max-width: 240px;
     width: 17.5%;
 }
 
+/* Side NavigationBar End */
+
+
+/* Available Area Start */
 .availArea {
     background-color: rgb(30, 30, 30);
     width: 85.5%;
@@ -28,7 +34,10 @@ body {
     position: relative;
     overflow: overlay;
 }
+/* Available Area End */
 
+
+/* Top Navbar Start */
 .nav {
     height: 64px;
     width: 100%;
@@ -38,32 +47,35 @@ body {
     top: 0;
 }
 
+/* Top Navbar Start */
+
+
+/* Content Area Start */
 .contentCtnr {
     max-width: 1955px;
-    padding: 20px;
+    padding: 20px 38px 20px 20px;
 }
 
+.contentCtnr p{
+text-align: justify;
+}
+/* Content Area End */
 
 
 
 
-/* width */
+/* Custom Scrollbar Start */
 ::-webkit-scrollbar {
     width: 16px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-}
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background-clip: content-box;
     border: 2px solid transparent;
     background-color: rgba(255, 255, 255, 0.28);
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.48);
 }
+/* Custom Scrollbar End */
