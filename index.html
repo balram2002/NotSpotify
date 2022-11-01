@@ -6,25 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <title>NotSpotify</title>
 </head>
 
 <body>
+    <!-- Parent Div Start -->
     <div class="mainDiv">
+
+        <!-- SideBar Start -->
         <div class="sidebar">
             <div class="navLinkTop">
                 <img class="logo" src="assets/logo.svg" alt="Spotify Logo">
                 <div class="space"></div>
-                <div class="navItem">
-                    <img src="assets/home-fill.svg" alt="home">
+                <div class="navItem sideBarActive">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
+                        class="Svg-ytk21e-0 eqtHWV home-active-icon" aria-hidden="true" viewBox="0 0 24 24">
+                        <path
+                            d="M13.5 1.515a3 3 0 00-3 0L3 5.845a2 2 0 00-1 1.732V21a1 1 0 001 1h6a1 1 0 001-1v-6h4v6a1 1 0 001 1h6a1 1 0 001-1V7.577a2 2 0 00-1-1.732l-7.5-4.33z" />
+                    </svg>
                     <a href="" class="home">Home</a>
                 </div>
                 <div class="navItem">
-                    <img src="assets/search.svg" alt="search">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
+                        class="Svg-ytk21e-0 eqtHWV search-icon" aria-hidden="true" viewBox="0 0 24 24">
+                        <path
+                            d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z" />
+                    </svg>
                     <a href="" class="search">Search</a>
                 </div>
                 <div class="navItem">
-                    <img src="assets/lib.svg" alt="Your Library">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
+                        class="Svg-ytk21e-0 eqtHWV collection-icon" aria-hidden="true" viewBox="0 0 24 24">
+                        <path
+                            d="M14.5 2.134a1 1 0 011 0l6 3.464a1 1 0 01.5.866V21a1 1 0 01-1 1h-6a1 1 0 01-1-1V3a1 1 0 01.5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1zm6 0a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1z" />
+                    </svg>
                     <a href="" class="lib">Your Library</a>
                 </div>
                 <div class="space"></div>
@@ -36,176 +52,57 @@
                     <img class="likedSongs" src="assets/heart-fill.svg" alt="Liked Songs">
                     <a href="">Liked Songs</a>
                 </div>
-                <!-- 
-                <hr>
-                <a href="" class="createPlaylist"><img src="assets/add.svg" alt="Create Playlist"> Your Library</a>
-                <a href="" class="likedSongs"><img src="assets/heart.svg" alt="Liked Songs"> Your Library</a> -->
             </div>
             <div class="navLinkBottom">
-                <!-- <a href="" class="">Your Library</a>
-                <a href="" class="">Your Library</a> -->
             </div>
         </div>
+        <!-- SideBar End -->
+
+        <!-- Available Area After SideBar Start -->
         <div class="availArea">
-            <div class="nav"></div>
-            <div class="contentCtnr">
-                <p>
-                    What is Lorem Ipsum?
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and
-                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap
-                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                    the
-                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing
-                    software like Aldus PageMaker including versions of Lorem Ipsum.
-                    <br>
-                    <br>
-                    Why do we use it?
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when
-                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution
-                    of letters, as opposed to using 'Content here, content here', making it look like readable English.
-                    Many
-                    desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
-                    and a
-                    search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-                    evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
-                    <br>
-                    <br>
-                    Where does it come from?
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                    classical
-                    Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-                    Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from
-                    <br>
-                    <br>
-                    a
-                    Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
-                    undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-                    Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the
-                    theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum
-                    dolor
-                    sit amet..", comes from a line in section 1.10.32.
-                    <br>
-                    <br>
+            <!-- NavBar Start -->
+            <div class="nav">
+                <div class="arrowCtnr">
+                    <div class="left">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
+                            class="Svg-ytk21e-0 dUrrjJ IYDlXmBmmUKHveMzIPCF" viewBox="0 0 24 24">
+                            <path
+                                d="M15.957 2.793a1 1 0 010 1.414L8.164 12l7.793 7.793a1 1 0 11-1.414 1.414L5.336 12l9.207-9.207a1 1 0 011.414 0z" />
+                        </svg>
+                    </div>
+                    <div class="right">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
+                            class="Svg-ytk21e-0 dUrrjJ IYDlXmBmmUKHveMzIPCF" viewBox="0 0 24 24" style="">
+                            <path
+                                d="M8.043 2.793a1 1 0 000 1.414L15.836 12l-7.793 7.793a1 1 0 101.414 1.414L18.664 12 9.457 2.793a1 1 0 00-1.414 0z" />
+                        </svg>
+                    </div>
+                </div>
 
-                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                    Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in
-                    their
-                    exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-                    <br>
-                    <br>
-
-                    Where can I get some?
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                    alteration in some form, by injected humour, or randomised words which don't look even slightly
-                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                    anything
-                    embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to
-                    repeat
-                    predefined chunks as necessary, making this the first true generator on the Internet. It uses a
-                    dictionary of over 200 Latin words, combined with a handful of model sentence structures, to
-                    generate
-                    <br>
-                    <br>
-                    Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from
-                    repetition,
-                    injected humour, or non-characteristic words etc.
-                    <br>
-                    <br>
-
-                    5
-                    paragraphs
-                    words
-                    bytes
-                    lists
-                    Start with 'Lorem
-                    ipsum dolor sit amet...'
-                    What is Lorem Ipsum?
-                    What is Lorem Ipsum?
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and
-                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap
-                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-                    the
-                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing
-                    software like Aldus PageMaker including versions of Lorem Ipsum.
-                    <br>
-                    <br>
-
-                    Why do we use it?
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when
-                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution
-                    of letters, as opposed to using 'Content here, content here', making it look like readable English.
-                    Many
-                    desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
-                    and a
-                    search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-                    evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                    <br>
-                    <br>
-
-
-                    Where does it come from?
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                    classical
-                    Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
-                    Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from
-                    a
-                    Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
-                    undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-                    Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the
-                    theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum
-                    dolor
-                    sit amet..", comes from a line in section 1.10.32.
-                    <br>
-                    <br>
-
-                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                    Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in
-                    their
-                    exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-                    <br>
-                    <br>
-
-                    Where can I get some?
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                    alteration in some form, by injected humour, or randomised words which don't look even slightly
-                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                    anything
-                    embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to
-                    repeat
-                    predefined chunks as necessary, making this the first true generator on the Internet. It uses a
-                    dictionary of over 200 Latin words, combined with a handful of model sentence structures, to
-                    generate
-                    <br>
-                    <br>
-                    Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from
-                    repetition,
-                    injected humour, or non-characteristic words etc.
-
-                    5
-                    paragraphs
-                    words
-                    bytes
-                    lists
-                    Start with 'Lorem
-                    ipsum dolor sit amet...'
-                    What is Lorem Ipsum?
-                </p>
+                <div class="navBtns">
+                    <button>
+                        Sign up
+                    </button>
+                    <button class="whiteBG">
+                        Log in
+                    </button>
+                </div>
             </div>
+            <!-- NavBar End -->
+
+            <!-- Content Area Start -->
+            <div class="contentCtnr">
+                <div style="height: 2000px;"></div>
+            </div>
+            <!-- Content Area End -->
+
         </div>
+        <!-- Available Area After SideBar End -->
+
     </div>
+    <!-- Parent Div End -->
+
 
 </body>
 

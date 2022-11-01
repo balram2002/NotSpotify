@@ -1,9 +1,103 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('fonts/CircularStd-Bold.woff2') format('woff2'),
+        url('fonts/CircularStd-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('fonts/CircularStd-Black.woff2') format('woff2'),
+        url('fonts/CircularStd-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('fonts/CircularStd-BlackItalic.woff2') format('woff2'),
+        url('fonts/CircularStd-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('fonts/CircularStd-Medium.woff2') format('woff2'),
+        url('fonts/CircularStd-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('fonts/CircularSpotifyText-LightItalic.woff2') format('woff2'),
+        url('fonts/CircularSpotifyText-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('fonts/CircularSpotifyText-Light.woff2') format('woff2'),
+        url('fonts/CircularSpotifyText-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std Book';
+    src: url('fonts/CircularStd-Book.woff2') format('woff2'),
+        url('fonts/CircularStd-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('fonts/CircularStd-MediumItalic.woff2') format('woff2'),
+        url('fonts/CircularStd-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std Book';
+    src: url('fonts/CircularStd-BookItalic.woff2') format('woff2'),
+        url('fonts/CircularStd-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('fonts/CircularStd-BoldItalic.woff2') format('woff2'),
+        url('fonts/CircularStd-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Fonts End*/
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.5);
-    font-family: sans-serif;
+    font-family: 'Circular Std';
 }
 
 
@@ -16,6 +110,7 @@ body {
     height: 100vh;
     display: flex;
 }
+
 
 
 /* Side NavigationBar Start */
@@ -40,47 +135,52 @@ body {
 .navItem {
     display: flex;
     align-items: center;
+    opacity: .7;
     margin: 8px 0;
+    transition: all .2s ease-in-out;
 }
 
 .navItem a {
     text-decoration: none;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.65);
-    font-weight: 700;
+    color: white;
+    font-weight: 600;
 }
 
-.navItem img {
-    color: white;
-    margin-right: 14px;
-}
-
-.navItem a:hover {
-    color: white;
+.navItem img,
+.navItem svg {
+    fill: white;
+    margin-right: 16px;
 }
 
 .space {
     padding: 13px 0;
 }
 
-.navItem .createPlaylist {
-    width: 24px;
-    height: 24px;
-    padding: 6px;
-    border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.70);
-    margin-right: 14px;
-}
-
+.navItem .createPlaylist,
 .navItem .likedSongs {
     width: 24px;
     height: 24px;
     padding: 6px;
-    background-image: linear-gradient();
+    border-radius: 2px;
     margin-right: 14px;
 }
 
+.navItem .createPlaylist {
+    background-color: rgb(255, 255, 255);
+}
+
+.navItem .likedSongs {
+    background-image: linear-gradient(135deg, #450af5, #c4efd9);
+}
+
+.navItem:hover,
+.sideBarActive {
+    opacity: 1;
+}
+
 /* Side NavigationBar End */
+
 
 
 /* Available Area Start */
@@ -95,6 +195,7 @@ body {
 /* Available Area End */
 
 
+
 /* Top Navbar Start */
 .nav {
     height: 64px;
@@ -103,9 +204,65 @@ body {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.nav .arrowCtnr {
+    display: flex;
+}
+
+.nav .arrowCtnr .left,
+.nav .arrowCtnr .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.3px;
+    border-radius: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav .arrowCtnr svg,
+.nav .arrowCtnr svg {
+    fill: white;
+    opacity: .6;
+    padding: 1px;
+}
+
+.nav .arrowCtnr .left {
+    margin-right: 17px;
+}
+
+.navBtns button {
+    min-height: 48px;
+    border: none;
+    font-size: 16px;
+    padding: 8px 32px;
+    border-radius: 24px;
+    background-color: transparent;
+    color: rgb(167, 167, 167);
+    transition: all .2s ease-in-out;
+}
+
+.navBtns .whiteBG {
+    color: black;
+    background-color: white;
+}
+
+.navBtns .whiteBG:hover {
+    color: black;
+    transform: scale(1.04);
+}
+
+.navBtns button:hover {
+    color: white;
+    transform: scale(1.04);
 }
 
 /* Top Navbar Start */
+
 
 
 /* Content Area Start */
@@ -135,7 +292,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.48);
+    background-color: rgba(255, 255, 255, 0.48);
 }
 
 /* Custom Scrollbar End */
