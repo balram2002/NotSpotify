@@ -269,6 +269,12 @@ body {
     transform: scale(1.04);
 }
 
+.navMenu {
+    display: none;
+}
+
+
+
 /* Top Navbar Start */
 
 
