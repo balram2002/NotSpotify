@@ -371,15 +371,24 @@ body {
         padding: 0 32px;
     }
 
-    .nav .arrowCtnr {
+    .nav .arrowCtnr,
+    .navBtns button {
         display: none;
     }
 
-    .navBtns button {
-        min-height: 40px;
-        font-size: 16px;
-        padding: 8px 32px;
-        border-radius: 24px;
+    .navMenu {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navMenu img {
+        width: 104px;
+    }
+
+    .navMenu svg {
+        fill: white;
+        opacity: .90;
     }
 
     /* Top Navbar End */
