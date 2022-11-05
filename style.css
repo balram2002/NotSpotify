@@ -310,8 +310,7 @@ body {
                 rgba(0, 0, 0, 0.19091386554621848) 100%);
         max-width: 100%;
         width: 100%;
-        position: -webkit-sticky;
-        position: sticky;
+        position: fixed;
         bottom: 0;
     }
 
