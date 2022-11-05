@@ -332,6 +332,7 @@ body {
     .navItem a {
         font-size: 11px;
         text-align: center;
+        margin-top: 6px;
     }
 
     .navItem img,
