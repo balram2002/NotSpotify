@@ -310,7 +310,8 @@ body {
                 rgba(0, 0, 0, 0.19091386554621848) 100%);
         max-width: 100%;
         width: 100%;
-        position: absolute;
+        position: -webkit-sticky;
+        position: sticky;
         bottom: 0;
     }
 
@@ -322,6 +323,7 @@ body {
 
     .navItem {
         display: flex;
+        flex: 1;
         flex-direction: column;
         opacity: .7;
         margin: 0 2px;
@@ -330,6 +332,7 @@ body {
 
     .navItem a {
         font-size: 11px;
+        text-align: center;
     }
 
     .navItem img,
@@ -379,12 +382,21 @@ body {
         border-radius: 24px;
     }
 
-    /* Top Navbar Start */
+    /* Top Navbar End */
+
+
+    /* Content Area Start */
+    .contentCtnr {
+        padding: 20px;
+    }
+
+    /* Content Area End */
+
 
 
     /* Custom Scrollbar Start */
     ::-webkit-scrollbar {
-        width: 0px;
+        display: none;
     }
 
     /* Custom Scrollbar End */
