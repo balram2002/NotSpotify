@@ -14,8 +14,6 @@
     <!-- Parent Div Start -->
     <div class="mainDiv">
 
-
-
         <!-- Available Area After SideBar Start -->
         <div class="availArea">
 
@@ -46,10 +44,11 @@
                         Log in
                     </button>
                 </div>
-                
+
                 <div class="navMenu">
                     <img class="logo" src="assets/logo.svg" alt="Spotify Logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 eqtHWV">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" height="24" width="24" viewBox="0 0 24 24"
+                        class="Svg-ytk21e-0 eqtHWV">
                         <path d="M21 6H3V4h18v2zm0 14H3v-2h18v2zm0-7H3v-2h18v2z" />
                     </svg>
                 </div>
@@ -68,6 +67,8 @@
 
         </div>
         <!-- Available Area After SideBar End -->
+
+
 
         <!-- SideBar Start -->
         <div class="sidebar">
@@ -110,12 +111,79 @@
             </div>
             <div class="navLinkBottom">
             </div>
+
         </div>
         <!-- SideBar End -->
 
     </div>
     <!-- Parent Div End -->
 
+    <div class="playerCtnr">
+        <div class="songDetailsCtnr">
+            <img src="./assets/song_art.jpg" alt="Song Art">
+            <div class="texts">
+                <h3>Song Title</h3>
+                <p>Artist Name</p>
+            </div>
+            <button class="playerBtnLike">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="16" width="16"
+                    viewBox="0 0 16 16" class="Svg-ytk21e-0 eqtHWV">
+                    <path
+                        d="M1.69 2A4.582 4.582 0 018 2.023 4.583 4.583 0 0111.88.817h.002a4.618 4.618 0 013.782 3.65v.003a4.543 4.543 0 01-1.011 3.84L9.35 14.629a1.765 1.765 0 01-2.093.464 1.762 1.762 0 01-.605-.463L1.348 8.309A4.582 4.582 0 011.689 2zm3.158.252A3.082 3.082 0 002.49 7.337l.005.005L7.8 13.664a.264.264 0 00.311.069.262.262 0 00.09-.069l5.312-6.33a3.043 3.043 0 00.68-2.573 3.118 3.118 0 00-2.551-2.463 3.079 3.079 0 00-2.612.816l-.007.007a1.501 1.501 0 01-2.045 0l-.009-.008a3.082 3.082 0 00-2.121-.861z" />
+                </svg>
+            </button>
+            <button class="playerBtnPopup">
+                <svg width="16" fill="currentColor" height="16" xmlns="http://www.w3.org/2000/svg" style="">
+                    <g>
+                        <path d="M1 3v9h14V3H1zm0-1h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"
+                            fill-rule="nonzero" style="" />
+                        <path d="M10 8h4v3h-4z" style="" />
+                    </g>
+                </svg>
+            </button>
+        </div>
+        <div class="controlerCtnr">
+            <div class="btnsCtnr">
+                <img src="assets/ic_shuffel.svg" alt="shuffel">
+                <img src="assets/ic_backward.svg" alt="backward">
+                <div class="playPauseBtn" onclick="togglePlayPause()">
+                    <img src="assets/ic_play.svg" alt="PlayPause" id="ppImg">
+                </div>
+                <img src="assets/ic_forward.svg" alt="shuffel">
+                <img src="assets/ic_repeat.svg" alt="backward">
+            </div>
+            <div class="progressCtnr">
+                <p class="currentTime">00:00</p>
+                <input type="range" min="0" max="100" value="0">
+                <p class="totalTime">00:00</p>
+            </div>
+        </div>
+        <div class="volumeCtnr">
+            <div class="queueBtn">
+                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" height="16" width="16"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 013.5 1h9a2.5 2.5 0 010 5h-9A2.5 2.5 0 011 3.5zm2.5-1a1 1 0 000 2h9a1 1 0 100-2h-9z" />
+                </svg>
+            </div>
+            <div class="muteBtn">
+                <img src="assets/volume100.svg" alt="PlayPause" id="ppImg">
+            </div>
+            <input type="range" min="0" max="100" value="100">
+        </div>
+    </div>
+
+    <script>
+        function togglePlayPause() {
+            var img = document.getElementById("ppImg").src;
+            if (img.indexOf('assets/ic_play.svg') != -1) {
+                document.getElementById('ppImg').src = 'assets/ic_pause.svg';
+            }
+            else {
+                document.getElementById('ppImg').src = 'assets/ic_play.svg';
+            }
+        }
+    </script>
 
 </body>
 
