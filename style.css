@@ -65,7 +65,6 @@ body {
     background-color: black;
     max-width: 240px;
     width: 17.5%;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .navLinkTop {
@@ -133,7 +132,7 @@ body {
 .sideBarActive {
     opacity: 1;
     background-color: rgba(255, 255, 255, 0.18);
-    padding: 12px  16px;
+    padding: 12px 16px;
     border-radius: 10px;
 }
 
@@ -304,7 +303,7 @@ body {
 
 /* Available Area Start */
 .availArea {
-    background-color: black;
+    background: linear-gradient(111deg, rgba(33, 33, 33, 1) 0%, rgba(18, 18, 18, 1) 40%);
     width: 85.5%;
     height: auto;
     position: relative;
@@ -467,6 +466,15 @@ body {
         display: none;
     }
 
+    .navItem:hover,
+    .navItem2:hover,
+    .sideBarActive {
+        opacity: 1;
+        background-color: transparent;
+        padding: 0px 0px;
+        border-radius: 0px;
+    }
+
     /* SideBar Area End */
 
 
@@ -520,7 +528,6 @@ body {
     /* Content Area End */
 
 
-
     /* Custom Scrollbar Start */
     ::-webkit-scrollbar {
         display: none;
@@ -529,14 +536,24 @@ body {
     /* Custom Scrollbar End */
 
 
-    .playerCtnr{
+    .playerCtnr {
         display: none;
     }
+
+    /* Mobile Player Container Start*/
+
+
+    /* Mobile Player Container Start*/
 
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
+@media only screen and (max-width: 1024px) {
+    .navLinkTop .logo {
+        width: fit-content;
+        height: 28px;
+    }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {}
