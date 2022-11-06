@@ -44,6 +44,7 @@
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.5);
     font-family: 'Circular Std';
+    transition: all .2s ease;
 }
 
 
@@ -301,6 +302,66 @@ body {
 /* Player Area End */
 
 
+/* Mobile Player Area Start */
+.mobPlayer {
+    height: 56px;
+    display: none;
+    padding: 0 8px;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0px 12px 4px 12px;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.mobPlayer .mobSongDetails {
+    display: flex;
+}
+
+.mobPlayer .mobSongDetails .texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+.mobPlayer .mobSongDetails img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+}
+
+.mobPlayer .mobSongDetails h4 {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.mobPlayer .mobSongDetails p {
+    font-weight: 300;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.mobPlayer .mobRightBtns button {
+    border: none;
+    opacity: .8;
+    padding: 2px 6px;
+    background: transparent;
+}
+
+.mobPlayer .mobRightBtns button svg {
+    fill: white;
+}
+
+.mobPlayer .mobRightBtns button:hover {
+    opacity: 1;
+}
+
+/* Mobile Player Area End */
+
+
 /* Available Area Start */
 .availArea {
     background: linear-gradient(111deg, rgba(33, 33, 33, 1) 0%, rgba(18, 18, 18, 1) 40%);
@@ -391,16 +452,15 @@ body {
 /* Content Area Start */
 .contentCtnr {
     display: block;
-    margin: auto;
     max-width: 1955px;
     padding: 20px 38px 20px 20px;
 }
 
 
 .demo {
-    width: 90%;
+    width: 100%;
     height: 200px;
-    margin: 20px;
+    margin: 20px 0;
     background: rgb(34, 193, 195);
     background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
     border-radius: 12px;
@@ -422,9 +482,10 @@ body {
 
     /* SideBar Area Start */
     .sidebar {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%,
-                rgba(0, 0, 0, 0.6979166666666667) 70%,
-                rgba(0, 0, 0, 0.19091386554621848) 100%);
+        background: linear-gradient(180deg, rgba(4, 4, 4, 0.10407913165266103) 0%,
+                rgba(11, 11, 11, 0.5970763305322129) 35%,
+                rgba(5, 5, 5, 0.804359243697479) 55%,
+                rgba(18, 18, 18, 1) 75%);
         max-width: 100%;
         width: 100%;
         position: fixed;
@@ -475,6 +536,10 @@ body {
         border-radius: 0px;
     }
 
+    .mobPlayer {
+        display: flex;
+    }
+
     /* SideBar Area End */
 
 
@@ -522,7 +587,7 @@ body {
 
     /* Content Area Start */
     .contentCtnr {
-        padding: 20px;
+        padding: 20px 20px 60px 20px;
     }
 
     /* Content Area End */
