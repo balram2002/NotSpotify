@@ -1,6 +1,46 @@
-<!-- Content Area Start -->
-<div>
-    <div class="demo"></div>
-    <div class="demo"></div>
-</div>
-<!-- Content Area End -->
+<div class="categoryCtnr">
+                    <h3 class="brAll">Browse all</h3>
+                    <div class="catCardCtnr">
+                        <div class="catCard">
+                            <h3>Made For You</h3>
+                            <img src="./assets/madeforu.png">
+                        </div>
+                        <div class="catCard">
+                            <h3>Made For You</h3>
+                            <img src="./assets/madeforu.png">
+                        </div>
+                        <div class="catCard">
+                            <h3>Made For You</h3>
+                            <img src="./assets/madeforu.png">
+                        </div>
+                        <div class="catCard">
+                            <h3>Made For You</h3>
+                            <img src="./assets/madeforu.png">
+                        </div>
+                        <div class="catCard">
+                            <h3>Made For You</h3>
+                            <img src="./assets/madeforu.png">
+                        </div>
+                        <div class="catCard">
+                            <h3>Made For You</h3>
+                            <img src="./assets/madeforu.png">
+                        </div>
+                        <div class="catCard">
+                            <h3>Made For You</h3>
+                            <img src="./assets/madeforu.png">
+                        </div>
+                        <div class="catCard">
+                            <h3>Made For You</h3>
+                            <img src="./assets/madeforu.png">
+                        </div>
+                        <div class="catCard">
+                            <h3>Made For You</h3>
+                            <img src="./assets/madeforu.png">
+                        </div>
+                        <div class="catCard">
+                            <h3>Made For You</h3>
+                            <img src="./assets/madeforu.png">
+                        </div>
+                    </div>
+                </div>
+                

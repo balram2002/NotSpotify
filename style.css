@@ -358,7 +358,7 @@ body {
     fill: white;
 }
 
-.mobPlayer .mobRightBtns img{
+.mobPlayer .mobRightBtns img {
     filter: invert(1);
 }
 
@@ -371,14 +371,14 @@ body {
 
 /* Available Area Start */
 .availArea {
-    background: linear-gradient(162deg, rgba(33,33,33,1) 0%, rgba(18,18,18,1) 50%);
+    background: linear-gradient(162deg, rgba(33, 33, 33, 1) 0%, rgba(18, 18, 18, 1) 50%);
     width: 85.5%;
     height: auto;
     position: relative;
     overflow: overlay;
-}   
+}
 
-/* Available Area End */ 
+/* Available Area End */
 
 
 
@@ -394,6 +394,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 32px;
+    z-index: 10;
 }
 
 .nav .arrowCtnr {
@@ -474,6 +475,90 @@ body {
 }
 
 /* Content Area End */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Harsh CSS Start */
+.categoryCtnr {
+    padding: 26px 0;
+}
+
+.catCardCtnr {
+    display: grid;
+    grid-row-gap: 25px;
+    grid-column-gap: 15px;
+    padding: 10px;
+    --auto-grid-min-size: 190px;
+    grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+}
+
+.brAll {
+    margin: 0 0 10px 10px;
+    color: white;
+    font-size: 24px;
+}
+
+.catCard {
+    background-position: 0% 0%;
+    position: relative;
+    height: 190px;
+    width: 190px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px 5px;
+}
+
+.catCard h3 {
+    background-position: 0% 0%;
+    color: #FFFFFF;
+    padding: 16px;
+    top: 0px;
+    left: 0;
+    text-shadow: .8px .8px 2px #36363683;
+    font-size: 21px;
+}
+
+.catCard img {
+    background-color: #FFFFFF;
+    color: #FFFFFF;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin-right: -18px;
+    margin-top: 6px;
+    transform: rotate(22deg);
+}
+
+/* Harsh CSS end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -594,7 +679,7 @@ body {
 
     /* Content Area Start */
     .contentCtnr {
-        padding: 20px 20px 60px 20px;
+        padding: 10px;
     }
 
     /* Content Area End */
@@ -607,15 +692,44 @@ body {
 
     /* Custom Scrollbar End */
 
-
+    /* Main Player End */
     .playerCtnr {
         display: none;
     }
 
-    /* Mobile Player Container Start*/
+    /* Main Player End */
 
 
-    /* Mobile Player Container Start*/
+
+    /* Harsh */
+
+    .catCardCtnr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .brAll {
+        font-size: 16px;
+    }
+
+    .catCard {
+        height: 140px;
+        width: 140px;
+        margin: 5px;
+    }
+
+    .catCard h3 {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .catCard img {
+        height: 70px;
+        width: 70px;
+    }
+
+    /* Harsh */
 
 }
 
