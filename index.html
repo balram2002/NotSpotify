@@ -56,7 +56,7 @@
             <!-- NavBar End -->
 
             <!-- Content Area Start -->
-            <div class="contentCtnr">
+            <div class="contentCtnr" id="content">
                 <div class="demo"></div>
                 <div class="demo"></div>
                 <div class="demo"></div>
@@ -90,13 +90,10 @@
                                 d="M1.69 2A4.582 4.582 0 018 2.023 4.583 4.583 0 0111.88.817h.002a4.618 4.618 0 013.782 3.65v.003a4.543 4.543 0 01-1.011 3.84L9.35 14.629a1.765 1.765 0 01-2.093.464 1.762 1.762 0 01-.605-.463L1.348 8.309A4.582 4.582 0 011.689 2zm3.158.252A3.082 3.082 0 002.49 7.337l.005.005L7.8 13.664a.264.264 0 00.311.069.262.262 0 00.09-.069l5.312-6.33a3.043 3.043 0 00.68-2.573 3.118 3.118 0 00-2.551-2.463 3.079 3.079 0 00-2.612.816l-.007.007a1.501 1.501 0 01-2.045 0l-.009-.008a3.082 3.082 0 00-2.121-.861z" />
                         </svg>
                     </button>
-                    <button class="mobPlayerBtnPopup">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="16" width="16"
-                            viewBox="0 0 16 16" class="Svg-ytk21e-0 eqtHWV">
-                            <path
-                                d="M3 1.713a.7.7 0 011.05-.607l10.89 6.288a.7.7 0 010 1.212L4.05 14.894A.7.7 0 013 14.288V1.713z" />
-                        </svg>
-                    </button>
+                    <!-- <img src="assets/ic_play.svg" alt="playPauseBtn" class="playPauseBtn" id="mobppImg"> -->
+                    <div class="playPauseBtn">
+                        <img src="assets/ic_play.svg" alt="PlayPause" id="mobppImg">
+                    </div>
                 </div>
             </div>
             <!-- Mobile player End -->
@@ -104,38 +101,38 @@
             <div class="navLinkTop">
                 <img class="logo" src="assets/logo.svg" alt="Spotify Logo">
                 <div class="space"></div>
-                <div class="navItem sideBarActive">
+                <div class="navItem sideBarActive" id="home">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
                         class="Svg-ytk21e-0 eqtHWV home-active-icon" aria-hidden="true" viewBox="0 0 24 24">
                         <path
                             d="M13.5 1.515a3 3 0 00-3 0L3 5.845a2 2 0 00-1 1.732V21a1 1 0 001 1h6a1 1 0 001-1v-6h4v6a1 1 0 001 1h6a1 1 0 001-1V7.577a2 2 0 00-1-1.732l-7.5-4.33z" />
                     </svg>
-                    <a href="" class="home">Home</a>
+                    <a>Home</a>
                 </div>
-                <div class="navItem">
+                <div class="navItem" id="search">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
                         class="Svg-ytk21e-0 eqtHWV search-icon" aria-hidden="true" viewBox="0 0 24 24">
                         <path
                             d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z" />
                     </svg>
-                    <a href="" class="search">Search</a>
+                    <a>Search</a>
                 </div>
-                <div class="navItem">
+                <div class="navItem" id="library">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
                         class="Svg-ytk21e-0 eqtHWV collection-icon" aria-hidden="true" viewBox="0 0 24 24">
                         <path
                             d="M14.5 2.134a1 1 0 011 0l6 3.464a1 1 0 01.5.866V21a1 1 0 01-1 1h-6a1 1 0 01-1-1V3a1 1 0 01.5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1zm6 0a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1z" />
                     </svg>
-                    <a href="" class="lib">Your Library</a>
+                    <a>Your Library</a>
                 </div>
                 <div class="space"></div>
-                <div class="navItem2">
+                <div class="navItem2" id="createPlaylist">
                     <img class="createPlaylist" src="assets/add.svg" alt="Create Playlist">
-                    <a href="">Create Playlist</a>
+                    <a>Create Playlist</a>
                 </div>
-                <div class="navItem2">
+                <div class="navItem2" id="likedSongs">
                     <img class="likedSongs" src="assets/heart-fill.svg" alt="Liked Songs">
-                    <a href="">Liked Songs</a>
+                    <a>Liked Songs</a>
                 </div>
             </div>
             <div class="navLinkBottom"></div>
@@ -176,7 +173,7 @@
             <div class="btnsCtnr">
                 <img src="assets/ic_shuffel.svg" alt="shuffel">
                 <img src="assets/ic_backward.svg" alt="backward">
-                <div class="playPauseBtn" onclick="togglePlayPause()">
+                <div class="playPauseBtn">
                     <img src="assets/ic_play.svg" alt="PlayPause" id="ppImg">
                 </div>
                 <img src="assets/ic_forward.svg" alt="shuffel">
@@ -197,24 +194,14 @@
                 </svg>
             </div>
             <div class="muteBtn">
-                <img src="assets/volume100.svg" alt="PlayPause" id="ppImg">
+                <img src="assets/volume100.svg" alt="PlayPause">
             </div>
             <input type="range" min="0" max="100" value="100">
         </div>
     </div>
     <!-- Player Container End -->
 
-    <script>
-        function togglePlayPause() {
-            var img = document.getElementById("ppImg").src;
-            if (img.indexOf('assets/ic_play.svg') != -1) {
-                document.getElementById('ppImg').src = 'assets/ic_pause.svg';
-            }
-            else {
-                document.getElementById('ppImg').src = 'assets/ic_play.svg';
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 

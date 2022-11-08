@@ -82,6 +82,7 @@ body {
 
 .navItem,
 .navItem2 {
+    cursor: pointer;
     display: flex;
     align-items: center;
     opacity: .7;
@@ -311,10 +312,11 @@ body {
     border-radius: 10px;
     margin: 0px 12px 4px 12px;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
-.mobPlayer .mobSongDetails {
+.mobPlayer .mobSongDetails,
+.mobPlayer .mobRightBtns {
     display: flex;
 }
 
@@ -344,15 +346,20 @@ body {
     color: rgba(255, 255, 255, 0.7);
 }
 
-.mobPlayer .mobRightBtns button {
+.mobPlayer .mobRightBtns button,
+.mobPlayer .mobRightBtns .playPauseBtn {
     border: none;
     opacity: .8;
-    padding: 2px 6px;
+    padding: 2px 8px;
     background: transparent;
 }
 
 .mobPlayer .mobRightBtns button svg {
     fill: white;
+}
+
+.mobPlayer .mobRightBtns img{
+    filter: invert(1);
 }
 
 .mobPlayer .mobRightBtns button:hover {
@@ -364,14 +371,14 @@ body {
 
 /* Available Area Start */
 .availArea {
-    background: linear-gradient(111deg, rgba(33, 33, 33, 1) 0%, rgba(18, 18, 18, 1) 40%);
+    background: linear-gradient(162deg, rgba(33,33,33,1) 0%, rgba(18,18,18,1) 50%);
     width: 85.5%;
     height: auto;
     position: relative;
     overflow: overlay;
-}
+}   
 
-/* Available Area End */
+/* Available Area End */ 
 
 
 
