@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
+}
+
+a {
+   text-decoration: underline;
+}
+
+.main {
+   height: 100vh;
+   width: 100%;
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+   background-color: #ffffff;
+}
+
+.center {
+   max-width: 450px;
+   padding: 0 0 130px 0;
+}
+
+.header,
+.ctnrAuthBtns {
+   width: 100%;
+   display: flex;
+   margin: 12px 0;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.header > div svg {
+   width: auto;
+   height: 40px;
+   margin: 10px 0 40px 0;
+}
+
+.AuthBtn {
+   height: 48px;
+   width: 100%;
+   background-color: white;
+   border-radius: 24px;
+   padding: 13px 31px;
+   font-weight: bold;
+   color: #535353;
+   font-size: 16px;
+   border: 1px solid #878787;
+   transition: all .2s ease;
+   cursor: pointer;
+}
+
+.facebook {
+   margin: 30px 0 10px 0;
+   background-color: #3b5998;
+   color: #ffffff;
+}
+
+.google {
+   margin: 10px 0;
+   border: 2px solid #535353;
+}
+
+.AuthBtn:hover {
+   border-color: black;
+}
+
+
+.inputCtnr {
+   display: flex;
+   flex-direction: column;
+   padding-bottom: 24px;
+   font-size: 14px;
+}
+
+.inputCtnr>label,
+.genderCtnr>label {
+   font-weight: 700;
+}
+
+.inputCtnr>input {
+   min-height: 52px;
+   padding: 14px;
+   font-size: 16;
+   margin: 6px 0;
+   outline-color: black;
+   border: 1px solid rgba(0, 0, 0, 0.6);
+   border-radius: 4px;
+}
+
+.inputCtnr>a {
+   color: #117A37;
+   cursor: pointer;
+}
+
+.genderCtnr {
+   display: flex;
+   margin: 20px 0;
+   font-size: 14px;
+   flex-direction: column;
+}
+
+.genderCtnr>div {
+   display: flex;
+   flex-wrap: wrap;
+   column-gap: 30px;
+   row-gap: 14px;
+   margin-top: 14px;
+}
+
+form {
+   padding: 50px 0;
+}
+
+.checBoxCtnr {
+   margin: 30px 0;
+}
+
+.checBoxCtnr > div {
+   margin-top: 30px;
+}
+
+.checBoxCtnr > div input[type=checkbox],
+.genderCtnr > div input[type=radio] {
+   accent-color: #1ED760;
+}
+
+.links {
+   text-align: center;
+   font-size: 14px;
+   font-weight: 500;
+}
+
+.links > div  a,
+.ctnrLogin > p a {
+   color: #1ED760;
+   cursor: pointer;
+}
+
+.links>div {
+   margin-top: 20px;
+}
+
+.links>div {
+   margin-top: 20px;
+}
+
+.btnDiv {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 10px;
+}
+
+.btnDiv button {
+   background-color: #1fdf64;
+   border: none;
+   height: 56px;
+   font-weight: 700;
+   border-radius: 28px;
+   font-size: 16px;
+   padding: 16px 48px;
+   transition: all .1s ease;
+}
+
+.btnDiv button:hover {
+   transform: scale(1.04);
+}
+
+.btnDiv button:active {
+   outline: 3px solid black;
+   border: 3px solid #ffffff;
+}
+
+.ctnrLogin{
+   text-align: center;
+   margin-top: 30px;
+}
