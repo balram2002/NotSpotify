@@ -2,393 +2,395 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-    <title>NotSpotify</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <title>NotSpotify</title>
 </head>
 
 <body>
-    <!-- Parent Div Start -->
-    <div class="mainDiv">
+  <!-- Parent Div Start -->
+  <div class="mainDiv">
 
-        <!-- Available Area After SideBar Start -->
-        <div class="availArea">
+    <!-- Available Area After SideBar Start -->
+    <div class="availArea">
 
-            <!-- NavBar Start -->
-            <div class="nav">
-                <div class="arrowCtnr">
-                    <div class="left">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
-                            class="Svg-ytk21e-0 dUrrjJ IYDlXmBmmUKHveMzIPCF" viewBox="0 0 24 24">
-                            <path
-                                d="M15.957 2.793a1 1 0 010 1.414L8.164 12l7.793 7.793a1 1 0 11-1.414 1.414L5.336 12l9.207-9.207a1 1 0 011.414 0z" />
-                        </svg>
-                    </div>
-                    <div class="right">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
-                            class="Svg-ytk21e-0 dUrrjJ IYDlXmBmmUKHveMzIPCF" viewBox="0 0 24 24">
-                            <path
-                                d="M8.043 2.793a1 1 0 000 1.414L15.836 12l-7.793 7.793a1 1 0 101.414 1.414L18.664 12 9.457 2.793a1 1 0 00-1.414 0z" />
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="navBtns">
-                    <button>
-                        Sign up
-                    </button>
-                    <a href="signin.html">
-                        <button class="whiteBG">
-                            Log in
-                        </button>
-                    </a>
-                </div>
-
-                <div class="navMenu">
-                    <img class="logo" src="assets/logo.svg" alt="Spotify Logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" role="img" height="24" width="24" viewBox="0 0 24 24"
-                        class="Svg-ytk21e-0 eqtHWV">
-                        <path d="M21 6H3V4h18v2zm0 14H3v-2h18v2zm0-7H3v-2h18v2z" />
-                    </svg>
-                </div>
-            </div>
-            <!-- NavBar End -->
-
-
-
-
-
-
-
-
-
-
-            <!-- Content Area Start -->
-            <div class="contentCtnr" id="content">
-                <div class="spotify-playlist">
-                    <h2>Recommended Playlist</h2>
-                    <div class="list">
-                        <div class="item">
-                            <img src="./assets/img/mood boster.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>MOOD BOOSTER</h4>
-                            <p>Get Happy with today's dose of feel-good songs</p>
-
-                        </div>
-                        <div class="item">
-                            <img src="./assets/img/TODAYs-Hits.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Today-FIRE</h4>
-                            <p>SZA is on top of hottest 50!</p>
-
-                        </div>
-                        <div class="item">
-                            <img src="./assets/img/all out.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>ALL OUT 2010s</h4>
-                            <p>The Biggest song of 2010s....</p>
-
-                        </div>
-                        <div class="item">
-                            <img src="./assets/img/best of bollywood 70s.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Best Of 70s Bollywood</h4>
-                            <p>Playlist Created with that lets you transfer your playlist to Spotify from any music
-                                platform such as YouTube, Deezer etc</p>
-                        </div>
-                        <div class="item">
-                            <img src="./assets/img/sleep.jpg ">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Sleep</h4>
-                            <p>Gentle ambient plano to help you fall asleep</p>
-
-                        </div>
-                        <div class="item">
-                            <img src="./assets/img/best of bollywood 2000.jpg ">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Best of Bollywood 2000s</h4>
-                            <p>The most well known Hindi songs between 2000 and 2010</p>
-
-                        </div>
-
-                    </div>
-                    <h2>Your Top Mix</h2>
-                    <div class="list">
-                        <div class="item">
-                            <img src="assets/img/mega hit mix.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Mega Hit Mix</h4>
-                            <p>A mega mix of 75 Favorites from The..</p>
-
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/Romantic Mix.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Romantic Mix</h4>
-                            <p>Our Recommended help you find audio you....</p>
-
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/A.R. Rahman Mix.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4 class="h4">A.R. Rahman Mix</h4>
-                            <p class="p">Dhanshu, G.V. Prakash,....</p>
-
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/Punjabi 101.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Punjabi 101</h4>
-                            <p>Ultimate 101 Punjabi hits..</p>
-                        </div>
-                        <div class="item ">
-                            <img src="assets/img/Atif Aslam Mix.jpg ">
-                            <div class="play ">
-                                <span class="fa fa-play "></span>
-                            </div>
-                            <h4>Atif Aslam Mix</h4>
-                            <p>Kailash Kher, Sunidhi Chauhan....</p>
-
-                        </div>
-                        <div class="item ">
-                            <img src="assets/img/love the 90's.jpg">
-                            <div class="play ">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Bollywood 90's Evergreen Songs
-                            </h4>
-                            <p>Top Hindi Songs of The 90s (From end of 80s to beginning of 2000 ) Playlist</p>
-
-                        </div>
-                    </div>
-                    <h2>POP Hits</h2>
-                    <div class="list">
-                        <div class="item">
-                            <img src="assets/img/BollyWood Butter.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>BollyWood Butter</h4>
-                            <p>New in BollyWood by Arijit and.. </p>
-
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/Hot Hists Hindi.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Hot Hits Hindi</h4>
-                            <p>Hottest Hindi Music Severd Here.</p>
-
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/Desi Hits.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Desi Hists</h4>
-                            <p>Desi Hits From South Asia.Cover:king</p>
-
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/I-Pop SuperHits.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>I-Pop Superhits</h4>
-                            <p>Score all the biggest hits from your favorite pop stars.Cover:king </p>
-                        </div>
-                        <div class="item ">
-                            <img src="assets/img/New in Dance.jpg">
-                            <div class="play ">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>New in Dance</h4>
-                            <p>Your weekly floor fillers.Cover-Millind Gada &...</p>
-
-                        </div>
-                        <div class="item ">
-                            <img src="assets/img/Diljit Dosanjh mood.jpg">
-                            <div class="play ">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Diljit Donsanjh Mood</h4>
-                            <p>GOAT Diljit Hits....</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Content Area End -->
-
-
-
-
-
-
-
-
+      <!-- NavBar Start -->
+      <div class="nav">
+        <div class="arrowCtnr">
+          <div class="left">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
+              class="Svg-ytk21e-0 dUrrjJ IYDlXmBmmUKHveMzIPCF" viewBox="0 0 24 24">
+              <path
+                d="M15.957 2.793a1 1 0 010 1.414L8.164 12l7.793 7.793a1 1 0 11-1.414 1.414L5.336 12l9.207-9.207a1 1 0 011.414 0z" />
+            </svg>
+          </div>
+          <div class="right">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
+              class="Svg-ytk21e-0 dUrrjJ IYDlXmBmmUKHveMzIPCF" viewBox="0 0 24 24">
+              <path
+                d="M8.043 2.793a1 1 0 000 1.414L15.836 12l-7.793 7.793a1 1 0 101.414 1.414L18.664 12 9.457 2.793a1 1 0 00-1.414 0z" />
+            </svg>
+          </div>
         </div>
-        <!-- Available Area After SideBar End -->
 
-
-
-        <!-- SideBar Start -->
-        <div class="sidebar">
-
-            <!-- Mobile player Start -->
-            <div class="mobPlayer">
-                <div class="mobSongDetails">
-                    <img src="assets/song_art.jpg" alt="song art">
-                    <div class="texts">
-                        <h4>Song Tltle</h4>
-                        <p>Artist Name</p>
-                    </div>
-                </div>
-                <div class="mobRightBtns">
-                    <button class="mobPlayerBtnLike">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="16" width="16"
-                            viewBox="0 0 16 16" class="Svg-ytk21e-0 eqtHWV">
-                            <path
-                                d="M1.69 2A4.582 4.582 0 018 2.023 4.583 4.583 0 0111.88.817h.002a4.618 4.618 0 013.782 3.65v.003a4.543 4.543 0 01-1.011 3.84L9.35 14.629a1.765 1.765 0 01-2.093.464 1.762 1.762 0 01-.605-.463L1.348 8.309A4.582 4.582 0 011.689 2zm3.158.252A3.082 3.082 0 002.49 7.337l.005.005L7.8 13.664a.264.264 0 00.311.069.262.262 0 00.09-.069l5.312-6.33a3.043 3.043 0 00.68-2.573 3.118 3.118 0 00-2.551-2.463 3.079 3.079 0 00-2.612.816l-.007.007a1.501 1.501 0 01-2.045 0l-.009-.008a3.082 3.082 0 00-2.121-.861z" />
-                        </svg>
-                    </button>
-                    <!-- <img src="assets/ic_play.svg" alt="playPauseBtn" class="playPauseBtn" id="mobppImg"> -->
-                    <div class="playPauseBtn">
-                        <img src="assets/ic_play.svg" alt="PlayPause" id="mobppImg">
-                    </div>
-                </div>
-            </div>
-            <!-- Mobile player End -->
-
-            <div class="navLinkTop">
-                <img class="logo" src="assets/logo.svg" alt="Spotify Logo">
-                <div class="space"></div>
-                <div class="navItem sideBarActive" id="home">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
-                        class="Svg-ytk21e-0 eqtHWV home-active-icon" aria-hidden="true" viewBox="0 0 24 24">
-                        <path
-                            d="M13.5 1.515a3 3 0 00-3 0L3 5.845a2 2 0 00-1 1.732V21a1 1 0 001 1h6a1 1 0 001-1v-6h4v6a1 1 0 001 1h6a1 1 0 001-1V7.577a2 2 0 00-1-1.732l-7.5-4.33z" />
-                    </svg>
-                    <a>Home</a>
-                </div>
-                <div class="navItem" id="search">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
-                        class="Svg-ytk21e-0 eqtHWV search-icon" aria-hidden="true" viewBox="0 0 24 24">
-                        <path
-                            d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z" />
-                    </svg>
-                    <a>Search</a>
-                </div>
-                <div class="navItem" id="library">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
-                        class="Svg-ytk21e-0 eqtHWV collection-icon" aria-hidden="true" viewBox="0 0 24 24">
-                        <path
-                            d="M14.5 2.134a1 1 0 011 0l6 3.464a1 1 0 01.5.866V21a1 1 0 01-1 1h-6a1 1 0 01-1-1V3a1 1 0 01.5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1zm6 0a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1z" />
-                    </svg>
-                    <a>Your Library</a>
-                </div>
-                <div class="space"></div>
-                <div class="navItem2" id="createPlaylist">
-                    <img class="createPlaylist" src="assets/add.svg" alt="Create Playlist">
-                    <a>Create Playlist</a>
-                </div>
-                <div class="navItem2" id="likedSongs">
-                    <img class="likedSongs" src="assets/heart-fill.svg" alt="Liked Songs">
-                    <a>Liked Songs</a>
-                </div>
-            </div>
-            <div class="navLinkBottom"></div>
-
+        <div class="navBtns">
+          <a style="text-decoration:none;" href="signup.html">
+            <button>
+              Sign up
+            </button>
+          </a>
+          <a style="text-decoration:none;" href="signin.html">
+            <button class="whiteBG">
+              Log in
+            </button>
+          </a>
         </div>
-        <!-- SideBar End -->
+
+        <div class="navMenu">
+          <img class="logo" src="assets/logo.svg" alt="Spotify Logo">
+          <svg xmlns="http://www.w3.org/2000/svg" role="img" height="24" width="24" viewBox="0 0 24 24"
+            class="Svg-ytk21e-0 eqtHWV">
+            <path d="M21 6H3V4h18v2zm0 14H3v-2h18v2zm0-7H3v-2h18v2z" />
+          </svg>
+        </div>
+      </div>
+      <!-- NavBar End -->
+
+
+
+
+
+
+
+
+
+
+      <!-- Content Area Start -->
+      <div class="contentCtnr" id="content">
+        <div class="spotify-playlist">
+          <h2>Recommended Playlist</h2>
+          <div class="list">
+            <div class="item">
+              <img src="./assets/img/mood boster.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>MOOD BOOSTER</h4>
+              <p>Get Happy with today's dose of feel-good songs</p>
+
+            </div>
+            <div class="item">
+              <img src="./assets/img/TODAYs-Hits.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>Today-FIRE</h4>
+              <p>SZA is on top of hottest 50!</p>
+
+            </div>
+            <div class="item">
+              <img src="./assets/img/all out.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>ALL OUT 2010s</h4>
+              <p>The Biggest song of 2010s....</p>
+
+            </div>
+            <div class="item">
+              <img src="./assets/img/best of bollywood 70s.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>Best Of 70s Bollywood</h4>
+              <p>Playlist Created with that lets you transfer your playlist to Spotify from any music
+                platform such as YouTube, Deezer etc</p>
+            </div>
+            <div class="item">
+              <img src="./assets/img/sleep.jpg ">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>Sleep</h4>
+              <p>Gentle ambient plano to help you fall asleep</p>
+
+            </div>
+            <div class="item">
+              <img src="./assets/img/best of bollywood 2000.jpg ">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>Best of Bollywood 2000s</h4>
+              <p>The most well known Hindi songs between 2000 and 2010</p>
+
+            </div>
+
+          </div>
+          <h2>Your Top Mix</h2>
+          <div class="list">
+            <div class="item">
+              <img src="assets/img/mega hit mix.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>Mega Hit Mix</h4>
+              <p>A mega mix of 75 Favorites from The..</p>
+
+            </div>
+            <div class="item">
+              <img src="assets/img/Romantic Mix.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>Romantic Mix</h4>
+              <p>Our Recommended help you find audio you....</p>
+
+            </div>
+            <div class="item">
+              <img src="assets/img/A.R. Rahman Mix.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4 class="h4">A.R. Rahman Mix</h4>
+              <p class="p">Dhanshu, G.V. Prakash,....</p>
+
+            </div>
+            <div class="item">
+              <img src="assets/img/Punjabi 101.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>Punjabi 101</h4>
+              <p>Ultimate 101 Punjabi hits..</p>
+            </div>
+            <div class="item ">
+              <img src="assets/img/Atif Aslam Mix.jpg ">
+              <div class="play ">
+                <span class="fa fa-play "></span>
+              </div>
+              <h4>Atif Aslam Mix</h4>
+              <p>Kailash Kher, Sunidhi Chauhan....</p>
+
+            </div>
+            <div class="item ">
+              <img src="assets/img/love the 90's.jpg">
+              <div class="play ">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>Bollywood 90's Evergreen Songs
+              </h4>
+              <p>Top Hindi Songs of The 90s (From end of 80s to beginning of 2000 ) Playlist</p>
+
+            </div>
+          </div>
+          <h2>POP Hits</h2>
+          <div class="list">
+            <div class="item">
+              <img src="assets/img/BollyWood Butter.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>BollyWood Butter</h4>
+              <p>New in BollyWood by Arijit and.. </p>
+
+            </div>
+            <div class="item">
+              <img src="assets/img/Hot Hists Hindi.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>Hot Hits Hindi</h4>
+              <p>Hottest Hindi Music Severd Here.</p>
+
+            </div>
+            <div class="item">
+              <img src="assets/img/Desi Hits.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>Desi Hists</h4>
+              <p>Desi Hits From South Asia.Cover:king</p>
+
+            </div>
+            <div class="item">
+              <img src="assets/img/I-Pop SuperHits.jpg">
+              <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>I-Pop Superhits</h4>
+              <p>Score all the biggest hits from your favorite pop stars.Cover:king </p>
+            </div>
+            <div class="item ">
+              <img src="assets/img/New in Dance.jpg">
+              <div class="play ">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>New in Dance</h4>
+              <p>Your weekly floor fillers.Cover-Millind Gada &...</p>
+
+            </div>
+            <div class="item ">
+              <img src="assets/img/Diljit Dosanjh mood.jpg">
+              <div class="play ">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+              </div>
+              <h4>Diljit Donsanjh Mood</h4>
+              <p>GOAT Diljit Hits....</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Content Area End -->
+
+
+
+
+
+
+
 
     </div>
-    <!-- Parent Div End -->
+    <!-- Available Area After SideBar End -->
 
 
-    <!-- Player Container Start -->
-    <div class="playerCtnr">
-        <div class="songDetailsCtnr">
-            <img src="./assets/song_art.jpg" alt="Song Art">
-            <div class="texts">
-                <h3>Song Title</h3>
-                <p>Artist Name</p>
-            </div>
-            <button class="playerBtnLike">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="16" width="16"
-                    viewBox="0 0 16 16" class="Svg-ytk21e-0 eqtHWV">
-                    <path
-                        d="M1.69 2A4.582 4.582 0 018 2.023 4.583 4.583 0 0111.88.817h.002a4.618 4.618 0 013.782 3.65v.003a4.543 4.543 0 01-1.011 3.84L9.35 14.629a1.765 1.765 0 01-2.093.464 1.762 1.762 0 01-.605-.463L1.348 8.309A4.582 4.582 0 011.689 2zm3.158.252A3.082 3.082 0 002.49 7.337l.005.005L7.8 13.664a.264.264 0 00.311.069.262.262 0 00.09-.069l5.312-6.33a3.043 3.043 0 00.68-2.573 3.118 3.118 0 00-2.551-2.463 3.079 3.079 0 00-2.612.816l-.007.007a1.501 1.501 0 01-2.045 0l-.009-.008a3.082 3.082 0 00-2.121-.861z" />
-                </svg>
-            </button>
-            <button class="playerBtnPopup">
-                <svg width="16" fill="currentColor" height="16" xmlns="http://www.w3.org/2000/svg">
-                    <g>
-                        <path d="M1 3v9h14V3H1zm0-1h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"
-                            fill-rule="nonzero" />
-                        <path d="M10 8h4v3h-4z" />
-                    </g>
-                </svg>
-            </button>
+
+    <!-- SideBar Start -->
+    <div class="sidebar">
+
+      <!-- Mobile player Start -->
+      <div class="mobPlayer">
+        <div class="mobSongDetails">
+          <img src="assets/song_art.jpg" alt="song art">
+          <div class="texts">
+            <h4>Song Tltle</h4>
+            <p>Artist Name</p>
+          </div>
         </div>
-        <div class="controlerCtnr">
-            <div class="btnsCtnr">
-                <img src="assets/ic_shuffel.svg" alt="shuffel">
-                <img src="assets/ic_backward.svg" alt="backward">
-                <div class="playPauseBtn">
-                    <img src="assets/ic_play.svg" alt="PlayPause" id="ppImg">
-                </div>
-                <img src="assets/ic_forward.svg" alt="shuffel">
-                <img src="assets/ic_repeat.svg" alt="backward">
-            </div>
-            <div class="progressCtnr">
-                <p class="currentTime">00:00</p>
-                <input type="range" min="0" max="100" value="0">
-                <p class="totalTime">00:00</p>
-            </div>
+        <div class="mobRightBtns">
+          <button class="mobPlayerBtnLike">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="16" width="16"
+              viewBox="0 0 16 16" class="Svg-ytk21e-0 eqtHWV">
+              <path
+                d="M1.69 2A4.582 4.582 0 018 2.023 4.583 4.583 0 0111.88.817h.002a4.618 4.618 0 013.782 3.65v.003a4.543 4.543 0 01-1.011 3.84L9.35 14.629a1.765 1.765 0 01-2.093.464 1.762 1.762 0 01-.605-.463L1.348 8.309A4.582 4.582 0 011.689 2zm3.158.252A3.082 3.082 0 002.49 7.337l.005.005L7.8 13.664a.264.264 0 00.311.069.262.262 0 00.09-.069l5.312-6.33a3.043 3.043 0 00.68-2.573 3.118 3.118 0 00-2.551-2.463 3.079 3.079 0 00-2.612.816l-.007.007a1.501 1.501 0 01-2.045 0l-.009-.008a3.082 3.082 0 00-2.121-.861z" />
+            </svg>
+          </button>
+          <!-- <img src="assets/ic_play.svg" alt="playPauseBtn" class="playPauseBtn" id="mobppImg"> -->
+          <div class="playPauseBtn">
+            <img src="./assets/ic_play.svg" alt="PlayPause" id="mobppImg">
+          </div>
         </div>
-        <div class="volumeCtnr">
-            <div class="queueBtn">
-                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" height="16" width="16"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 013.5 1h9a2.5 2.5 0 010 5h-9A2.5 2.5 0 011 3.5zm2.5-1a1 1 0 000 2h9a1 1 0 100-2h-9z" />
-                </svg>
-            </div>
-            <div class="muteBtn">
-                <img src="assets/volume100.svg" alt="PlayPause">
-            </div>
-            <input type="range" min="0" max="100" value="100">
+      </div>
+      <!-- Mobile player End -->
+
+      <div class="navLinkTop">
+        <img class="logo" src="assets/logo.svg" alt="Spotify Logo">
+        <div class="space"></div>
+        <div class="navItem sideBarActive" id="home">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
+            class="Svg-ytk21e-0 eqtHWV home-active-icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path
+              d="M13.5 1.515a3 3 0 00-3 0L3 5.845a2 2 0 00-1 1.732V21a1 1 0 001 1h6a1 1 0 001-1v-6h4v6a1 1 0 001 1h6a1 1 0 001-1V7.577a2 2 0 00-1-1.732l-7.5-4.33z" />
+          </svg>
+          <a>Home</a>
         </div>
+        <div class="navItem" id="search">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
+            class="Svg-ytk21e-0 eqtHWV search-icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path
+              d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z" />
+          </svg>
+          <a>Search</a>
+        </div>
+        <div class="navItem" id="library">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="24" width="24"
+            class="Svg-ytk21e-0 eqtHWV collection-icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path
+              d="M14.5 2.134a1 1 0 011 0l6 3.464a1 1 0 01.5.866V21a1 1 0 01-1 1h-6a1 1 0 01-1-1V3a1 1 0 01.5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1zm6 0a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1z" />
+          </svg>
+          <a>Your Library</a>
+        </div>
+        <div class="space"></div>
+        <div class="navItem2" id="createPlaylist">
+          <img class="createPlaylist" src="assets/add.svg" alt="Create Playlist">
+          <a>Create Playlist</a>
+        </div>
+        <div class="navItem2" id="likedSongs">
+          <img class="likedSongs" src="assets/heart-fill.svg" alt="Liked Songs">
+          <a>Liked Songs</a>
+        </div>
+      </div>
+      <div class="navLinkBottom"></div>
+
     </div>
-    <!-- Player Container End -->
+    <!-- SideBar End -->
 
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/d4efaf251d.js" crossorigin="anonymous"></script>
+  </div>
+  <!-- Parent Div End -->
+
+
+  <!-- Player Container Start -->
+  <div class="playerCtnr">
+    <div class="songDetailsCtnr">
+      <img src="./assets/song_art.jpg" alt="Song Art">
+      <div class="texts">
+        <h3>Song Title</h3>
+        <p>Artist Name</p>
+      </div>
+      <button class="playerBtnLike">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" role="img" height="16" width="16"
+          viewBox="0 0 16 16" class="Svg-ytk21e-0 eqtHWV">
+          <path
+            d="M1.69 2A4.582 4.582 0 018 2.023 4.583 4.583 0 0111.88.817h.002a4.618 4.618 0 013.782 3.65v.003a4.543 4.543 0 01-1.011 3.84L9.35 14.629a1.765 1.765 0 01-2.093.464 1.762 1.762 0 01-.605-.463L1.348 8.309A4.582 4.582 0 011.689 2zm3.158.252A3.082 3.082 0 002.49 7.337l.005.005L7.8 13.664a.264.264 0 00.311.069.262.262 0 00.09-.069l5.312-6.33a3.043 3.043 0 00.68-2.573 3.118 3.118 0 00-2.551-2.463 3.079 3.079 0 00-2.612.816l-.007.007a1.501 1.501 0 01-2.045 0l-.009-.008a3.082 3.082 0 00-2.121-.861z" />
+        </svg>
+      </button>
+      <button class="playerBtnPopup">
+        <svg width="16" fill="currentColor" height="16" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <path d="M1 3v9h14V3H1zm0-1h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"
+              fill-rule="nonzero" />
+            <path d="M10 8h4v3h-4z" />
+          </g>
+        </svg>
+      </button>
+    </div>
+    <div class="controlerCtnr">
+      <div class="btnsCtnr">
+        <img src="assets/ic_shuffel.svg" alt="shuffel">
+        <img src="assets/ic_backward.svg" alt="backward">
+        <div class="playPauseBtn">
+          <img src="assets/ic_play.svg" alt="PlayPause" id="ppImg">
+        </div>
+        <img src="assets/ic_forward.svg" alt="shuffel">
+        <img src="assets/ic_repeat.svg" alt="backward">
+      </div>
+      <div class="progressCtnr">
+        <p class="currentTime">00:00</p>
+        <input type="range" min="0" max="100" value="0">
+        <p class="totalTime">00:00</p>
+      </div>
+    </div>
+    <div class="volumeCtnr">
+      <div class="queueBtn">
+        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" height="16" width="16"
+          viewBox="0 0 16 16">
+          <path
+            d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 013.5 1h9a2.5 2.5 0 010 5h-9A2.5 2.5 0 011 3.5zm2.5-1a1 1 0 000 2h9a1 1 0 100-2h-9z" />
+        </svg>
+      </div>
+      <div class="muteBtn">
+        <img src="assets/volume100.svg" alt="PlayPause">
+      </div>
+      <input id="volume" type="range" min="0" max="100" value="100">
+    </div>
+  </div>
+  <!-- Player Container End -->
+
+  <script src="js/script.js"></script>
+  <script src="https://kit.fontawesome.com/d4efaf251d.js" crossorigin="anonymous"></script>
 
 </body>
 
