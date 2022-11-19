@@ -223,8 +223,8 @@ form {
    transform: scale(1.04);
 }
 
-.btnDiv button:active,
-.btnLogin:active {
+.btnDiv button:hover,
+.btnLogin:hover {
    outline: 3px solid black;
    border: 3px solid #ffffff;
 }
