@@ -99,18 +99,18 @@ function loadData() {
                 console.log(element.pimg_path);
                 console.log(element.psubtitle);
 
-                let imgp = element.psubtitle.replace(".","");
+                let imgp = element.psubtitle.replace(".", "");
 
                 document.querySelectorAll(".spotify-playlist > .list .item").forEach((card) => {
                     card.querySelector("h4").textContent = element.ptitle;
                     card.querySelector("p").textContent = element.psubtitle;
-                    card.querySelector("img").src = "http://musify.42web.io"+imgp;
+                    card.querySelector("img").src = "http://musify.42web.io" + imgp;
                 });
             });
         }
     };
     xhttp.onload = function () {
-
+        alert("data changed");
 
     }
 
