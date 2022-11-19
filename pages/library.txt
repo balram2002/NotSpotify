@@ -1,5 +1,47 @@
 <!-- Content Area Start -->
-<div>
-    <div class="demo"></div>
+<div class="noListCtnr">
+    <svg xmlns="http://www.w3.org/2000/svg" role="img" height="24" width="24" aria-hidden="true" data-testid="playlist"
+        id="musicimage" viewBox="0 0 24 24">
+        <path
+            d="M6 3h15v15.167a3.5 3.5 0 11-3.5-3.5H19V5H8v13.167a3.5 3.5 0 11-3.5-3.5H6V3zm0 13.667H4.5a1.5 1.5 0 101.5 1.5v-1.5zm13 0h-1.5a1.5 1.5 0 101.5 1.5v-1.5z" />
+    </svg>
+    <h1 class="musiclist">Create your first Playlist </h1>
+    <h3 class="musiclist2">It's easy, we'll help you.</h3>
+    <button class="musiclistbutton ">Create Playlist</button>
 </div>
+
+
+<div class="availListCtnr">
+    <div>
+        <h2 class="textplaylistsbd">Playlists</h2>
+    </div>
+    <div class="libraryArea">
+        <div class="likedArea">
+            <h1 class="textLiked">Liked Songs</h1>
+            <h2 class="textLikedStatus">0 Liked Songs</h2>
+            <div class="buttonPlay">
+                <svg xmlns="http://www.w3.org/2000/svg" role="img" height="24" width="24" viewBox="0 0 24 24">
+                    <path
+                        d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z" />
+                </svg>
+            </div>
+        </div>
+        <div class="playlistArea">
+            <div class="playlistImage">
+                <svg xmlns="http://www.w3.org/2000/svg" role="img" height="24" width="24" aria-hidden="true"
+                    data-testid="playlist" viewBox="0 0 24 24" id="imagemusiciconbd">
+                    <path
+                        d="M6 3h15v15.167a3.5 3.5 0 11-3.5-3.5H19V5H8v13.167a3.5 3.5 0 11-3.5-3.5H6V3zm0 13.667H4.5a1.5 1.5 0 101.5 1.5v-1.5zm13 0h-1.5a1.5 1.5 0 101.5 1.5v-1.5z" />
+                </svg>
+            </div>
+            <div class="myPlaylistTextCtnr">
+                <h2 class="textmyplay">My Playlist #1</h2>
+                <h3 class="textmyplaybdd">By username</h3>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
 <!-- Content Area End -->

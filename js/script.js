@@ -13,9 +13,6 @@ document.querySelectorAll('.navItem, .navItem2').forEach((btn) => {
     });
 });
 
-
-
-
 document.getElementById("SvgMenu").onclick = () => {
     var x = document.getElementById("navMenuLinks");
     if (x.style.display === "block") {
@@ -56,9 +53,15 @@ function route(id) {
     };
     xhttp.onload = function () {
         if (id == 'search') {
-            const catCards = document.querySelectorAll('.catCard');
-            catCards.forEach((card) => {
+            document.querySelectorAll('.catCard').forEach((card) => {
                 card.style.backgroundColor = random_bg_color();
+            });
+        }
+
+        if (id == 'library') {
+            document.querySelectorAll(".musiclistbutton")[0].addEventListener('click', () => {
+                document.querySelector(".availListCtnr").style = "display: block;";
+                document.querySelector(".noListCtnr").style = "display: none;";
             });
         }
     }

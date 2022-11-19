@@ -934,3 +934,181 @@ body {
 }
 
 /* Custom Scrollbar End */
+
+
+
+
+/* Balram Area Starts */
+
+.noListCtnr {
+    width: 100%;
+    gap: 34px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 44px;
+}
+
+#musicimage {
+    height: 64px;
+    width: 64px;
+    cursor: pointer;
+    fill: white;
+}
+
+.musiclist {
+    color: white;
+    margin-top: 6px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.musiclist2 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.musiclistbutton {
+    height: 48px;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 32px;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.musiclistbutton:hover {
+    transform: scale(1.06);
+}
+
+
+
+
+.availListCtnr {
+    display: none;
+}
+
+.libraryArea {
+    width: 100%;
+    gap: 20px;
+    display: flex;
+}
+
+.textplaylistsbd {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 21px;
+}
+
+.likedArea {
+    height: 260px;
+    max-width: 390px;
+    width: 100%;
+    background-image: linear-gradient(135deg, #450af5 0%, #c4efd9 150%);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.textLiked {
+    position: relative;
+    top: 160px;
+    left: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 34px;
+}
+
+.textLikedStatus {
+    position: relative;
+    top: 170px;
+    left: 20px;
+    color: rgb(234, 225, 225);
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.buttonPlay {
+    height: 48px;
+    width: 48px;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 24px;
+    background-color: rgb(55, 182, 55);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    margin-bottom: -14px;
+    transition: translate .2s ease-in-out, opacity .4 linear;
+}
+
+.likedArea:hover .buttonPlay {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+
+.playlistArea {
+    height: 260px;
+    width: 185px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(92, 92, 92, 0.1);
+    border-radius: 4px;
+}
+
+
+.playlistImage {
+    height: 160px;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(58, 56, 56);
+    border-radius: 4px;
+    box-shadow: 0px 4px 12px #181818;
+}
+
+#imagemusiciconbd {
+    height: 89px;
+    width: 92px;
+    fill: rgb(153, 149, 149);
+}
+
+.myPlaylistTextCtnr{
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.textmyplay {
+    color: white;
+    font-size: 16px;
+}
+
+
+.textmyplaybdd {
+    color: rgb(167, 167, 167);
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+@media only screen and (max-width: 760px) {
+    .libraryArea{
+        flex-direction: column;
+    }
+}
+
+/* Balram area ends */
