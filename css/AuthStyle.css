@@ -267,4 +267,11 @@ form {
    .center {
       width: 100vw;
    }
+
+   .AuthBtn {
+      padding: 12px 18px;
+      font-size: 16px;
+      margin: 8px 0;
+   }
+
 }
