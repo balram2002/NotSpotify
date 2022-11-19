@@ -1,3 +1,5 @@
+loadData();
+
 document.querySelectorAll('.playPauseBtn').forEach((btn) => {
     btn.addEventListener('click', function () {
         togglePPIcon(this.querySelector("Img").id);
@@ -21,8 +23,6 @@ document.getElementById("SvgMenu").onclick = () => {
         x.style.display = "block";
     }
 }
-
-
 
 
 
@@ -67,6 +67,53 @@ function route(id) {
     }
     xhttp.open("GET", "pages/" + id + ".txt", true);
     xhttp.send();
+}
+
+
+function loadData() {
+    /* var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "http://musify.42web.io/Api's/getPlaylistForHome.php?id=18", true);
+    xhttp.getResponseHeader("Content-type", "application/json");
+    xhttp.send();
+
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    };
+    xhttp.onload = function () {
+
+
+    } */
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "http://musify.42web.io/Api's/getPlaylistForHome.php?id=18", true);
+    xhttp.getResponseHeader("Content-type", "application/json");
+    xhttp.send();
+
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var obj = JSON.parse(this.responseText);
+            obj.forEach(element => {
+                console.log(element.ptitle);
+                console.log(element.pimg_path);
+                console.log(element.psubtitle);
+
+                let imgp = element.psubtitle.replace(".","");
+
+                document.querySelectorAll(".spotify-playlist > .list .item").forEach((card) => {
+                    card.querySelector("h4").textContent = element.ptitle;
+                    card.querySelector("p").textContent = element.psubtitle;
+                    card.querySelector("img").src = "http://musify.42web.io"+imgp;
+                });
+            });
+        }
+    };
+    xhttp.onload = function () {
+
+
+    }
+
 }
 
 /* let audio = new Audio("http://21273.live.streamtheworld.com/LOS40_DANCE.mp3");
