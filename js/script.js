@@ -16,6 +16,19 @@ document.querySelectorAll('.navItem, .navItem2').forEach((btn) => {
 
 
 
+document.getElementById("SvgMenu").onclick = () => {
+    var x = document.getElementById("navMenuLinks");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+
+
+
+
+
 function random_bg_color() {
     let red = Math.floor(Math.random() * 176) + 10
     let green = Math.floor(Math.random() * 176) + 10;

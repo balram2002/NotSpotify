@@ -233,7 +233,7 @@ form {
    margin-top: 30px;
 }
 
-.signUpCtnr{
+.signUpCtnr {
    display: flex;
    padding: 20px 0;
    gap: 20px;
@@ -242,17 +242,29 @@ form {
    justify-content: center;
 }
 
-.signUpCtnr > p{
+.signUpCtnr>p {
    font-size: 18px;
    font-weight: 700;
 }
 
-.signUpCtnr >a{
+.signUpCtnr>a {
    width: 100%;
 }
 
-.signUpCtnr > a button{
+.signUpCtnr>a button {
    font-size: 14px;
    color: #6a6a6a;
    font-weight: 700;
+}
+
+
+
+
+
+@media only screen and (max-width: 760px) {
+
+   .main,
+   .center {
+      width: 100vw;
+   }
 }

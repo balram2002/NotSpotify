@@ -45,6 +45,22 @@
     color: rgba(255, 255, 255, 0.5);
     font-family: 'Circular Std';
     transition: all .2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus {
+    color: #40a97b;
+}
+
+::selection {
+    color: none;
+    background: none;
+}
+
+/* For Mozilla Firefox */
+::-moz-selection {
+    color: none;
+    background: none;
 }
 
 
@@ -381,9 +397,9 @@ body {
 
 @-moz-document url-prefix() {
     .availArea {
-      overflow: auto;
+        overflow: auto;
     }
-  }
+}
 
 /* Available Area End */
 
@@ -391,7 +407,8 @@ body {
 
 /* Top Navbar Start */
 .nav {
-    height: 64px;
+    min-height: 64px;
+    height: auto;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.50);
     position: -webkit-sticky;
@@ -456,8 +473,34 @@ body {
     transform: scale(1.04);
 }
 
-.navMenu {
+.navMenuCtnr {
     display: none;
+}
+
+#navMenuLinks {
+    display: none;
+    margin-top: 20px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#navMenuLinks .navLink {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+#navMenuLinks .navLink h4 {
+    font-size: 18px;
+}
+
+#navMenuLinks .navLink:hover {
+    background-color: #ffffff50;
+}
+
+#navMenuLinks .navLink:hover.navLink h4 {
+    color: #181818;
 }
 
 /* Top Navbar Start */
@@ -666,6 +709,7 @@ body {
 
 
 
+
 @media only screen and (max-width: 760px) {
 
     .mainDiv {
@@ -749,16 +793,23 @@ body {
 
     /* Top Navbar Start */
     .nav {
-        height: 64px;
+        height: auto;
         width: 100%;
         align-items: center;
         justify-content: flex-end;
-        padding: 0 32px;
+        padding: 10px 32px;
     }
 
     .nav .arrowCtnr,
     .navBtns button {
         display: none;
+    }
+
+    .navMenuCtnr {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .navMenu {
@@ -768,6 +819,7 @@ body {
     }
 
     .navMenu img {
+
         width: 104px;
     }
 
@@ -805,7 +857,8 @@ body {
 
     /* Harsh */
 
-    .catCardCtnr {
+    .catCardCtnr,
+    .spotify-playlist .list {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -842,12 +895,6 @@ body {
         font-size: 22px;
         margin-top: 30px;
         margin-bottom: 10px;
-    }
-
-    .spotify-playlist .list {
-        grid-row-gap: 20px;
-        grid-column-gap: 8px;
-        --auto-grid-min-size: 146px;
     }
 
     .spotify-playlist .list .item {
