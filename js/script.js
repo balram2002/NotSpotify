@@ -1,5 +1,10 @@
 loadData();
 
+document.body.onload = () => {
+    route('shimmer');
+    setTimeout("route('home')", 2000);
+}
+
 document.querySelectorAll('.playPauseBtn').forEach((btn) => {
     btn.addEventListener('click', function () {
         togglePPIcon(this.querySelector("Img").id);
@@ -104,7 +109,7 @@ function loadData() {
                 document.querySelectorAll(".spotify-playlist > .list .item").forEach((card) => {
                     card.querySelector("h4").textContent = element.ptitle;
                     card.querySelector("p").textContent = element.psubtitle;
-                    card.querySelector("img").src = "http://musify.42web.io" + imgp;
+                    card.querySelector("img").src = "https://musify.42web.io" + imgp;
                 });
             });
         }
