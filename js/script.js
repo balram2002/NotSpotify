@@ -1,10 +1,4 @@
 loadData();
-document.body.onload = ()=>{
-   route('shimmer');
-   setTimeout("route('home')", 3000);
-};
-
-
 
 document.querySelectorAll('.playPauseBtn').forEach((btn) => {
     btn.addEventListener('click', function () {
