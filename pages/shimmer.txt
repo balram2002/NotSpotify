@@ -1,0 +1,74 @@
+<div>
+    <div class="spotify-playlist-sh">
+        <h2>Recommended Playlist</h2>
+        <div class="list">
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left"></div>
+                </div>
+            </div>
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left">
+                    </div>
+                </div>
+            </div>
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left"></div>
+                </div>
+            </div>
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left"></div>
+                </div>
+            </div>
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left"></div>
+                </div>
+            </div>
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spotify-playlist-sh">
+        <h2>Your Top Mix</h2>
+        <div class="list">
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left"></div>
+                </div>
+            </div>
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left">
+                    </div>
+                </div>
+            </div>
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left"></div>
+                </div>
+            </div>
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left"></div>
+                </div>
+            </div>
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left"></div>
+                </div>
+            </div>
+            <div class="main-item">
+                <div class="animated-background">
+                    <div class="background-masker btn-divide-left"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

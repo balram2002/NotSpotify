@@ -1086,7 +1086,7 @@ body {
     fill: rgb(153, 149, 149);
 }
 
-.myPlaylistTextCtnr{
+.myPlaylistTextCtnr {
     display: block;
     width: 100%;
     margin-top: 20px;
@@ -1106,9 +1106,80 @@ body {
 }
 
 @media only screen and (max-width: 760px) {
-    .libraryArea{
+    .libraryArea {
         flex-direction: column;
     }
 }
 
 /* Balram area ends */
+
+
+/* pukit shimmer start*/
+
+/* .main-item {
+    background-color: var(--color-background);
+    width: 700px;
+    height: 100px;
+}
+ */
+/* .btn-divide-left {
+    top: 0;
+    left: 25%;
+    height: 100%;
+    width: 5%;
+    color: black;
+} */
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -800px 0
+    }
+
+    100% {
+        background-position: 800px 0
+    }
+}
+
+.animated-background {
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #636363 8%, #181818 18%, #252525 33%);
+    background-size: 800px 104px;
+    height: 200px;
+    width: 220px;
+    min-width: 200px;
+    position: relative;
+    border-radius: 6px;
+}
+
+.spotify-playlist-sh .list {
+    display: grid;
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+    padding: 30px;
+    --auto-grid-min-size: 160px;
+    grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+}
+
+.spotify-playlist-sh .list .main-item {
+    min-width: 140px;
+    width: 160px;
+    height: 160px;
+    padding: 10px;
+    background-color: var(--color-);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+}
+
+.spotify-playlist-sh h2 {
+    color: var(--color-heading);
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+/* pulkit shimmer end */

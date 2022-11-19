@@ -1,4 +1,10 @@
 loadData();
+document.body.onload = ()=>{
+   route('shimmer');
+   setTimeout("route('home')", 3000);
+};
+
+
 
 document.querySelectorAll('.playPauseBtn').forEach((btn) => {
     btn.addEventListener('click', function () {
@@ -87,8 +93,8 @@ function loadData() {
     } */
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://musify.42web.io/Api's/getPlaylistForHome.php?id=18", true);
-    xhttp.getResponseHeader("Content-type", "application/json");
+    xhttp.open("POST", "https://musify.42web.io/Api's/getPlaylistForHome.php?id=18", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
 
     xhttp.onreadystatechange = function () {
@@ -110,8 +116,7 @@ function loadData() {
         }
     };
     xhttp.onload = function () {
-        alert("data changed");
-
+        //alert("data changed");
     }
 
 }
