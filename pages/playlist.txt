@@ -1,7 +1,7 @@
 <div class="parent">
     <div class="tophead">
         <div class="ctnr">
-            <p class="pubplay">PUBLIC PLAYLIST</p>
+            <p class="pubplay">PLAYLIST</p>
             <h1 class="title">Hot Hits India</h1>
             <p class="subtitle">The hottest tracks in India.</p>
             <p>NotSpotify</p>
@@ -9,52 +9,47 @@
     </div>
 
     <!-- body -->
-    <div class="body">
-
-        <div class="navbar">
-
+    <div>
+        <div class="playlistNavbar">
             <div class="pausegreen" onclick="togglePlayPause()">
-                <img src="svg files/play.svg" alt="PlayPause" id="ppImg">
+                <img src="../assets/ic_play.svg" alt="PlayPause" id="ppImg">
             </div>
-
-            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" role="img"
-                aria-hidden="true" viewBox="0 0 16 16" class="like">
+            <svg class="like" xmlns="http://www.w3.org/2000/svg" role="img" height="16" width="16" viewBox="0 0 16 16"
+                class="Svg-ytk21e-0 eqtHWV">
                 <path
-                    d="M15.724 4.22A4.313 4.313 0 0012.192.814a4.269 4.269 0 00-3.622 1.13.837.837 0 01-1.14 0 4.272 4.272 0 00-6.21 5.855l5.916 7.05a1.128 1.128 0 001.727 0l5.916-7.05a4.228 4.228 0 00.945-3.577z">
-                </path>
+                    d="M1.69 2A4.582 4.582 0 018 2.023 4.583 4.583 0 0111.88.817h.002a4.618 4.618 0 013.782 3.65v.003a4.543 4.543 0 01-1.011 3.84L9.35 14.629a1.765 1.765 0 01-2.093.464 1.762 1.762 0 01-.605-.463L1.348 8.309A4.582 4.582 0 011.689 2zm3.158.252A3.082 3.082 0 002.49 7.337l.005.005L7.8 13.664a.264.264 0 00.311.069.262.262 0 00.09-.069l5.312-6.33a3.043 3.043 0 00.68-2.573 3.118 3.118 0 00-2.551-2.463 3.079 3.079 0 00-2.612.816l-.007.007a1.501 1.501 0 01-2.045 0l-.009-.008a3.082 3.082 0 00-2.121-.861z" />
             </svg>
-
             <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" class="options">
                 <path
                     d="M4.5 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm15 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
             </svg>
-
-            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" role="img" class="search"
-                aria-hidden="true" viewBox="0 0 24 24">
-                <path
-                    d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"
-                    fill-opacity="0.7"></path>
-            </svg>
-
         </div>
 
-        <div class="table">
-            <table class="list">
+        <div class="tableCtnr">
+            <table class="tableList">
                 <thead>
                     <tr>
                         <th>
-                            <p id="title"># TITLE</p>
+                            <p># TITLE</p>
                         </th>
                         <th>ALBUM</th>
                         <th class="dateadded">DATE ADDED</th>
-                        <th><img src="pngs/icon clock.png" alt="clock" class="time"></th>
+                        <th>
+                            <svg xmlns="http://www.w3.org/2000/svg" role="img" height="16" width="16"
+                                viewBox="0 0 16 16" class="time">
+                                <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8z" />
+                                <path
+                                    d="M8 3.25a.75.75 0 01.75.75v3.25H11a.75.75 0 010 1.5H7.25V4A.75.75 0 018 3.25z" />
+                            </svg>
+                        </th>
                     </tr>
                 </thead>
                 <!-- song details -->
                 <div class="songlist">
                     <tr>
                         <td class="title">
-                            <p class="number"> 1 </p><img src="uti.jpg" alt="cover" class="img">
+                            <p class="number"> 1 </p><img src="../assets/img/Atif Aslam Mix.jpg" alt="cover"
+                                class="img">
                             <div class="songdetails">
                                 <p class="songname"> Under the Influence</p>
                                 <p class="artistname"> Chris Brown</p>
@@ -75,7 +70,8 @@
                     <!-- song details -->
                     <tr>
                         <td class="title">
-                            <p class="number"> 2 </p><img src="double take.jpg" alt="cover" class="img">
+                            <p class="number"> 2 </p><img src="../assets/img/Atif Aslam Mix.jpg" alt="cover"
+                                class="img">
                             <div class="songdetails">
                                 <p class="songname"> double take</p>
                                 <p class="artistname"> dhruv</p>
@@ -97,7 +93,7 @@
                 <!-- song details -->
                 <tr>
                     <td class="title">
-                        <p class="number"> 2 </p><img src="double take.jpg" alt="cover" class="img">
+                        <p class="number"> 2 </p><img src="../assets/img/Atif Aslam Mix.jpg" alt="cover" class="img">
                         <div class="songdetails">
                             <p class="songname"> double take</p>
                             <p class="artistname"> dhruv</p>
@@ -113,28 +109,27 @@
                         <p class="time">2:52</p>
                     </td>
                 </tr>
-        </div>
-        <!-- song details end -->
+                <tr>
+                    <td class="title">
+                        <p class="number"> 2 </p><img src="../assets/img/Atif Aslam Mix.jpg" alt="cover" class="img">
+                        <div class="songdetails">
+                            <p class="songname"> double take</p>
+                            <p class="artistname"> dhruv</p>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="albumname">double take</p>
+                    </td>
+                    <td>
+                        <p class="dateadded">5 days ago</p>
+                    </td>
+                    <td>
+                        <p class="time">2:52</p>
+                    </td>
+                </tr>
+            </table>
 
-        <!-- song details -->
-        <tr>
-            <td class="title">
-                <p class="number"> 2 </p><img src="double take.jpg" alt="cover" class="img">
-                <div class="songdetails">
-                    <p class="songname"> double take</p>
-                    <p class="artistname"> dhruv</p>
-                </div>
-            </td>
-            <td>
-                <p class="albumname">double take</p>
-            </td>
-            <td>
-                <p class="dateadded">5 days ago</p>
-            </td>
-            <td>
-                <p class="time">2:52</p>
-            </td>
-        </tr>
+        </div>
     </div>
     <!-- song details end -->
 

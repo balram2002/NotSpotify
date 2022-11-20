@@ -81,6 +81,9 @@ function route(id) {
                 });
             });
         }
+        if (id == 'playlist'){
+            //document.querySelector('.nav').style = 'background-color: transparent;';
+        }
     }
     xhttp.open("GET", "pages/" + id + ".txt", true);
     xhttp.send();

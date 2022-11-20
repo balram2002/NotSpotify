@@ -1213,7 +1213,7 @@ body {
 /* TOP HEAD CSS */
 
 .tophead {
-    padding: 20px;
+    padding: 30px;
     min-height: 55vh;
     width: 100%;
     background-image: url("../assets/img/hhi.jpg");
@@ -1225,12 +1225,13 @@ body {
 
 .tophead .ctnr {
     position: absolute;
-    bottom: 10px;
+    bottom: 26px;
 }
 
 .tophead p {
     color: white;
     font-weight: bold;
+    font-size: 14px;
 }
 
 .tophead .title {
@@ -1239,148 +1240,76 @@ body {
 }
 
 .tophead .subtitle {
-    color: rgb(103, 103, 103);
+    color: rgba(226, 226, 226, 0.7);
+    text-shadow: 0 .2px 2px rgba(48, 48, 48, 0.6);
     font-family: 'Hind', sans-serif;
-    font-weight: bold;
+    font-weight: normal;
+    font-size: 16px;
     margin: 12px 0;
 }
 
 
 /* body CSS */
-.body {
-    color: white;
-    background-color: #161616;
-    min-height: 100vh;
-}
 
-.navbar {
+.playlistNavbar {
     display: flex;
-    min-height: 16vh;
+    min-height: 12vh;
     width: 100%;
-    background-image: linear-gradient(to bottom, rgba(215, 148, 2, 0.527), #161616);
-
+    background-image: linear-gradient(180deg, rgba(255, 162, 0, 0.4) 0%, rgba(255, 162, 0, 0) 100%);
     align-items: center;
     justify-content: flex-start;
+    padding: 20px 30px 30px 30px;
+    gap: 30px;
 }
 
-.pausegreen {
+.playlistNavbar .pausegreen {
     display: flex;
-    background-color: rgb(108, 250, 108);
-    border-radius: 100px;
-    width: 60px;
-    height: 60px;
-    margin: 30px;
+    background-color: #1fdf64;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
     align-items: center;
     justify-content: center;
-    padding: 2px;
 }
 
-.pause {
-    width: 100px;
-    height: 23px;
+.playlistNavbar .pausegreen img {
+    width: 22px;
+}
+
+.playlistNavbar .pausegreen:active {
+    opacity: .6;
+}
+
+.playlistNavbar .like,
+.playlistNavbar .options {
+    height: 32px;
+    width: 32px;
+    fill: white;
     cursor: pointer;
+    opacity: .6;
 }
 
-.pausegreen:active {
-    background-color: rgb(73, 171, 73);
-
+.playlistNavbar .like:hover,
+.playlistNavbar .options:hover {
+    opacity: 1;
 }
 
-.like {
-    fill: rgb(108, 250, 108);
-    margin: 20px 0px;
-    height: 30px;
-    cursor: pointer;
+/* table start */
+
+.tableCtnr{
+    padding: 20px 33px 20px 20px;
 }
 
-.download {
-    margin: 22px;
-    width: 40px;
-    cursor: pointer;
-}
-
-.options {
-    fill: rgb(203, 203, 203);
-    margin: 22px;
-    cursor: pointer;
-    width: 40px;
-}
-
-.options:hover {
-    fill: rgb(255, 255, 255);
-    cursor: pointer;
-}
-
-.search {
-    fill: rgb(203, 203, 203);
-    width: 25px;
-    padding: 5px;
-    margin: auto 25px auto auto;
-    align-self: flex-end;
-}
-
-.search:hover {
-    fill: rgb(255, 255, 255);
-    background-color: rgba(237, 237, 237, 0.2);
-    border-radius: 100px;
-
-}
-
-.listcol {
-    display: flex;
-    color: rgb(103, 103, 103);
-    justify-content: space-around;
-    font-size: 15px;
-    font-family: 'Secular One', sans-serif;
-
-}
-
-.ttitle {
-    margin-right: 350px;
-}
-
-/*  */
-table {
-    margin: 0;
-    padding: 0;
-}
-
-
-
-@media only screen and(max-width: 700px) {
-    th .dateadded {
-        display: none;
-    }
-
-    .number {
-        margin: 2px;
-    }
-}
-
-.items {
-    display: flex;
-    margin: 20px 30px;
-    align-items: center;
-
-
-}
-
-#title {
-    margin-left: 70px;
-}
-
-.list {
+.tableCtnr .tableList {
     border-collapse: collapse;
-
-    color: rgb(129, 129, 129);
-    font-family: 'Arimo', sans-serif;
-    margin: 10px 30px 0 10px;
     /* padding:auto; */
     font-size: 15px;
-    min-width: 50vw;
-    width: 100vw;
+    width: 100%;
     text-align: left;
+}
 
+th > p {
+    margin-left: 70px;
 }
 
 tr:hover {
@@ -1389,25 +1318,27 @@ tr:hover {
 }
 
 thead tr:hover {
-    cursor: pointer;
-    background-color: #161616;
+    cursor: auto;
+    background-color: transparent;
 }
 
-.list img {
+.tableList img {
     height: 5vh;
     align-self: center;
-
 }
 
-.list th img {
-    height: 3vh;
+.time {
+    width: 16px;
+    height: auto;
+    fill: white;
+    opacity: .6;
 }
 
-.list th {
+.tableList th {
     padding: 3px 20px 20px 0px;
 }
 
-.list tr {
+.tableList tr {
     border-spacing: 20px 15px;
 }
 
@@ -1433,11 +1364,35 @@ thead tr:hover {
 /* Mobile NotSpotify */
 
 
+/* @media only screen and(max-width: 700px) {
+    th .dateadded {
+        display: none;
+    }
+
+    .number {
+        margin: 2px;
+    }
+}
+
+.items {
+    display: flex;
+    margin: 20px 30px;
+    align-items: center;
+
+
+}
+
+
 @media only screen and (max-width: 600px) {
-    .tophead h1 {
+    .tophead {
+        height: 40vh;
+    }
+
+    .tophead .title {
         font-size: 3em;
     }
-    .parent{
+
+    .parent {
         margin-right: -10px;
     }
 }
@@ -1448,7 +1403,7 @@ thead tr:hover {
         flex-direction: row-reverse;
     } */
 
-    .list {
+/*     .list {
         margin: 0px;
     }
 
@@ -1474,5 +1429,5 @@ thead tr:hover {
 
     .like {}
 }
-
+ */ 
 /* Panbihar CSS End */
