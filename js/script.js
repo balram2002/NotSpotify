@@ -76,6 +76,9 @@ function route(id) {
                 cards[idx].querySelector("h4").textContent = item.title;
                 cards[idx].querySelector("p").textContent = item.subtitle;
                 cards[idx].querySelector("img").src = item.img;
+                cards[idx].addEventListener("click", () => {
+                    route('playlist');
+                });
             });
         }
     }
@@ -98,12 +101,13 @@ function loadData() {
                 console.log(element.pimg_path);
                 console.log(element.psubtitle);
                 let imgp = element.pimg_path.replace(".", "");
-                homeData.push({title: element.ptitle, subtitle: element.psubtitle, img: "https://musify.42web.io" + imgp });
+                homeData.push({ title: element.ptitle, subtitle: element.psubtitle, img: "https://musify.42web.io" + imgp });
             });
         }
     };
     xhttp.onload = function () {
-        setTimeout("route('home')", 2000);
+        //setTimeout("route('home')", 2000);
+        route('home');
     }
 
 }

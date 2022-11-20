@@ -1198,3 +1198,281 @@ body {
 }
 
 /* pulkit shimmer end */
+
+
+
+
+/* Panbihar CSS Start */
+
+.parent {
+    overflow-x: hidden;
+    margin: -90px -38px -20px -20px;
+}
+
+
+/* TOP HEAD CSS */
+
+.tophead {
+    padding: 20px;
+    min-height: 55vh;
+    width: 100%;
+    background-image: url("../assets/img/hhi.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.tophead .ctnr {
+    position: absolute;
+    bottom: 10px;
+}
+
+.tophead p {
+    color: white;
+    font-weight: bold;
+}
+
+.tophead .title {
+    font-size: 5em;
+    color: white;
+}
+
+.tophead .subtitle {
+    color: rgb(103, 103, 103);
+    font-family: 'Hind', sans-serif;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+
+/* body CSS */
+.body {
+    color: white;
+    background-color: #161616;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    min-height: 16vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(215, 148, 2, 0.527), #161616);
+
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.pausegreen {
+    display: flex;
+    background-color: rgb(108, 250, 108);
+    border-radius: 100px;
+    width: 60px;
+    height: 60px;
+    margin: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+
+.pause {
+    width: 100px;
+    height: 23px;
+    cursor: pointer;
+}
+
+.pausegreen:active {
+    background-color: rgb(73, 171, 73);
+
+}
+
+.like {
+    fill: rgb(108, 250, 108);
+    margin: 20px 0px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.download {
+    margin: 22px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.options {
+    fill: rgb(203, 203, 203);
+    margin: 22px;
+    cursor: pointer;
+    width: 40px;
+}
+
+.options:hover {
+    fill: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.search {
+    fill: rgb(203, 203, 203);
+    width: 25px;
+    padding: 5px;
+    margin: auto 25px auto auto;
+    align-self: flex-end;
+}
+
+.search:hover {
+    fill: rgb(255, 255, 255);
+    background-color: rgba(237, 237, 237, 0.2);
+    border-radius: 100px;
+
+}
+
+.listcol {
+    display: flex;
+    color: rgb(103, 103, 103);
+    justify-content: space-around;
+    font-size: 15px;
+    font-family: 'Secular One', sans-serif;
+
+}
+
+.ttitle {
+    margin-right: 350px;
+}
+
+/*  */
+table {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@media only screen and(max-width: 700px) {
+    th .dateadded {
+        display: none;
+    }
+
+    .number {
+        margin: 2px;
+    }
+}
+
+.items {
+    display: flex;
+    margin: 20px 30px;
+    align-items: center;
+
+
+}
+
+#title {
+    margin-left: 70px;
+}
+
+.list {
+    border-collapse: collapse;
+
+    color: rgb(129, 129, 129);
+    font-family: 'Arimo', sans-serif;
+    margin: 10px 30px 0 10px;
+    /* padding:auto; */
+    font-size: 15px;
+    min-width: 50vw;
+    width: 100vw;
+    text-align: left;
+
+}
+
+tr:hover {
+    background-color: rgba(237, 237, 237, 0.1);
+    cursor: pointer;
+}
+
+thead tr:hover {
+    cursor: pointer;
+    background-color: #161616;
+}
+
+.list img {
+    height: 5vh;
+    align-self: center;
+
+}
+
+.list th img {
+    height: 3vh;
+}
+
+.list th {
+    padding: 3px 20px 20px 0px;
+}
+
+.list tr {
+    border-spacing: 20px 15px;
+}
+
+.title {
+    display: flex;
+}
+
+.number {
+    margin: auto 10px;
+    color: rgb(103, 103, 103);
+    margin: auto 20px auto 40px;
+}
+
+.songdetails {
+    margin: 15px;
+}
+
+.songname {
+    color: white;
+    font-size: 16px;
+}
+
+/* Mobile NotSpotify */
+
+
+@media only screen and (max-width: 600px) {
+    .tophead h1 {
+        font-size: 3em;
+    }
+    .parent{
+        margin-right: -10px;
+    }
+}
+
+@media (max-width:450px) and (min-height:800px) {
+
+    /* .navbar {
+        flex-direction: row-reverse;
+    } */
+
+    .list {
+        margin: 0px;
+    }
+
+    thead {
+        display: none;
+    }
+
+    .albumname {
+        display: none;
+    }
+
+    .time {
+        display: none;
+    }
+
+    .number {
+        margin: 20px;
+    }
+
+    .dateadded {
+        display: none;
+    }
+
+    .like {}
+}
+
+/* Panbihar CSS End */
