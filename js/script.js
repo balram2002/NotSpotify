@@ -1,5 +1,6 @@
 var homeData = new Array();
-
+/* Session uid & email */
+console.log("uid: " + sessionStorage.getItem("uid") + ", Email: " + sessionStorage.getItem("email"));
 document.body.onload = () => {
     route('shimmer');
     loadData();
@@ -76,9 +77,6 @@ function route(id) {
                 cards[idx].querySelector("h4").textContent = item.title;
                 cards[idx].querySelector("p").textContent = item.subtitle;
                 cards[idx].querySelector("img").src = item.img;
-                cards[idx].addEventListener("click", () => {
-                    route('playlist');
-                });
             });
         }
     }
@@ -101,13 +99,12 @@ function loadData() {
                 console.log(element.pimg_path);
                 console.log(element.psubtitle);
                 let imgp = element.pimg_path.replace(".", "");
-                homeData.push({ title: element.ptitle, subtitle: element.psubtitle, img: "https://musify.42web.io" + imgp });
+                homeData.push({title: element.ptitle, subtitle: element.psubtitle, img: "https://musify.42web.io" + imgp });
             });
         }
     };
     xhttp.onload = function () {
-        //setTimeout("route('home')", 2000);
-        route('home');
+        setTimeout("route('home')", 2000);
     }
 
 }

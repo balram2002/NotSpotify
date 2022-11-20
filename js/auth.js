@@ -9,7 +9,7 @@ import {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 var user;
-console.log("Auth.js");
+console.log("Auth.js :" + document.title);
 
 function getData(elements) {
     const obj = {};
@@ -46,80 +46,93 @@ function validation(elements) {
 
 }
 
-/* Login & Signup Using Firebase Email Verification */
-
-document.querySelector(".btnDiv>.btn").onclick =
-    function emailPassword_singIn() {
-        const elements = document.querySelectorAll(".inputCtnr");
-        const ele = [];
-        elements.forEach((element) => ele.push(element.getElementsByTagName("input")[0]));
-        let inputFieldsData = validation(ele);
-        let gen = null;
-        document.querySelectorAll('input[name="gender"]').forEach(g => {
-            if (g.checked) gen = g.value;
-        });
-        if (gen == null) {
-            setError(document.querySelector(".genderCtnr"));
-            return;
-        } else inputFieldsData["gender"] = gen;
-        createUserWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
-            .then((userCredential) => {
-                user = userCredential.user;
-                updateProfile(user, {
-                    displayName: inputFieldsData.name, photoURL: ""
-                }).then(() => {
-
-                }).catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    console.log(errorCode + "errorCode");
-                    console.log(errorMessage + "errorMessage");
-                });
-                sendEmailVerification(user)
-                    .then(() => {
-                        console.log("Email Sent");
-                    });
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode + "errorCode");
-                console.log(errorMessage + "errorMessage");
+/* Signup Using Firebase Email Verification & MySql */
+if (document.title === "Signup - Spotify") {
+    console.log("Working");
+    document.querySelector(".btnDiv>.btn").onclick =
+        function emailPassword_singUp() {
+            const elements = document.querySelectorAll("form>.inputCtnr");
+            const ele = [];
+            elements.forEach((element) => ele.push(element.getElementsByTagName("input")[0]));
+            let inputFieldsData = validation(ele);
+            let gen = null;
+            document.querySelectorAll('input[name="gender"]').forEach(g => {
+                if (g.checked) gen = g.value;
             });
+            if (gen == null) {
+                setError(document.querySelector(".genderCtnr"));
+                return;
+            } else inputFieldsData["gender"] = gen;
+            if (inputFieldsData != null) {
+                createUserWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
+                    .then((userCredential) => {
+                        user = userCredential.user;
+                        updateProfile(user, {
+                            displayName: inputFieldsData.name, photoURL: ""
+                        }).then(() => {
 
-        $.post("https://musify.42web.io/Api%27s/signUpUser.php",
-            inputFieldsData,
-            function(data, status){
-                    console.log(data+" : "+status);
-        });
-    }
-
-
-/*
-
-
-
-
-
-/*
-//Email & Password Authentication
-document.getElementById("btn3").onclick = function atts() {
-var email = document.getElementById("e").value;
-var pass = document.getElementById("p").value;
-console.log("SignUp" + email.toString() + pass.toString());
-signInWithEmailAndPassword(auth, email, pass)
-.then((userCredential) => {
- // Signed in
- const user = userCredential.user;
- console.log(user);
- console.log(user.uid);
- // ...
-})
-.catch((error) => {
- const errorCode = error.code;
- const errorMessage = error.message;
- console.log(errorCode + "errorCode");
- console.log(errorMessage + "errorMessage");
-});
+                        }).catch((error) => {
+                            const errorCode = error.code;
+                            const errorMessage = error.message;
+                            console.log(errorCode + "errorCode");
+                            console.log(errorMessage + "errorMessage");
+                        });
+                        sendEmailVerification(user)
+                            .then(() => {
+                                console.log("Email Sent");
+                            });
+                        $.post("https://musify.42web.io/Api%27s/signUpUser.php",
+                            inputFieldsData,
+                            function (data, status) {
+                                location.href = "signin.html";
+                                console.log(data + " : " + status);
+                            });
+                    })
+                    .catch((error) => {
+                        if (error.code === "auth/email-already-in-use") alert("Email Already in use, \nPlease choose another Email");
+                        console.log(error.errorCode + " errorCode");
+                        console.log(error.code + " errorCode");
+                        console.log(error.message + " errorMessage");
+                    });
+            }
+        }
 }
-*/
+
+/* Login Using Firebase Email Verification & MySql */
+if (document.title === "Login - Spotify") {
+    console.log("Working");
+    document.querySelector(".btnLogin").onclick =
+        function emailPassword_singIn() {
+            console.log("Sign IN");
+            const elements = document.querySelectorAll(".login>.inputCtnr");
+            const ele = [];
+            elements.forEach((element) => ele.push(element.getElementsByTagName("input")[0]));
+            let inputFieldsData = validation(ele);
+            console.log(inputFieldsData);
+            if (inputFieldsData != null) {
+                signInWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
+                    .then((userCredential) => {
+                        if (userCredential.user.emailVerified)
+                            $.post("https://musify.42web.io/Api%27s/signInUser.php",
+                                inputFieldsData,
+                                function (data, status) {
+                                    if (data !== "Login Failed") {
+                                        sessionStorage.setItem("uid", data);
+                                        sessionStorage.setItem("email", inputFieldsData.email);
+                                        location.href = "index.html";
+                                    } else alert("Login Failed Try Again");
+                                });
+                        else alert("Please Verify Your Email")
+                    })
+                    .catch((error) => {
+                        if (error.code === "auth/wrong-password") alert("Invalid Email & Password");
+                        else alert("Login Failed Try Again");
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.log(errorCode + "errorCode");
+                        console.log(errorMessage + "errorMessage");
+                    });
+
+            }
+        }
+}
