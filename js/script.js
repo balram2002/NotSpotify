@@ -1,5 +1,4 @@
 loadData();
-
 document.querySelectorAll('.playPauseBtn').forEach((btn) => {
     btn.addEventListener('click', function () {
         togglePPIcon(this.querySelector("Img").id);

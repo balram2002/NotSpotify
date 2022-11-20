@@ -50,7 +50,6 @@ function validation(elements) {
 
 document.querySelector(".btnDiv>.btn").onclick =
     function emailPassword_singIn() {
-        console.log("singIn");
         const elements = document.querySelectorAll(".inputCtnr");
         const ele = [];
         elements.forEach((element) => ele.push(element.getElementsByTagName("input")[0]));
@@ -63,7 +62,7 @@ document.querySelector(".btnDiv>.btn").onclick =
             setError(document.querySelector(".genderCtnr"));
             return;
         } else inputFieldsData["gender"] = gen;
-        /*createUserWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
+        createUserWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
             .then((userCredential) => {
                 user = userCredential.user;
                 updateProfile(user, {
@@ -86,28 +85,13 @@ document.querySelector(".btnDiv>.btn").onclick =
                 const errorMessage = error.message;
                 console.log(errorCode + "errorCode");
                 console.log(errorMessage + "errorMessage");
-            });*/
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "http://musify.42web.io/Api%27s/singUpUser.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(
-            "name = "+inputFieldsData.name+
-            "&email="+ inputFieldsData.email+
-            "&password"+ inputFieldsData.password+
-            "&gender"+ inputFieldsData.gender+
-            "&DOB"+ inputFieldsData.gender
-        );
+            });
 
-        xhttp.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                console.log(this.responseText);
-            }
-        };
-        xhttp.onload = function () {
-
-
-        }
-
+        $.post("http://musify.42web.io/Api%27s/signUpUser.php",
+            inputFieldsData,
+            function(data, status){
+                    console.log(data+" : "+status);
+        });
     }
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css ">
     <link rel="stylesheet" type="text/css" href="./css/AuthStyle.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -34,76 +35,77 @@
                 <i class="fa-brands fa-facebook"></i>
                 <label>Sign up with facebook</label>
             </button>
-            <button class="AuthBtn google" type="button">
+            <button class="AuthBtn google" type=" button">
                 <i class="fa-brands fa-google"></i>
                 <label>Sign up with google</label>
             </button>
         </div>
 
-        <form id="form">
+        <form>
             <div class="inputCtnr">
                 <label>What's your email?</label>
-                <input type="email" required placeholder="Enter your email" name="email">
+                <input type="email" placeholder="Enter your email" name="email">
                 <a>Use phone number instead</a>
             </div>
             <div class="inputCtnr">
                 <label>Confirm your email</label>
-                <input type="email" required placeholder="Enter your email again" name="cEmail">
+                <input type="email" placeholder="Enter your email again" name="cEmail">
             </div>
             <div class="inputCtnr">
                 <label>Create a password</label>
-                <input type="password" required name="password" placeholder="create a password"/>
+                <input type="password" name="password" placeholder="create a password"/>
             </div>
 
             <div class="inputCtnr">
                 <label>What should we call you?</label>
-                <input type="text" required name="userName" value="" placeholder="Enter a profile name "/>
+                <input type="text" name="userName" placeholder="Enter a profile name "/>
                 <label style="font-weight: 500;">This appears on your profile</label>
             </div>
 
             <div class="inputCtnr">
                 <label>What's your date of birth?</label>
-                <input type="date" required name="DOB"/>
+                <input type="date" name="DOB"/>
             </div>
 
             <div class="genderCtnr">
                 <label>What's your gender</label>
+
                 <div>
                     <div>
-                        <input type="radio" required name="gender" id="male" value="male"/>
+                        <input type="radio" name="gender" id="male" value="male"/>
                         <label for="male">Male</label>
                     </div>
 
                     <div>
-                        <input type="radio" required name="gender" id="female" value="female"/>
+                        <input type="radio" name="gender" id="female" value="female"/>
                         <label for="female">Female</label>
                     </div>
 
                     <div>
-                        <input type="radio" required name="gender" id="Non-binary" value="Non-binary"/>
-                        <label for="Non-binary">Non-binary</label>
+                        <input type="radio" name="gender" id="Non-binary" value="Non-binary"/>
+                        <label for="non-binary">Non-binary</label>
                     </div>
 
                     <div>
-                        <input type="radio" required name="gender" value="Other" id="Other"/>
+                        <input type="radio" name="gender" id="Other" value="Other"/>
                         <label for="Other">Other</label>
                     </div>
 
                     <div>
-                        <input type="radio" required name="gender" value="Prefer not to say" id="pnts"/>
-                        <label for="pnts">Prefer not to say</label>
+                        <input type="radio" name="gender" id="pfnts" value="pfnts"/>
+                        <label for="pfnts">Prefer not to say</label>
                     </div>
                 </div>
             </div>
 
             <div class="checBoxCtnr">
                 <div>
-                    <input type="checkbox" name="msg" id="msg" required/>
+                    <input type="checkbox" name="msg" id="msg"/>
                     <label for="msg">I would prefer not to receive marketing message from spotify</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="reg" id="reg" required/>
-                    <label for="reg">Share my registration data with spotify's content provides for marketing
+                    <input type="checkbox" name="data" id="data"/>
+                    <label for="data">Share my registration data with spotify's content provides for marketing
                         purposes</label>
                 </div>
             </div>
@@ -132,6 +134,7 @@
         </form>
     </div>
 </div>
-<script type="module" src="js/auth.js"></script>
+<script src="js/auth.js" type="module"></script>
 </body>
+
 </html>
