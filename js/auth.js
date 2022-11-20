@@ -87,7 +87,7 @@ document.querySelector(".btnDiv>.btn").onclick =
                 console.log(errorMessage + "errorMessage");
             });
 
-        $.post("http://musify.42web.io/Api%27s/signUpUser.php",
+        $.post("https://musify.42web.io/Api%27s/signUpUser.php",
             inputFieldsData,
             function(data, status){
                     console.log(data+" : "+status);
