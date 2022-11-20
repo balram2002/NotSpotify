@@ -66,67 +66,8 @@
                         </td>
                     </tr>
                     <!-- song details end -->
-
-                    <!-- song details -->
-                    <tr>
-                        <td class="title">
-                            <p class="number"> 2 </p><img src="../assets/img/Atif Aslam Mix.jpg" alt="cover"
-                                class="img">
-                            <div class="songdetails">
-                                <p class="songname"> double take</p>
-                                <p class="artistname"> dhruv</p>
-                            </div>
-                        </td>
-                        <td>
-                            <p class="albumname">double take</p>
-                        </td>
-                        <td>
-                            <p class="dateadded">5 days ago</p>
-                        </td>
-                        <td>
-                            <p class="time">2:52</p>
-                        </td>
-                    </tr>
                 </div>
-                <!-- song details end -->
 
-                <!-- song details -->
-                <tr>
-                    <td class="title">
-                        <p class="number"> 2 </p><img src="../assets/img/Atif Aslam Mix.jpg" alt="cover" class="img">
-                        <div class="songdetails">
-                            <p class="songname"> double take</p>
-                            <p class="artistname"> dhruv</p>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="albumname">double take</p>
-                    </td>
-                    <td>
-                        <p class="dateadded">5 days ago</p>
-                    </td>
-                    <td>
-                        <p class="time">2:52</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="title">
-                        <p class="number"> 2 </p><img src="../assets/img/Atif Aslam Mix.jpg" alt="cover" class="img">
-                        <div class="songdetails">
-                            <p class="songname"> double take</p>
-                            <p class="artistname"> dhruv</p>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="albumname">double take</p>
-                    </td>
-                    <td>
-                        <p class="dateadded">5 days ago</p>
-                    </td>
-                    <td>
-                        <p class="time">2:52</p>
-                    </td>
-                </tr>
             </table>
 
         </div>
