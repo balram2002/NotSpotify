@@ -1,9 +1,8 @@
-loadData();
-var data = new Array();
+var homeData = new Array();
 
 document.body.onload = () => {
     route('shimmer');
-    setTimeout("route('home')", 2000);
+    loadData();
 }
 
 document.querySelectorAll('.playPauseBtn').forEach((btn) => {
@@ -71,10 +70,12 @@ function route(id) {
             });
         }
         if (id == 'home') {
-            document.querySelectorAll(".spotify-playlist > .list .item").forEach((card, idx) => {
-                card.querySelector("h4").textContent = data[idx].title;
-                card.querySelector("p").textContent = data[idx].subtitle;
-                card.querySelector("img").src = data[idx].img;
+            var cards = document.querySelectorAll(".spotify-playlist > .list .item");
+            homeData.forEach((item, idx) => {
+                console.log(idx);
+                cards[idx].querySelector("h4").textContent = item.title;
+                cards[idx].querySelector("p").textContent = item.subtitle;
+                cards[idx].querySelector("img").src = item.img;
             });
         }
     }
@@ -97,12 +98,12 @@ function loadData() {
                 console.log(element.pimg_path);
                 console.log(element.psubtitle);
                 let imgp = element.pimg_path.replace(".", "");
-                data.push({title: element.ptitle, subtitle: element.psubtitle, img: "https://musify.42web.io" + imgp });
+                homeData.push({title: element.ptitle, subtitle: element.psubtitle, img: "https://musify.42web.io" + imgp });
             });
         }
     };
     xhttp.onload = function () {
-        //alert("data changed");
+        setTimeout("route('home')", 2000);
     }
 
 }
