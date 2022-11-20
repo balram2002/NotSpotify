@@ -32,7 +32,7 @@
                         <th>
                             <p># TITLE</p>
                         </th>
-                        <th>ALBUM</th>
+
                         <th class="dateadded">DATE ADDED</th>
                         <th>
                             <svg xmlns="http://www.w3.org/2000/svg" role="img" height="16" width="16"
@@ -44,89 +44,13 @@
                         </th>
                     </tr>
                 </thead>
+                <tbody>
                 <!-- song details -->
-                <div class="songlist">
-                    <tr>
-                        <td class="title">
-                            <p class="number"> 1 </p><img src="../assets/img/Atif Aslam Mix.jpg" alt="cover"
-                                class="img">
-                            <div class="songdetails">
-                                <p class="songname"> Under the Influence</p>
-                                <p class="artistname"> Chris Brown</p>
-                            </div>
-                        </td>
-                        <td>
-                            <p class="albumname">Indigo</p>
-                        </td>
-                        <td>
-                            <p class="dateadded">3 days ago</p>
-                        </td>
-                        <td>
-                            <p class="time">3:21</p>
-                        </td>
-                    </tr>
-                    <!-- song details end -->
 
-                    <!-- song details -->
-                    <tr>
-                        <td class="title">
-                            <p class="number"> 2 </p><img src="../assets/img/Atif Aslam Mix.jpg" alt="cover"
-                                class="img">
-                            <div class="songdetails">
-                                <p class="songname"> double take</p>
-                                <p class="artistname"> dhruv</p>
-                            </div>
-                        </td>
-                        <td>
-                            <p class="albumname">double take</p>
-                        </td>
-                        <td>
-                            <p class="dateadded">5 days ago</p>
-                        </td>
-                        <td>
-                            <p class="time">2:52</p>
-                        </td>
-                    </tr>
-                </div>
+
                 <!-- song details end -->
 
-                <!-- song details -->
-                <tr>
-                    <td class="title">
-                        <p class="number"> 2 </p><img src="../assets/img/Atif Aslam Mix.jpg" alt="cover" class="img">
-                        <div class="songdetails">
-                            <p class="songname"> double take</p>
-                            <p class="artistname"> dhruv</p>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="albumname">double take</p>
-                    </td>
-                    <td>
-                        <p class="dateadded">5 days ago</p>
-                    </td>
-                    <td>
-                        <p class="time">2:52</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="title">
-                        <p class="number"> 2 </p><img src="../assets/img/Atif Aslam Mix.jpg" alt="cover" class="img">
-                        <div class="songdetails">
-                            <p class="songname"> double take</p>
-                            <p class="artistname"> dhruv</p>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="albumname">double take</p>
-                    </td>
-                    <td>
-                        <p class="dateadded">5 days ago</p>
-                    </td>
-                    <td>
-                        <p class="time">2:52</p>
-                    </td>
-                </tr>
+                </tbody>
             </table>
 
         </div>

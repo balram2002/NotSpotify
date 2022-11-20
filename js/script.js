@@ -1,4 +1,6 @@
 var homeData = new Array();
+var playList = new Array();
+var len = 0;
 /* Session uid & email */
 console.log("uid: " + sessionStorage.getItem("uid") + ", Email: " + sessionStorage.getItem("email"));
 document.body.onload = () => {
@@ -31,7 +33,6 @@ document.getElementById("SvgMenu").onclick = () => {
 }
 
 
-
 function random_bg_color() {
     let red = Math.floor(Math.random() * 176) + 10
     let green = Math.floor(Math.random() * 176) + 10;
@@ -49,7 +50,7 @@ function togglePPIcon(id) {
 
 }
 
-function route(id) {
+function route(id, i = null) {
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function () {
@@ -73,23 +74,78 @@ function route(id) {
         if (id == 'home') {
             var cards = document.querySelectorAll(".spotify-playlist > .list .item");
             homeData.forEach((item, idx) => {
-                console.log(idx);
-                cards[idx].querySelector("h4").textContent = item.title;
+                const e = cards[idx].querySelector("h4");
+                e.textContent = item.title;
+                e.id = item.id;
                 cards[idx].querySelector("p").textContent = item.subtitle;
                 cards[idx].querySelector("img").src = item.img;
-                cards[idx].addEventListener("click", function() {
-                    route('playlist');
+                cards[idx].addEventListener("click", function () {
+                    route('playlist', {id: item.id, title: item.title, subtitle: item.subtitle, img: item.img});
                 });
             });
         }
-        if (id == 'playlist'){
-            //document.querySelector('.nav').style = 'background-color: transparent;';
+        if (id == 'playlist' && i != null) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "https://musify.42web.io/Api's/getPlaylistSongs.php?id=" + i.id, true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("id=" + i.id);
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var obj = JSON.parse(this.responseText);
+                    obj.forEach(element => {
+                        let imgp = element.simgpath.replace("./", "/");
+                        playList.push({
+                            id: element.sid,
+                            title: element.sname,
+                            path: element.spath,
+                            simgpath: "https://musify.42web.io" + imgp,
+                            artist: element.sartist,
+                            duration: element.sduration,
+                            cid: element.cid,
+                            sadded: element.psong_added
+                        });
+                    });
+                }
+            };
+            xhttp.onload = function () {
+                document.querySelector(".tophead>.ctnr .title").textContent = i.title;
+                document.querySelector(".tophead>.ctnr .subtitle").textContent = i.subtitle;
+                document.querySelector(".tophead").style = "background-image:url(" + i.img + ")";
+                const slist = document.querySelector('.tableList').getElementsByTagName('tbody')[0];
+                playList.forEach((e,i) => {
+                    let row = slist.insertRow();
+                    let cell1 = row.insertCell(0);
+                    let cell3 = row.insertCell(1);
+                    let cell4 = row.insertCell(2);
+
+                    cell1.innerHTML = "<div class='title'>\n" +
+                        "                            <p class='number'> "+(i+1)+" </p><img src='"+e.simgpath+"' alt='cover'\n" +
+                        "                                class='img'>\n" +
+                        "                            <div class='songdetails'>\n" +
+                        "                                <p class='songname'>" + e.title + "</p>\n" +
+                        "                                <p class='artistname'>" + e.artist + "</p>\n" +
+                        "                            </div>\n" +
+                        "                        </div>";
+
+                    cell3.innerHTML = "<div>\n" +
+                        "                            <p class='dateadded'>"+e.sadded+"</p>\n" +
+                        "                        </div>";
+                    cell4.innerHTML = "<div>\n" +
+                        "                            <p class='time'>"+e.duration.replace("00:","")+"</p>\n" +
+                        "                        </div>";
+                });
+
+            }
         }
     }
     xhttp.open("GET", "pages/" + id + ".txt", true);
     xhttp.send();
 }
 
+function loadPlaylist(id) {
+
+
+}
 
 function loadData() {
     var xhttp = new XMLHttpRequest();
@@ -101,22 +157,22 @@ function loadData() {
         if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
             obj.forEach(element => {
-                console.log(element.ptitle);
-                console.log(element.pimg_path);
-                console.log(element.psubtitle);
                 let imgp = element.pimg_path.replace(".", "");
-                homeData.push({title: element.ptitle, subtitle: element.psubtitle, img: "https://musify.42web.io" + imgp });
+                homeData.push({
+                    id: element.pid,
+                    title: element.ptitle,
+                    subtitle: element.psubtitle,
+                    img: "https://musify.42web.io" + imgp
+                });
             });
         }
     };
     xhttp.onload = function () {
-        setTimeout("route('home')", 2000);
+        //setTimeout("route('home')", 2000);
+        route("home");
     }
 
 }
-
-
-
 
 
 /* let audio = new Audio("http://21273.live.streamtheworld.com/LOS40_DANCE.mp3");
