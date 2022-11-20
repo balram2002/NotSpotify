@@ -77,6 +77,9 @@ function route(id) {
                 cards[idx].querySelector("h4").textContent = item.title;
                 cards[idx].querySelector("p").textContent = item.subtitle;
                 cards[idx].querySelector("img").src = item.img;
+                cards[idx].addEventListener("click", function() {
+                    route('playlist');
+                });
             });
         }
         if (id == 'playlist'){
