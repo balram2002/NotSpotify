@@ -1,4 +1,5 @@
 loadData();
+var data = new Array();
 
 document.body.onload = () => {
     route('shimmer');
@@ -69,6 +70,13 @@ function route(id) {
                 document.querySelector(".noListCtnr").style = "display: none;";
             });
         }
+        if (id == 'home') {
+            document.querySelectorAll(".spotify-playlist > .list .item").forEach((card, idx) => {
+                card.querySelector("h4").textContent = data[idx].title;
+                card.querySelector("p").textContent = data[idx].subtitle;
+                card.querySelector("img").src = data[idx].img;
+            });
+        }
     }
     xhttp.open("GET", "pages/" + id + ".txt", true);
     xhttp.send();
@@ -76,21 +84,6 @@ function route(id) {
 
 
 function loadData() {
-    /* var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "http://musify.42web.io/Api's/getPlaylistForHome.php?id=18", true);
-    xhttp.getResponseHeader("Content-type", "application/json");
-    xhttp.send();
-
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
-        }
-    };
-    xhttp.onload = function () {
-
-
-    } */
-
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "https://musify.42web.io/Api's/getPlaylistForHome.php?id=18", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -103,14 +96,8 @@ function loadData() {
                 console.log(element.ptitle);
                 console.log(element.pimg_path);
                 console.log(element.psubtitle);
-
-                let imgp = element.psubtitle.replace(".", "");
-
-                document.querySelectorAll(".spotify-playlist > .list .item").forEach((card) => {
-                    card.querySelector("h4").textContent = element.ptitle;
-                    card.querySelector("p").textContent = element.psubtitle;
-                    card.querySelector("img").src = "https://musify.42web.io" + imgp;
-                });
+                let imgp = element.pimg_path.replace(".", "");
+                data.push({title: element.ptitle, subtitle: element.psubtitle, img: "https://musify.42web.io" + imgp });
             });
         }
     };
@@ -119,6 +106,10 @@ function loadData() {
     }
 
 }
+
+
+
+
 
 /* let audio = new Audio("http://21273.live.streamtheworld.com/LOS40_DANCE.mp3");
 
