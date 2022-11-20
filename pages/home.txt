@@ -1,176 +1,176 @@
- <!-- Content Area Start -->
-                <div class="spotify-playlist">
-                    <h2>Recommended Playlist</h2>
-                    <div class="list">
-                        <div class="item">
-                            <img src="./assets/img/mood boster.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>MOOD BOOSTER</h4>
-                            <p>Get Happy with today's dose of feel-good songs</p>
+<!-- Content Area Start -->
+<div class="spotify-playlist">
+    <h2>Recommended Playlist</h2>
+    <div class="list">
+        <div class="item">
+            <img src="./assets/img/mood boster.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>MOOD BOOSTER</h4>
+            <p>Get Happy with today's dose of feel-good songs</p>
 
-                        </div>
-                        <div class="item">
-                            <img src="./assets/img/TODAYs-Hits.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Today-FIRE</h4>
-                            <p>SZA is on top of hottest 50!</p>
+        </div>
+        <div class="item">
+            <img src="./assets/img/TODAYs-Hits.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>Today-FIRE</h4>
+            <p>SZA is on top of hottest 50!</p>
 
-                        </div>
-                        <div class="item">
-                            <img src="./assets/img/all out.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>ALL OUT 2010s</h4>
-                            <p>The Biggest song of 2010s....</p>
+        </div>
+        <div class="item">
+            <img src="./assets/img/all out.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>ALL OUT 2010s</h4>
+            <p>The Biggest song of 2010s....</p>
 
-                        </div>
-                        <div class="item">
-                            <img src="./assets/img/best of bollywood 70s.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Best Of 70s Bollywood</h4>
-                            <p>Playlist Created with that lets you transfer your playlist to Spotify from any music
-                                platform such as YouTube, Deezer etc</p>
-                        </div>
-                        <div class="item">
-                            <img src="./assets/img/sleep.jpg ">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Sleep</h4>
-                            <p>Gentle ambient plano to help you fall asleep</p>
+        </div>
+        <div class="item">
+            <img src="./assets/img/best of bollywood 70s.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>Best Of 70s Bollywood</h4>
+            <p>Playlist Created with that lets you transfer your playlist to Spotify from any music
+                platform such as YouTube, Deezer etc</p>
+        </div>
+        <div class="item">
+            <img src="./assets/img/sleep.jpg ">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>Sleep</h4>
+            <p>Gentle ambient plano to help you fall asleep</p>
 
-                        </div>
-                        <div class="item">
-                            <img src="./assets/img/best of bollywood 2000.jpg ">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Best of Bollywood 2000s</h4>
-                            <p>The most well known Hindi songs between 2000 and 2010</p>
+        </div>
+        <div class="item">
+            <img src="./assets/img/best of bollywood 2000.jpg ">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>Best of Bollywood 2000s</h4>
+            <p>The most well known Hindi songs between 2000 and 2010</p>
 
-                        </div>
+        </div>
 
-                    </div>
-                    <h2>Your Top Mix</h2>
-                    <div class="list">
-                        <div class="item">
-                            <img src="assets/img/mega hit mix.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Mega Hit Mix</h4>
-                            <p>A mega mix of 75 Favorites from The..</p>
+    </div>
+    <h2>Your Top Mix</h2>
+    <div class="list">
+        <div class="item">
+            <img src="assets/img/mega hit mix.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>Mega Hit Mix</h4>
+            <p>A mega mix of 75 Favorites from The..</p>
 
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/Romantic Mix.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Romantic Mix</h4>
-                            <p>Our Recommended help you find audio you....</p>
+        </div>
+        <div class="item">
+            <img src="assets/img/Romantic Mix.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>Romantic Mix</h4>
+            <p>Our Recommended help you find audio you....</p>
 
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/A.R. Rahman Mix.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4 class="h4">A.R. Rahman Mix</h4>
-                            <p class="p">Dhanshu, G.V. Prakash,....</p>
+        </div>
+        <div class="item">
+            <img src="assets/img/A.R. Rahman Mix.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4 class="h4">A.R. Rahman Mix</h4>
+            <p class="p">Dhanshu, G.V. Prakash,....</p>
 
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/Punjabi 101.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Punjabi 101</h4>
-                            <p>Ultimate 101 Punjabi hits..</p>
-                        </div>
-                        <div class="item ">
-                            <img src="assets/img/Atif Aslam Mix.jpg ">
-                            <div class="play ">
-                                <span class="fa fa-play "></span>
-                            </div>
-                            <h4>Atif Aslam Mix</h4>
-                            <p>Kailash Kher, Sunidhi Chauhan....</p>
+        </div>
+        <div class="item">
+            <img src="assets/img/Punjabi 101.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>Punjabi 101</h4>
+            <p>Ultimate 101 Punjabi hits..</p>
+        </div>
+        <div class="item ">
+            <img src="assets/img/Atif Aslam Mix.jpg ">
+            <div class="play ">
+                <span class="fa fa-play "></span>
+            </div>
+            <h4>Atif Aslam Mix</h4>
+            <p>Kailash Kher, Sunidhi Chauhan....</p>
 
-                        </div>
-                        <div class="item ">
-                            <img src="assets/img/love the 90's.jpg">
-                            <div class="play ">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Bollywood 90's Evergreen Songs
-                            </h4>
-                            <p>Top Hindi Songs of The 90s (From end of 80s to beginning of 2000 ) Playlist</p>
+        </div>
+        <div class="item ">
+            <img src="assets/img/love the 90's.jpg">
+            <div class="play ">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>Bollywood 90's Evergreen Songs
+            </h4>
+            <p>Top Hindi Songs of The 90s (From end of 80s to beginning of 2000 ) Playlist</p>
 
-                        </div>
-                    </div>
-                    <h2>POP Hits</h2>
-                    <div class="list">
-                        <div class="item">
-                            <img src="assets/img/BollyWood Butter.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>BollyWood Butter</h4>
-                            <p>New in BollyWood by Arijit and.. </p>
+        </div>
+    </div>
+    <h2>POP Hits</h2>
+    <div class="list">
+        <div class="item">
+            <img src="assets/img/BollyWood Butter.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>BollyWood Butter</h4>
+            <p>New in BollyWood by Arijit and.. </p>
 
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/Hot Hists Hindi.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Hot Hits Hindi</h4>
-                            <p>Hottest Hindi Music Severd Here.</p>
+        </div>
+        <div class="item">
+            <img src="assets/img/Hot Hists Hindi.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>Hot Hits Hindi</h4>
+            <p>Hottest Hindi Music Severd Here.</p>
 
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/Desi Hits.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Desi Hists</h4>
-                            <p>Desi Hits From South Asia.Cover:king</p>
+        </div>
+        <div class="item">
+            <img src="assets/img/Desi Hits.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>Desi Hists</h4>
+            <p>Desi Hits From South Asia.Cover:king</p>
 
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/I-Pop SuperHits.jpg">
-                            <div class="play">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>I-Pop Superhits</h4>
-                            <p>Score all the biggest hits from your favorite pop stars.Cover:king </p>
-                        </div>
-                        <div class="item ">
-                            <img src="assets/img/New in Dance.jpg">
-                            <div class="play ">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>New in Dance</h4>
-                            <p>Your weekly floor fillers.Cover-Millind Gada &...</p>
+        </div>
+        <div class="item">
+            <img src="assets/img/I-Pop SuperHits.jpg">
+            <div class="play">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>I-Pop Superhits</h4>
+            <p>Score all the biggest hits from your favorite pop stars.Cover:king </p>
+        </div>
+        <div class="item ">
+            <img src="assets/img/New in Dance.jpg">
+            <div class="play ">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>New in Dance</h4>
+            <p>Your weekly floor fillers.Cover-Millind Gada &...</p>
 
-                        </div>
-                        <div class="item ">
-                            <img src="assets/img/Diljit Dosanjh mood.jpg">
-                            <div class="play ">
-                                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
-                            </div>
-                            <h4>Diljit Donsanjh Mood</h4>
-                            <p>GOAT Diljit Hits....</p>
+        </div>
+        <div class="item ">
+            <img src="assets/img/Diljit Dosanjh mood.jpg">
+            <div class="play ">
+                <span class="fa fa-play" onclick="aud_play_pause(this)"></span>
+            </div>
+            <h4>Diljit Donsanjh Mood</h4>
+            <p>GOAT Diljit Hits....</p>
 
-                        </div>
-                    </div>
-                </div>
-            
+        </div>
+    </div>
+</div>
+
 <!-- Content Area End -->
