@@ -1,8 +1,8 @@
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js'
 import {firebaseConfig} from "./firebase-config.js";
 import {
-    getAuth, signInWithRedirect, getRedirectResult, signInWithPopup, createUserWithEmailAndPassword,
-    GoogleAuthProvider, FacebookAuthProvider, signInWithEmailAndPassword, sendEmailVerification, updateProfile
+    getAuth, createUserWithEmailAndPassword,
+    signInWithEmailAndPassword, sendEmailVerification, updateProfile
 }
     from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js';
 
