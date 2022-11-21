@@ -1,5 +1,6 @@
 const homeData = new Array();
 let playList = new Array();
+let searchSongData = new Array();
 let track_index = 0;
 const uid = sessionStorage.getItem("uid");
 const uEmail = sessionStorage.getItem("email");
@@ -73,7 +74,8 @@ function route(id, i = null) {
             document.querySelectorAll('.catCard').forEach((card) => {
                 card.style.backgroundColor = random_bg_color();
             });
-            //sbr.addEventListener("onkeyup", getSongs(sbr.value));
+
+
         }
 
         if (id == 'library') {
@@ -138,7 +140,7 @@ function route(id, i = null) {
                         "                            <p class='number'> " + (i + 1) + " </p><img src='" + e.simgpath + "' alt='cover'\n" +
                         "                                class='img'>\n" +
                         "                            <div class='songdetails'>\n" +
-                        "                                <p class='songname' value='"+ i +"' >" + e.title + "</p>\n" +
+                        "                                <p class='songname' value='" + i + "' >" + e.title + "</p>\n" +
                         "                                <p class='artistname'>" + e.artist + "</p>\n" +
                         "                            </div>\n" +
                         "                        </div>";
@@ -191,6 +193,17 @@ function loadData() {
 }
 
 function getSongs(s) {
+    const catCtnr = document.querySelector('.categoryCtnr');
+    const parCtnr = document.querySelector('.parentCtnr');
+    if (s.length != 0) {
+        parCtnr.style = 'display: flex';
+        catCtnr.style = 'display: none';
+    }
+    else {
+        catCtnr.style = 'display: block';
+        parCtnr.style = 'display: none';
+    }
+
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "https://musify.42web.io/Api's/search.php?sname=" + s, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -199,14 +212,34 @@ function getSongs(s) {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
+            const sDiv = document.querySelector('.songCtnr');
+            sDiv.innerHTML = '<h2>Songs</h2>';
             obj.forEach(element => {
-                let imgp = element.pimg_path.replace(".", "");
+                let imgp = "https://musify.42web.io" + element.simgpath.replace(".", "");
                 searchSongData.push({
-                    sid: element.sid,
-                    sname: element.sname,
-                    ssubtitle: element.psubtitle,
-                    simg: "https://musify.42web.io" + imgp
+                    sId: element.sid,
+                    sName: element.sname,
+                    sArtist: element.sartist,
+                    sDuration: element.sduration,
+                    sPath: element.spath,
+                    sImg: imgp
                 });
+                var ele = document.createElement("div");
+                ele.innerHTML = "<div class='songItem'>" +
+                    "<div class='imgCtnr'>" +
+                    "<img src='" + imgp + "'>" +
+                    "</div>" +
+                    "<div class='textCtnr'>" +
+                    "<div class='left'>" +
+                    "<h3>" + element.sname + "</h3>" +
+                    "<p>" + element.sartist + "</p>" +
+                    "</div>" +
+                    "<div class='right'>" +
+                    "<h4>" + element.sduration.replace("00:", "") + "</h4>" +
+                    "</div>" +
+                    "</div>" +
+                    "</div>";
+                sDiv.appendChild(ele);
             });
         }
     };
