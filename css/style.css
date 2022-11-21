@@ -1285,6 +1285,7 @@ body {
     height: 32px;
     width: 32px;
     fill: white;
+    margin: 0 8px;
     cursor: pointer;
     opacity: .6;
 }
@@ -1296,7 +1297,7 @@ body {
 
 /* table start */
 
-.tableCtnr{
+.tableCtnr {
     padding: 20px 33px 20px 20px;
 }
 
@@ -1308,7 +1309,7 @@ body {
     text-align: left;
 }
 
-th > p {
+th>p {
     margin-left: 70px;
 }
 
@@ -1364,47 +1365,51 @@ thead tr:hover {
 /* Mobile NotSpotify */
 
 
-/* @media only screen and(max-width: 700px) {
-    th .dateadded {
+@media only screen and (max-width: 760px) {
+    
+    .tophead {
+        height: 40vh;
+    }
+    
+    .tophead .title {
+        font-size: 3em;
+    }
+    
+    .parent {
+        margin-right: -10px;
+    }
+    
+    .tableList thead tr .dateadded {
+        display: none;
+    }
+
+    .tableList thead tr .thtime {
         display: none;
     }
 
     .number {
-        margin: 2px;
+        margin-right: 10px;
     }
-}
-
-.items {
-    display: flex;
-    margin: 20px 30px;
-    align-items: center;
-
-
-}
-
-
-@media only screen and (max-width: 600px) {
-    .tophead {
-        height: 40vh;
+    
+    .tableList th {
+        padding: 3px 20px 20px 0px;
+    }
+    
+    .tableList tr {
+        border-spacing: 20px 15px;
+    }
+    
+    .title {
+        display: flex;
     }
 
-    .tophead .title {
-        font-size: 3em;
+    .title img{
+        display: none;
     }
 
-    .parent {
-        margin-right: -10px;
-    }
-}
-
-@media (max-width:450px) and (min-height:800px) {
-
-    /* .navbar {
+    .playlistNavbar {
         flex-direction: row-reverse;
-    } */
-
-/*     .list {
-        margin: 0px;
+        justify-content: space-between;
     }
 
     thead {
@@ -1428,6 +1433,8 @@ thead tr:hover {
     }
 
     .like {}
+
 }
- */ 
+
+
 /* Panbihar CSS End */

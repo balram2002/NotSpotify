@@ -80,7 +80,7 @@ function route(id, i = null) {
                 cards[idx].querySelector("p").textContent = item.subtitle;
                 cards[idx].querySelector("img").src = item.img;
                 cards[idx].addEventListener("click", function () {
-                    route('playlist', {id: item.id, title: item.title, subtitle: item.subtitle, img: item.img});
+                    route('playlist', { id: item.id, title: item.title, subtitle: item.subtitle, img: item.img });
                 });
             });
         }
@@ -112,14 +112,14 @@ function route(id, i = null) {
                 document.querySelector(".tophead>.ctnr .subtitle").textContent = i.subtitle;
                 document.querySelector(".tophead").style = "background-image:url(" + i.img + ")";
                 const slist = document.querySelector('.tableList').getElementsByTagName('tbody')[0];
-                playList.forEach((e,i) => {
+                playList.forEach((e, i) => {
                     let row = slist.insertRow();
                     let cell1 = row.insertCell(0);
                     let cell3 = row.insertCell(1);
                     let cell4 = row.insertCell(2);
 
                     cell1.innerHTML = "<div class='title'>\n" +
-                        "                            <p class='number'> "+(i+1)+" </p><img src='"+e.simgpath+"' alt='cover'\n" +
+                        "                            <p class='number'> " + (i + 1) + " </p><img src='" + e.simgpath + "' alt='cover'\n" +
                         "                                class='img'>\n" +
                         "                            <div class='songdetails'>\n" +
                         "                                <p class='songname'>" + e.title + "</p>\n" +
@@ -128,10 +128,10 @@ function route(id, i = null) {
                         "                        </div>";
 
                     cell3.innerHTML = "<div>\n" +
-                        "                            <p class='dateadded'>"+e.sadded+"</p>\n" +
+                        "                            <p class='dateadded'>" + e.sadded + "</p>\n" +
                         "                        </div>";
                     cell4.innerHTML = "<div>\n" +
-                        "                            <p class='time'>"+e.duration.replace("00:","")+"</p>\n" +
+                        "                            <p class='time'>" + e.duration.replace("00:", "") + "</p>\n" +
                         "                        </div>";
                 });
 
