@@ -1,8 +1,9 @@
 var homeData = new Array();
 var playList = new Array();
-var len = 0;
+const uid = sessionStorage.getItem("uid");
+const uEmail = sessionStorage.getItem("email");
 /* Session uid & email */
-console.log("uid: " + sessionStorage.getItem("uid") + ", Email: " + sessionStorage.getItem("email"));
+console.log("uid: " + uid + ", Email: " + uEmail);
 document.body.onload = () => {
     route('shimmer');
     loadData();
@@ -16,10 +17,12 @@ document.querySelectorAll('.playPauseBtn').forEach((btn) => {
 
 document.querySelectorAll('.navItem, .navItem2').forEach((btn) => {
     btn.addEventListener('click', function () {
-        var current = document.getElementsByClassName("sideBarActive");
-        current[0].className = current[0].className.replace(" sideBarActive", "");
-        this.className += " sideBarActive";
-        route(this.id);
+        if (uid != null || this.id == "search") {
+            var current = document.getElementsByClassName("sideBarActive");
+            current[0].className = current[0].className.replace(" sideBarActive", "");
+            this.className += " sideBarActive";
+            route(this.id);
+        } else location.href = "signin.html";
     });
 });
 
