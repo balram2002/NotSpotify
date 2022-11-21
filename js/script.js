@@ -1,5 +1,6 @@
 var homeData = new Array();
 var playList = new Array();
+var searchSongData = new Array();
 const uid = sessionStorage.getItem("uid");
 const uEmail = sessionStorage.getItem("email");
 /* Session uid & email */
@@ -193,16 +194,16 @@ console.log("GetSongs");
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
-            /* var obj = JSON.parse(this.responseText);
+            var obj = JSON.parse(this.responseText);
             obj.forEach(element => {
                 let imgp = element.pimg_path.replace(".", "");
-                homeData.push({
-                    id: element.pid,
-                    title: element.ptitle,
-                    subtitle: element.psubtitle,
-                    img: "https://musify.42web.io" + imgp
+                searchSongData.push({
+                    sid: element.sid,
+                    sname: element.sname,
+                    ssubtitle: element.psubtitle,
+                    simg: "https://musify.42web.io" + imgp
                 });
-            }); */
+            });
         }
     };
     xhttp.onload = function () {
