@@ -47,7 +47,6 @@ function random_bg_color() {
 }
 
 function togglePPIcon(id) {
-    console.log(id);
     const img = document.getElementById(id).src;
     if (img.indexOf('assets/ic_play.svg') != -1)
         document.getElementById(id).src = 'assets/ic_pause.svg';
@@ -123,10 +122,7 @@ function route(id, i = null) {
             xhttp.onload = function () {
                 document.querySelector(".tophead>.ctnr .title").textContent = i.title;
                 document.querySelector(".tophead>.ctnr .subtitle").textContent = i.subtitle;
-                const v = document.querySelector(".parent>.tophead");
-                console.log(v);
-                console.log(i.img);
-                v.style.backgroundImage = "url(" + i.img + ")";
+                document.querySelector(".parent>.tophead").style.backgroundImage = "url(" + i.img + ")";
                 const slist = document.querySelector('.tableList').getElementsByTagName('tbody')[0];
                 playList.forEach((e, i) => {
                     let row = slist.insertRow();
@@ -195,7 +191,6 @@ function loadData() {
 }
 
 function getSongs(s) {
-console.log("GetSongs");
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "https://musify.42web.io/Api's/search.php?sname=" + s, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -203,7 +198,6 @@ console.log("GetSongs");
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
             var obj = JSON.parse(this.responseText);
             obj.forEach(element => {
                 let imgp = element.pimg_path.replace(".", "");
