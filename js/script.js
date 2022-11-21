@@ -2,6 +2,7 @@ const homeData = new Array();
 let playList = new Array();
 const uid = sessionStorage.getItem("uid");
 const uEmail = sessionStorage.getItem("email");
+
 /* Session uid & email */
 console.log("uid: " + uid + ", Email: " + uEmail);
 document.body.onload = () => {
