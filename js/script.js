@@ -1,6 +1,5 @@
 var homeData = new Array();
 var playList = new Array();
-var searchSongData = new Array();
 const uid = sessionStorage.getItem("uid");
 const uEmail = sessionStorage.getItem("email");
 /* Session uid & email */
@@ -102,6 +101,7 @@ function route(id, i = null) {
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     var obj = JSON.parse(this.responseText);
+                    if (playList.length != 0) playList = new Array();
                     obj.forEach(element => {
                         let imgp = element.simgpath.replace("./", "/");
                         playList.push({
@@ -132,7 +132,7 @@ function route(id, i = null) {
                         "                            <p class='number'> " + (i + 1) + " </p><img src='" + e.simgpath + "' alt='cover'\n" +
                         "                                class='img'>\n" +
                         "                            <div class='songdetails'>\n" +
-                        "                                <p class='songname'>" + e.title + "</p>\n" +
+                        "                                <p class='songname' value='"+ i +"' >" + e.title + "</p>\n" +
                         "                                <p class='artistname'>" + e.artist + "</p>\n" +
                         "                            </div>\n" +
                         "                        </div>";
