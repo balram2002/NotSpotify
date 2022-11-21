@@ -52,6 +52,7 @@ function togglePPIcon(id) {
 
 function route(id, i = null) {
     var xhttp = new XMLHttpRequest();
+    //const sbr = document.querySelector('.searchbar > input');
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -59,10 +60,15 @@ function route(id, i = null) {
         }
     };
     xhttp.onload = function () {
+        if (id != 'search')
+            document.querySelector('.searchbar').style = "display: none;";
+
         if (id == 'search') {
+            document.querySelector('.searchbar').style = "display: flex;";
             document.querySelectorAll('.catCard').forEach((card) => {
                 card.style.backgroundColor = random_bg_color();
             });
+            //sbr.addEventListener("onkeyup", getSongs(sbr.value));
         }
 
         if (id == 'library') {
@@ -174,6 +180,32 @@ function loadData() {
 
 }
 
+function getSongs(s) {
+console.log("GetSongs");
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "https://musify.42web.io/Api's/search.php?sname=" + s, true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("sname=" + s);
+
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+            /* var obj = JSON.parse(this.responseText);
+            obj.forEach(element => {
+                let imgp = element.pimg_path.replace(".", "");
+                homeData.push({
+                    id: element.pid,
+                    title: element.ptitle,
+                    subtitle: element.psubtitle,
+                    img: "https://musify.42web.io" + imgp
+                });
+            }); */
+        }
+    };
+    xhttp.onload = function () {
+    }
+
+}
 
 /* let audio = new Audio("http://21273.live.streamtheworld.com/LOS40_DANCE.mp3");
 

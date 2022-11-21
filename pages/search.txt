@@ -1,46 +1,136 @@
 <div class="categoryCtnr">
-                    <h3 class="brAll">Browse all</h3>
-                    <div class="catCardCtnr">
-                        <div class="catCard">
-                            <h3>Made For You</h3>
-                            <img src="./assets/madeforu.png">
-                        </div>
-                        <div class="catCard">
-                            <h3>Made For You</h3>
-                            <img src="./assets/madeforu.png">
-                        </div>
-                        <div class="catCard">
-                            <h3>Made For You</h3>
-                            <img src="./assets/madeforu.png">
-                        </div>
-                        <div class="catCard">
-                            <h3>Made For You</h3>
-                            <img src="./assets/madeforu.png">
-                        </div>
-                        <div class="catCard">
-                            <h3>Made For You</h3>
-                            <img src="./assets/madeforu.png">
-                        </div>
-                        <div class="catCard">
-                            <h3>Made For You</h3>
-                            <img src="./assets/madeforu.png">
-                        </div>
-                        <div class="catCard">
-                            <h3>Made For You</h3>
-                            <img src="./assets/madeforu.png">
-                        </div>
-                        <div class="catCard">
-                            <h3>Made For You</h3>
-                            <img src="./assets/madeforu.png">
-                        </div>
-                        <div class="catCard">
-                            <h3>Made For You</h3>
-                            <img src="./assets/madeforu.png">
-                        </div>
-                        <div class="catCard">
-                            <h3>Made For You</h3>
-                            <img src="./assets/madeforu.png">
-                        </div>
-                    </div>
+    <h3 class="brAll">Browse all</h3>
+    <div class="catCardCtnr">
+        <div class="catCard">
+            <h3>Made For You</h3>
+            <img src="./assets/madeforu.png">
+        </div>
+        <div class="catCard">
+            <h3>Made For You</h3>
+            <img src="./assets/madeforu.png">
+        </div>
+        <div class="catCard">
+            <h3>Made For You</h3>
+            <img src="./assets/madeforu.png">
+        </div>
+        <div class="catCard">
+            <h3>Made For You</h3>
+            <img src="./assets/madeforu.png">
+        </div>
+        <div class="catCard">
+            <h3>Made For You</h3>
+            <img src="./assets/madeforu.png">
+        </div>
+        <div class="catCard">
+            <h3>Made For You</h3>
+            <img src="./assets/madeforu.png">
+        </div>
+        <div class="catCard">
+            <h3>Made For You</h3>
+            <img src="./assets/madeforu.png">
+        </div>
+        <div class="catCard">
+            <h3>Made For You</h3>
+            <img src="./assets/madeforu.png">
+        </div>
+        <div class="catCard">
+            <h3>Made For You</h3>
+            <img src="./assets/madeforu.png">
+        </div>
+        <div class="catCard">
+            <h3>Made For You</h3>
+            <img src="./assets/madeforu.png">
+        </div>
+    </div>
+</div>
+
+<div class="parentCtnr">
+    <div class="topResultCtnr">
+        <h2>Top result</h2>
+        <div class="cardCtnr">
+            <img src="../assets/img/BollyWood Butter.jpg">
+            <h1>As It Was</h1>
+            <div>
+                <h4 class="artist">Artist Name</h4>
+            </div>
+            <div class="play">
+                <img src="../assets/ic_play.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="songCtnr">
+        <h2>Songs</h2>
+        <div class="songItem">
+            <div class="imgCtnr">
+                <img src="../assets//img/BollyWood Butter.jpg">
+                <!-- <div class="play">
+                    <img src="./assets/add.svg" alt="">
+                </div> -->
+            </div>
+            <div class="textCtnr">
+                <div class="left">
+                    <h3>As It Was</h3>
+                    <p>Harry styles</p>
                 </div>
-                
+                <div class="right">
+                    <h4>03:48</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="songItem">
+            <div class="imgCtnr">
+                <img src="../assets//img/BollyWood Butter.jpg">
+                <!-- <div class="play">
+                    <img src="./assets/add.svg" alt="">
+                </div> -->
+            </div>
+            <div class="textCtnr">
+                <div class="left">
+                    <h3>As It Was</h3>
+                    <p>Harry styles</p>
+                </div>
+                <div class="right">
+                    <h4>03:48</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="songItem">
+            <div class="imgCtnr">
+                <img src="../assets//img/BollyWood Butter.jpg">
+                <!-- <div class="play">
+                    <img src="./assets/add.svg" alt="">
+                </div> -->
+            </div>
+            <div class="textCtnr">
+                <div class="left">
+                    <h3>As It Was</h3>
+                    <p>Harry styles</p>
+                </div>
+                <div class="right">
+                    <h4>03:48</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="songItem">
+            <div class="imgCtnr">
+                <img src="../assets//img/BollyWood Butter.jpg">
+                <!-- <div class="play">
+                    <img src="./assets/add.svg" alt="">
+                </div> -->
+            </div>
+            <div class="textCtnr">
+                <div class="left">
+                    <h3>As It Was</h3>
+                    <p>Harry styles</p>
+                </div>
+                <div class="right">
+                    <h4>03:48</h4>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

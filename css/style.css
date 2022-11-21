@@ -502,6 +502,36 @@ body {
     color: #181818;
 }
 
+
+.nav .searchbar {
+    display: none;
+    margin-left: 22px;
+    align-items: center;
+    width: 364px;
+    max-height: 40px;
+    background-color: white;
+    padding: 12px;
+    border-radius: 20px;
+}
+
+.nav .searchbar input {
+    min-height: 36px;
+    min-width: 300px;
+    font-size: 14px;
+    outline: none;
+    font-weight: 500;
+    border: none;
+    color: #000000;
+    text-align: start;
+}
+
+.nav .searchbar svg {
+    fill: black;
+    opacity: .8;
+    margin-right: 10px;
+}
+
+
 /* Top Navbar Start */
 
 
@@ -541,6 +571,7 @@ body {
 
 /* Harsh CSS Start */
 .categoryCtnr {
+    display: none;
     padding: 26px 0;
 }
 
@@ -591,6 +622,189 @@ body {
     margin-top: 6px;
     transform: rotate(22deg);
 }
+
+
+
+
+
+
+.parentCtnr {
+    display: flex;
+}
+
+.cardCtnr div {
+    display: flex;
+}
+
+.topResultCtnr {
+width: 28%;
+}
+
+.topResultCtnr h2 {
+    color: #FFFFFF;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.cardCtnr {
+    background-color: #ffffff08;
+    height: 260px;
+    width: 398.228px;
+    padding: 20px;
+    display: block;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.cardCtnr .play {
+    width: 56px;
+    height: 56px;
+    background-color: #1db954;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+    margin-bottom: -40px;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all ease .4s;
+}
+
+.cardCtnr .play img {
+    width: 24px;
+    height: 24px;
+    margin: auto;
+    background-color: #1db954;
+    border-radius: 50%;
+}
+
+.cardCtnr:hover .play {
+    transform: translateY(0px);
+    opacity: 1;
+    margin-bottom: 20px;
+}
+
+.cardCtnr:hover {
+    background-color: #ffffff23;
+}
+
+
+.cardCtnr img {
+    background-color: #FFFFFF;
+    height: 110px;
+    width: 110px;
+    border-radius: 8px;
+}
+
+.cardCtnr h1 {
+    color: #FFFFFF;
+    padding: 0 0 4px 0;
+    margin-top: 28px;
+}
+
+.artist {
+    color: #ffffffa8;
+    font-size: 16px;
+    padding: 5px 8px;
+    border-radius: 20px;
+    background-color: rgba(28, 28, 28, 0.4);
+}
+
+.songCtnr {
+    margin-top: 25px;
+    width: 72%;
+    padding: 0 16px;
+}
+
+.songCtnr h2 {
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.songItem {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.imgCtnr {
+    height: 40px;
+    width: 40px;
+    margin: 6px;
+}
+
+.imgCtnr img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+.textCtnr {
+    display: flex;
+    width: 100%;
+    margin: 6px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textCtnr .left h3 {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.textCtnr .left {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.textCtnr .left p {
+    color: #ffffffa3;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.textCtnr .right {
+    display: flex;
+    gap: 3px;
+}
+
+.songItem:hover {
+    background-color: #ffffff23;
+
+}
+
+.imgCtnr .play img {
+    width: auto;
+    height: auto;
+    margin: 30px;
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    right: 20px;
+    top: -80px;
+    padding: 18px;
+    transform: translate(-50%);
+    text-align: center;
+    cursor: pointer;
+}
+
+.imgCtnr:hover .play {
+    opacity: 1;
+    margin-bottom: 5px;
+    width: 10px;
+    height: 10px;
+}
+
+
+
 
 /* Harsh CSS end */
 
@@ -710,6 +924,10 @@ body {
 
 
 @media only screen and (max-width: 760px) {
+
+    .parentCtnr {
+        display: block;
+    }
 
     .mainDiv {
         height: 100vh;
@@ -1366,19 +1584,19 @@ thead tr:hover {
 
 
 @media only screen and (max-width: 760px) {
-    
+
     .tophead {
         height: 40vh;
     }
-    
+
     .tophead .title {
         font-size: 3em;
     }
-    
+
     .parent {
         margin-right: -10px;
     }
-    
+
     .tableList thead tr .dateadded {
         display: none;
     }
@@ -1390,20 +1608,20 @@ thead tr:hover {
     .number {
         margin-right: 10px;
     }
-    
+
     .tableList th {
         padding: 3px 20px 20px 0px;
     }
-    
+
     .tableList tr {
         border-spacing: 20px 15px;
     }
-    
+
     .title {
         display: flex;
     }
 
-    .title img{
+    .title img {
         display: none;
     }
 
