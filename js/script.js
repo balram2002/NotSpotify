@@ -174,8 +174,8 @@ function loadData() {
         }
     };
     xhttp.onload = function () {
-        //setTimeout("route('home')", 2000);
-        route("home");
+        setTimeout("route('home')", 1000);
+        //route("home");
     }
 
 }
