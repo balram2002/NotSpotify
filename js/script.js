@@ -1,5 +1,6 @@
-var homeData = new Array();
-var playList = new Array();
+const homeData = new Array();
+let playList = new Array();
+let track_index = 0;
 const uid = sessionStorage.getItem("uid");
 const uEmail = sessionStorage.getItem("email");
 
@@ -10,11 +11,11 @@ document.body.onload = () => {
     loadData();
 }
 
-document.querySelectorAll('.playPauseBtn').forEach((btn) => {
+/*document.querySelectorAll('.playPauseBtn').forEach((btn) => {
     btn.addEventListener('click', function () {
         togglePPIcon(this.querySelector("Img").id);
     });
-});
+});*/
 
 document.querySelectorAll('.navItem, .navItem2').forEach((btn) => {
     btn.addEventListener('click', function () {
@@ -28,7 +29,7 @@ document.querySelectorAll('.navItem, .navItem2').forEach((btn) => {
 });
 
 document.getElementById("SvgMenu").onclick = () => {
-    var x = document.getElementById("navMenuLinks");
+    const x = document.getElementById("navMenuLinks");
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {
@@ -46,7 +47,8 @@ function random_bg_color() {
 }
 
 function togglePPIcon(id) {
-    var img = document.getElementById(id).src;
+    console.log(id);
+    const img = document.getElementById(id).src;
     if (img.indexOf('assets/ic_play.svg') != -1)
         document.getElementById(id).src = 'assets/ic_pause.svg';
     else
@@ -55,7 +57,7 @@ function togglePPIcon(id) {
 }
 
 function route(id, i = null) {
-    var xhttp = new XMLHttpRequest();
+    const xhttp = new XMLHttpRequest();
     //const sbr = document.querySelector('.searchbar > input');
 
     xhttp.onreadystatechange = function () {
@@ -82,7 +84,7 @@ function route(id, i = null) {
             });
         }
         if (id == 'home') {
-            var cards = document.querySelectorAll(".spotify-playlist > .list .item");
+            const cards = document.querySelectorAll(".spotify-playlist > .list .item");
             homeData.forEach((item, idx) => {
                 const e = cards[idx].querySelector("h4");
                 e.textContent = item.title;
@@ -121,10 +123,17 @@ function route(id, i = null) {
             xhttp.onload = function () {
                 document.querySelector(".tophead>.ctnr .title").textContent = i.title;
                 document.querySelector(".tophead>.ctnr .subtitle").textContent = i.subtitle;
-                document.querySelector(".tophead").style = "background-image:url(" + i.img + ")";
+                const v = document.querySelector(".parent>.tophead");
+                console.log(v);
+                console.log(i.img);
+                v.style.backgroundImage = "url(" + i.img + ")";
                 const slist = document.querySelector('.tableList').getElementsByTagName('tbody')[0];
                 playList.forEach((e, i) => {
                     let row = slist.insertRow();
+                    row.addEventListener("click", function (){
+                        track_index = i;
+                        loadTrack(i)
+                    });
                     let cell1 = row.insertCell(0);
                     let cell3 = row.insertCell(1);
                     let cell4 = row.insertCell(2);

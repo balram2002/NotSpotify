@@ -332,32 +332,31 @@ body {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.mobPlayer .mobSongDetails,
+.mobPlayer .songDetailsCtnr:nth-child(1),
 .mobPlayer .mobRightBtns {
     display: flex;
 }
 
-.mobPlayer .mobSongDetails .texts {
+.mobPlayer .songDetailsCtnr:nth-child(1) .texts {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: 0px 10px;
 }
 
-.mobPlayer .mobSongDetails img {
+.mobPlayer .songDetailsCtnr:nth-child(1) img {
     width: 40px;
     height: 40px;
     border-radius: 6px;
 }
 
-.mobPlayer .mobSongDetails h4 {
+.mobPlayer .songDetailsCtnr:nth-child(1) h4 {
     color: white;
     font-size: 13px;
     font-weight: 500;
 }
 
-.mobPlayer .mobSongDetails p {
+.mobPlayer .songDetailsCtnr:nth-child(1) p {
     font-weight: 300;
     font-size: 12px;
     color: rgba(255, 255, 255, 0.7);
