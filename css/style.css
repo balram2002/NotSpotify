@@ -540,7 +540,7 @@ body {
 .contentCtnr {
     display: block;
     max-width: 1955px;
-    padding: 20px 38px 20px 20px;
+    padding: 20px 38px 100px 20px;
     z-index: 9;
 }
 
@@ -571,7 +571,7 @@ body {
 
 /* Harsh CSS Start */
 .categoryCtnr {
-    display: none;
+    display: block;
     padding: 26px 0;
 }
 
@@ -629,7 +629,8 @@ body {
 
 
 .parentCtnr {
-    display: flex;
+    display: none;
+    flex-wrap: wrap;
 }
 
 .cardCtnr div {
@@ -637,7 +638,8 @@ body {
 }
 
 .topResultCtnr {
-width: 28%;
+    width: 33%;
+    min-width: 300px;
 }
 
 .topResultCtnr h2 {
@@ -649,7 +651,7 @@ width: 28%;
 .cardCtnr {
     background-color: #ffffff08;
     height: 260px;
-    width: 398.228px;
+    width: 100%;
     padding: 20px;
     display: block;
     border-radius: 8px;
@@ -716,7 +718,8 @@ width: 28%;
 
 .songCtnr {
     margin-top: 25px;
-    width: 72%;
+    /* width: 67%; */
+    flex-grow: 1;
     padding: 0 16px;
 }
 
@@ -926,7 +929,7 @@ width: 28%;
 @media only screen and (max-width: 760px) {
 
     .parentCtnr {
-        display: block;
+        display: none;
     }
 
     .mainDiv {
@@ -1049,7 +1052,7 @@ width: 28%;
 
     /* Content Area Start */
     .contentCtnr {
-        padding: 10px;
+        padding: 10px 10px 100px 10px;
     }
 
     /* Content Area End */
