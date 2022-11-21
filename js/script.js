@@ -17,7 +17,7 @@ document.querySelectorAll('.playPauseBtn').forEach((btn) => {
 
 document.querySelectorAll('.navItem, .navItem2').forEach((btn) => {
     btn.addEventListener('click', function () {
-        if (uid != null || this.id == "search") {
+        if (uid != null || this.id == "search" || this.id == "home") {
             var current = document.getElementsByClassName("sideBarActive");
             current[0].className = current[0].className.replace(" sideBarActive", "");
             this.className += " sideBarActive";
