@@ -1,3 +1,5 @@
+const host = "http://localhost/Musify/";
+const path = "Api's/";
 const homeData = new Array();
 let playList = new Array();
 let searchSongData = new Array();
@@ -20,8 +22,8 @@ document.body.onload = () => {
 
 document.querySelectorAll('.navItem, .navItem2').forEach((btn) => {
     btn.addEventListener('click', function () {
-        if (uid != null || this.id == "search" || this.id == "home") {
-            var current = document.getElementsByClassName("sideBarActive");
+        if (uid != null || this.id === "search" || this.id === "home") {
+            const current = document.getElementsByClassName("sideBarActive");
             current[0].className = current[0].className.replace(" sideBarActive", "");
             this.className += " sideBarActive";
             route(this.id);
@@ -43,8 +45,7 @@ function random_bg_color() {
     let red = Math.floor(Math.random() * 176) + 10
     let green = Math.floor(Math.random() * 176) + 10;
     let blue = Math.floor(Math.random() * 176) + 10;
-    let bgColor = "rgb(" + red + ", " + green + ", " + blue + ")";
-    return bgColor;
+    return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
 
 function togglePPIcon(id) {
@@ -61,30 +62,25 @@ function route(id, i = null) {
     //const sbr = document.querySelector('.searchbar > input');
 
     xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             document.getElementById("content").innerHTML = this.responseText;
         }
     };
     xhttp.onload = function () {
-        if (id != 'search')
-            document.querySelector('.searchbar').style = "display: none;";
-
-        if (id == 'search') {
+        if (id === 'search') {
             document.querySelector('.searchbar').style = "display: flex;";
             document.querySelectorAll('.catCard').forEach((card) => {
                 card.style.backgroundColor = random_bg_color();
             });
+        } else document.querySelector('.searchbar').style = "display: none;";
 
-
-        }
-
-        if (id == 'library') {
+        if (id === 'library') {
             document.querySelectorAll(".musiclistbutton")[0].addEventListener('click', () => {
                 document.querySelector(".availListCtnr").style = "display: block;";
                 document.querySelector(".noListCtnr").style = "display: none;";
             });
         }
-        if (id == 'home') {
+        if (id === 'home') {
             const cards = document.querySelectorAll(".spotify-playlist > .list .item");
             homeData.forEach((item, idx) => {
                 const e = cards[idx].querySelector("h4");
@@ -93,42 +89,42 @@ function route(id, i = null) {
                 cards[idx].querySelector("p").textContent = item.subtitle;
                 cards[idx].querySelector("img").src = item.img;
                 cards[idx].addEventListener("click", function () {
-                    route('playlist', { id: item.id, title: item.title, subtitle: item.subtitle, img: item.img });
+                    route('playlist', {id: item.id, title: item.title, subtitle: item.subtitle, img: item.img});
                 });
             });
         }
-        if (id == 'playlist' && i != null) {
+        if (id === 'playlist' && i != null) {
             const xhttp = new XMLHttpRequest();
-            xhttp.open("POST", "https://musify.42web.io/Api's/getPlaylistSongs.php?id=" + i.id, true);
+            xhttp.open("POST", host + path + "getPlaylistSongs.php?id=" + i.id, true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("id=" + i.id);
             xhttp.onreadystatechange = function () {
+                console.log(this.responseText);
                 if (this.readyState == 4 && this.status == 200) {
-                    var obj = JSON.parse(this.responseText);
-                    if (playList.length != 0) playList = new Array();
+                    /*const obj = JSON.parse(this.responseText);
+                    if (playList.length !== 0) playList = [];
                     obj.forEach(element => {
-                        let imgp = element.simgpath.replace("./", "/");
                         playList.push({
                             id: element.sid,
                             title: element.sname,
                             path: element.spath,
-                            simgpath: "https://musify.42web.io" + imgp,
+                            sImgPath: host + element.simgpath.replace("./", "/"),
                             artist: element.sartist,
                             duration: element.sduration,
                             cid: element.cid,
                             sadded: element.psong_added
                         });
-                    });
+                    });*/
                 }
             };
-            xhttp.onload = function () {
+            /*xhttp.onload = function () {
                 document.querySelector(".tophead>.ctnr .title").textContent = i.title;
                 document.querySelector(".tophead>.ctnr .subtitle").textContent = i.subtitle;
                 document.querySelector(".parent>.tophead").style.backgroundImage = "url(" + i.img + ")";
-                const slist = document.querySelector('.tableList').getElementsByTagName('tbody')[0];
+                const sList = document.querySelector('.tableList').getElementsByTagName('tbody')[0];
                 playList.forEach((e, i) => {
-                    let row = slist.insertRow();
-                    row.addEventListener("click", function (){
+                    let row = sList.insertRow();
+                    row.addEventListener("click", function () {
                         track_index = i;
                         loadTrack(i)
                     });
@@ -137,7 +133,7 @@ function route(id, i = null) {
                     let cell4 = row.insertCell(2);
 
                     cell1.innerHTML = "<div class='title'>\n" +
-                        "                            <p class='number'> " + (i + 1) + " </p><img src='" + e.simgpath + "' alt='cover'\n" +
+                        "                            <p class='number'> " + (i + 1) + " </p><img src='" + e.sImgPath + "' alt='cover'\n" +
                         "                                class='img'>\n" +
                         "                            <div class='songdetails'>\n" +
                         "                                <p class='songname' value='" + i + "' >" + e.title + "</p>\n" +
@@ -153,7 +149,7 @@ function route(id, i = null) {
                         "                        </div>";
                 });
 
-            }
+            }*/
         }
     }
     xhttp.open("GET", "pages/" + id + ".txt", true);
@@ -166,21 +162,21 @@ function loadPlaylist(id) {
 }
 
 function loadData() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "https://musify.42web.io/Api's/getPlaylistForHome.php?id=18", true);
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("POST", host + path + "getPlaylistForHome.php?id=18", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send();
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(this.responseText);
+            console.log(this.responseText);
+            const obj = JSON.parse(this.responseText);
             obj.forEach(element => {
-                let imgp = element.pimg_path.replace(".", "");
                 homeData.push({
                     id: element.pid,
                     title: element.ptitle,
                     subtitle: element.psubtitle,
-                    img: "https://musify.42web.io" + imgp
+                    img: host + element.pimg_path.replace(".", "")
                 });
             });
         }
@@ -198,14 +194,13 @@ function getSongs(s) {
     if (s.length != 0) {
         parCtnr.style = 'display: flex';
         catCtnr.style = 'display: none';
-    }
-    else {
+    } else {
         catCtnr.style = 'display: block';
         parCtnr.style = 'display: none';
     }
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "https://musify.42web.io/Api's/search.php?sname=" + s, true);
+    xhttp.open("POST", host + path + "search.php?sname=" + s, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("sname=" + s);
 
@@ -215,19 +210,19 @@ function getSongs(s) {
             const sDiv = document.querySelector('.songCtnr');
             sDiv.innerHTML = '<h2>Songs</h2>';
             obj.forEach(element => {
-                let imgp = "https://musify.42web.io" + element.simgpath.replace(".", "");
+                let imgPath = host + element.simgpath.replace("./", "/");
                 searchSongData.push({
                     sId: element.sid,
                     sName: element.sname,
                     sArtist: element.sartist,
                     sDuration: element.sduration,
                     sPath: element.spath,
-                    sImg: imgp
+                    sImg: imgPath
                 });
-                var ele = document.createElement("div");
+                const ele = document.createElement("div");
                 ele.innerHTML = "<div class='songItem'>" +
                     "<div class='imgCtnr'>" +
-                    "<img src='" + imgp + "'>" +
+                    "<img src='" + imgPath + "'>" +
                     "</div>" +
                     "<div class='textCtnr'>" +
                     "<div class='left'>" +

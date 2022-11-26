@@ -1,5 +1,7 @@
+const host = "http://localhost/Musify/";
+const path = "Api's/";
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js'
-import {firebaseConfig} from "./firebase-config.js";
+import firebaseConfig from "./firebase-config.js";
 import {
     getAuth, createUserWithEmailAndPassword,
     signInWithEmailAndPassword, sendEmailVerification, updateProfile
@@ -8,7 +10,6 @@ import {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-var user;
 console.log("Auth.js :" + document.title);
 
 function getData(elements) {
@@ -23,7 +24,7 @@ const setError = (element) => element.style.borderColor = "red";
 function validation(elements) {
     let c = null;
     elements.forEach((e) => {
-        const reg =  /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i;
+        const reg = /^((([a-z]|\d|[!#\$%&'*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i;
         switch (e.name) {
             case "email" :
                 if (e.value === "" || !reg.test(e.value)) setError(c = e);
@@ -67,7 +68,7 @@ if (document.title === "Signup - Spotify") {
             if (inputFieldsData != null) {
                 createUserWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
                     .then((userCredential) => {
-                        user = userCredential.user;
+                        let user = userCredential.user;
                         updateProfile(user, {
                             displayName: inputFieldsData.name, photoURL: ""
                         }).then(() => {
@@ -82,7 +83,7 @@ if (document.title === "Signup - Spotify") {
                             .then(() => {
                                 console.log("Email Sent");
                             });
-                        $.post("https://musify.42web.io/Api%27s/signUpUser.php",
+                        $.post(host + path + "signUpUser.php",
                             inputFieldsData,
                             function (data, status) {
                                 location.href = "signin.html";
@@ -114,7 +115,7 @@ if (document.title === "Login - Spotify") {
                 signInWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
                     .then((userCredential) => {
                         if (userCredential.user.emailVerified)
-                            $.post("https://musify.42web.io/Api%27s/signInUser.php",
+                            $.post(host + path + "signInUser.php",
                                 inputFieldsData,
                                 function (data, status) {
                                     if (data !== "Login Failed") {
