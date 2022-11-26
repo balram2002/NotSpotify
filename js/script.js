@@ -1,4 +1,4 @@
-const host = "http://localhost/Musify/";
+import host from "./Server.js";
 const path = "Api's/";
 const homeData = new Array();
 let playList = new Array();
@@ -101,7 +101,7 @@ function route(id, i = null) {
             xhttp.onreadystatechange = function () {
                 console.log(this.responseText);
                 if (this.readyState == 4 && this.status == 200) {
-                    /*const obj = JSON.parse(this.responseText);
+                    const obj = JSON.parse(this.responseText);
                     if (playList.length !== 0) playList = [];
                     obj.forEach(element => {
                         playList.push({
@@ -114,10 +114,10 @@ function route(id, i = null) {
                             cid: element.cid,
                             sadded: element.psong_added
                         });
-                    });*/
+                    });
                 }
             };
-            /*xhttp.onload = function () {
+            xhttp.onload = function () {
                 document.querySelector(".tophead>.ctnr .title").textContent = i.title;
                 document.querySelector(".tophead>.ctnr .subtitle").textContent = i.subtitle;
                 document.querySelector(".parent>.tophead").style.backgroundImage = "url(" + i.img + ")";
@@ -149,7 +149,7 @@ function route(id, i = null) {
                         "                        </div>";
                 });
 
-            }*/
+            }
         }
     }
     xhttp.open("GET", "pages/" + id + ".txt", true);
@@ -169,7 +169,6 @@ function loadData() {
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
             const obj = JSON.parse(this.responseText);
             obj.forEach(element => {
                 homeData.push({
@@ -182,8 +181,8 @@ function loadData() {
         }
     };
     xhttp.onload = function () {
-        setTimeout("route('home')", 1000);
-        //route("home");
+        setTimeout(route('home'), 1000);
+
     }
 
 }
@@ -199,7 +198,7 @@ function getSongs(s) {
         parCtnr.style = 'display: none';
     }
 
-    var xhttp = new XMLHttpRequest();
+    const xhttp = new XMLHttpRequest();
     xhttp.open("POST", host + path + "search.php?sname=" + s, true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("sname=" + s);

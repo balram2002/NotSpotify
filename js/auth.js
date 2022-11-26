@@ -1,4 +1,4 @@
-const host = "http://localhost/Musify/";
+import host from "./Server.js";
 const path = "Api's/";
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js'
 import firebaseConfig from "./firebase-config.js";
