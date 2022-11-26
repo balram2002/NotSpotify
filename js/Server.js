@@ -1,2 +1,2 @@
 const host = "https://musify.42web.io/";
-export default host;
+export default host1;
