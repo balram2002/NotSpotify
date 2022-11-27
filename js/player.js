@@ -22,7 +22,7 @@ document.querySelector(".volumeCtnr>.muteBtn").onclick = function (){
 }
 let playList;
 let isPlaying = false;
-let updateTimer;
+var updateTimer;
 let track_index;
 // Create new audio element
 let curr_track = document.createElement('audio');
