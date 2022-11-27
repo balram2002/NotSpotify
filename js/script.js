@@ -1,6 +1,6 @@
 import host from "./Server.js";
-const path = "Api's/";
 const homeData = new Array();
+const path = "Api's/";
 let playList = new Array();
 let searchSongData = new Array();
 let track_index = 0;
@@ -99,7 +99,6 @@ function route(id, i = null) {
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("id=" + i.id);
             xhttp.onreadystatechange = function () {
-                console.log(this.responseText);
                 if (this.readyState == 4 && this.status == 200) {
                     const obj = JSON.parse(this.responseText);
                     if (playList.length !== 0) playList = [];
@@ -108,7 +107,7 @@ function route(id, i = null) {
                             id: element.sid,
                             title: element.sname,
                             path: element.spath,
-                            sImgPath: host + element.simgpath.replace("./", "/"),
+                            sImgPath: element.simgpath.replace("./", "/"),
                             artist: element.sartist,
                             duration: element.sduration,
                             cid: element.cid,
@@ -126,7 +125,7 @@ function route(id, i = null) {
                     let row = sList.insertRow();
                     row.addEventListener("click", function () {
                         track_index = i;
-                        loadTrack(i)
+                        loadTrack(i, playList)
                     });
                     let cell1 = row.insertCell(0);
                     let cell3 = row.insertCell(1);
@@ -175,13 +174,13 @@ function loadData() {
                     id: element.pid,
                     title: element.ptitle,
                     subtitle: element.psubtitle,
-                    img: host + element.pimg_path.replace(".", "")
+                    img:  element.pimg_path.replace("./", "")
                 });
             });
         }
     };
     xhttp.onload = function () {
-        setTimeout(route('home'), 1000);
+        setTimeout(route('home', homeData), 1000);
 
     }
 

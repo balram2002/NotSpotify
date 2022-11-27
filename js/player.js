@@ -10,6 +10,7 @@ let seek_slider = document.querySelector(".controlerCtnr>.progressCtnr>.slider")
 let volume_slider = document.querySelector(".volumeCtnr>#volume");
 let curr_time = document.querySelector(".controlerCtnr>.progressCtnr>.currentTime");
 let total_duration = document.querySelector(".controlerCtnr>.progressCtnr>.totalTime");
+let updateSeek = flase;
 document.querySelector(".volumeCtnr>.muteBtn").onclick = function (){
     if (volume_slider.value != 0) {
         curr_track.volume = 0
@@ -19,25 +20,27 @@ document.querySelector(".volumeCtnr>.muteBtn").onclick = function (){
         volume_slider.value = 50;
     }
 }
-
+var playList;
 let isPlaying = false;
 let updateTimer;
 
 // Create new audio element
 let curr_track = document.createElement('audio');
 
-function loadTrack(track_index) {
+function loadTrack(track_index, list) {
+    playList = list;
     clearInterval(updateTimer);
     resetValues();
     curr_track.src = playList[track_index].path;
     curr_track.load();
 
-    track_art.forEach(e => e.style.backgroundImage = "url(" + playList[track_index].simgpath + ")");
+    track_art.forEach(e => e.src = playList[track_index].sImgPath);
     track_name.forEach(e => e.textContent = playList[track_index].title);
     track_artist.forEach(e => e.textContent = playList[track_index].artist);
 
     updateTimer = setInterval(seekUpdate, 1000);
     curr_track.addEventListener("ended", nextTrack);
+    updateSeek = true;
     playTrack();
 }
 
@@ -86,9 +89,12 @@ prev_btn.onclick = function prevTrack() {
 }
 
 seek_slider.onchange = function seekTo() {
+    updateSeek = false;
     let seekto = curr_track.duration * (seek_slider.value / 100);
     curr_track.currentTime = seekto;
 }
+
+seek_slider.addEventListener("mouseup", () => updateSeek = true);
 
 volume_slider.onchange = function setVolume() {
     curr_track.volume = volume_slider.value / 100;
@@ -96,8 +102,8 @@ volume_slider.onchange = function setVolume() {
 
 function seekUpdate() {
     let seekPosition = 0;
-
-    if (!isNaN(curr_track.duration)) {
+    console.log("SeekUpdate");
+    if (!isNaN(curr_track.duration) && updateSeek) {
         seekPosition = curr_track.currentTime * (100 / curr_track.duration);
 
         seek_slider.value = seekPosition;
