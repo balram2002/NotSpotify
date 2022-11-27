@@ -32,7 +32,7 @@ function loadTrack(i, list = playList) {
     track_index = i
     clearInterval(updateTimer);
     resetValues();
-    console.log(playList[track_index].path);
+    //console.log(playList[track_index].path);
     curr_track.src = playList[track_index].path;
     curr_track.load();
 
@@ -91,7 +91,7 @@ prev_btn.onclick = function prevTrack() {
 }
 
 seek_slider.onchange = function seekTo() {
-    console.log("onchange");
+    //console.log("onchange");
 
     curr_track.currentTime = curr_track.duration * (seek_slider.value / 100);
 }
@@ -106,7 +106,7 @@ volume_slider.onchange = function setVolume() {
 function seekUpdate() {
     let seekPosition = 0;
     if (!isNaN(curr_track.duration) && updateSeek) {
-        console.log("SeekUpdate");
+        //console.log("SeekUpdate");
         seekPosition = curr_track.currentTime * (100 / curr_track.duration);
 
         seek_slider.value = seekPosition;
