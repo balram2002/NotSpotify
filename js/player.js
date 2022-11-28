@@ -99,7 +99,7 @@ seek_slider.onchange = function seekTo() {
 seek_slider.addEventListener("mousedown", () => updateSeek = false);
 seek_slider.addEventListener("mouseup", () => updateSeek = true);
 
-volume_slider.onchange = function setVolume() {
+volume_slider.oninput = function setVolume() {
     curr_track.volume = volume_slider.value / 100;
 }
 
