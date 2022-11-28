@@ -1,4 +1,5 @@
 import host from "./Server.js";
+
 const path = "Api's/";
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js'
 import firebaseConfig from "./firebase-config.js";
@@ -51,7 +52,8 @@ function validation(elements) {
 /* Signup Using Firebase Email Verification & MySql */
 if (document.title === "Signup - Spotify") {
     console.log("Working");
-    document.querySelector(".btnDiv>.btn").onclick =
+    const btn = document.querySelector(".btnDiv>.btn");
+    btn.onclick =
         function emailPassword_singUp() {
             const elements = document.querySelectorAll("form>.inputCtnr");
             const ele = [];
@@ -66,6 +68,10 @@ if (document.title === "Signup - Spotify") {
                 return;
             } else inputFieldsData["gender"] = gen;
             if (inputFieldsData != null) {
+                btn.disabled = true;
+                console.log(btn.disabled);
+                btn.lastElementChild.innerHTML = "Please Wait";
+                console.log(btn.lastElementChild);
                 createUserWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
                     .then((userCredential) => {
                         let user = userCredential.user;
@@ -81,7 +87,7 @@ if (document.title === "Signup - Spotify") {
                         });
                         sendEmailVerification(user)
                             .then(() => {
-                                console.log("Email Sent");
+                                alert("Email Verification Link Sent on your Email Address");
                             });
                         $.post(host + path + "signUpUser.php",
                             inputFieldsData,
@@ -92,6 +98,8 @@ if (document.title === "Signup - Spotify") {
                     })
                     .catch((error) => {
                         if (error.code === "auth/email-already-in-use") alert("Email Already in use, \nPlease choose another Email");
+                        btn.disabled = false;
+                        btn.lastElementChild.innerHTML = "Sign Up";
                         console.log(error.errorCode + " errorCode");
                         console.log(error.code + " errorCode");
                         console.log(error.message + " errorMessage");
@@ -103,7 +111,8 @@ if (document.title === "Signup - Spotify") {
 /* Login Using Firebase Email Verification & MySql */
 if (document.title === "Login - Spotify") {
     console.log("Working");
-    document.querySelector(".btnLogin").onclick =
+    const btn = document.querySelector(".btnLogin");
+    btn.onclick =
         function emailPassword_singIn() {
             console.log("Sign IN");
             const elements = document.querySelectorAll(".login>.inputCtnr");
@@ -112,6 +121,9 @@ if (document.title === "Login - Spotify") {
             let inputFieldsData = validation(ele);
             console.log(inputFieldsData);
             if (inputFieldsData != null) {
+                btn.disabled = true;
+                btn.lastElementChild.innerHTML = "Please Wait";
+
                 signInWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
                     .then((userCredential) => {
                         if (userCredential.user.emailVerified)
@@ -122,13 +134,19 @@ if (document.title === "Login - Spotify") {
                                         sessionStorage.setItem("uid", data);
                                         sessionStorage.setItem("email", inputFieldsData.email);
                                         location.href = "index.html";
-                                    } else alert("Login Failed Try Again");
+                                    } else {
+                                        alert("Login Failed Try Again");
+                                        btn.disabled = false;
+                                        btn.lastElementChild.innerHTML = "LOG IN";
+                                    }
                                 });
                         else alert("Please Verify Your Email")
                     })
                     .catch((error) => {
                         if (error.code === "auth/wrong-password") alert("Invalid Email & Password");
                         else alert("Login Failed Try Again");
+                        btn.disabled = false;
+                        btn.lastElementChild.innerHTML = "LOG IN";
                         const errorCode = error.code;
                         const errorMessage = error.message;
                         console.log(errorCode + "errorCode");
