@@ -246,6 +246,7 @@ body {
 
 .ppbCtnr {
     display: flex;
+    max-width: 50px;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -1532,11 +1533,21 @@ body {
     color: white;
     font-weight: bold;
     font-size: 14px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .tophead .title {
     font-size: 5em;
     color: white;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .tophead .subtitle {
