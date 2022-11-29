@@ -1627,9 +1627,11 @@ thead tr:hover {
     background-color: transparent;
 }
 
-.tableList img {
-    height: 5vh;
+.tableList tbody .img {
+    height: 40px;
+    width: 40px;
     align-self: center;
+    overflow: hidden;
 }
 
 .time {
@@ -1653,7 +1655,7 @@ thead tr:hover {
 
 .number {
     margin: auto 10px;
-    color: rgb(103, 103, 103);
+    color: rgb(107, 107, 107);
     margin: auto 20px auto 40px;
 }
 
