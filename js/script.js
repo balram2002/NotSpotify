@@ -7,6 +7,15 @@ let track_index = 0;
 const uid = sessionStorage.getItem("uid");
 const uEmail = sessionStorage.getItem("email");
 
+
+
+if (uid != null) {
+    document.querySelector('.navBtns').style = 'display: none;';
+    document.querySelector('.navUName>h3').textContent = uEmail;
+}
+else document.querySelector('.navUName>h3').style = 'display: none';
+
+
 /* Session uid & email */
 console.log("uid: " + uid + ", Email: " + uEmail);
 document.body.onload = () => {
@@ -66,6 +75,7 @@ function route(id, i = null) {
             document.getElementById("content").innerHTML = this.responseText;
         }
     };
+
     xhttp.onload = function () {
         if (id === 'search') {
             document.querySelector('.searchbar').style = "display: flex;";
@@ -89,7 +99,7 @@ function route(id, i = null) {
                 cards[idx].querySelector("p").textContent = item.subtitle;
                 cards[idx].querySelector("img").src = item.img;
                 cards[idx].addEventListener("click", function () {
-                    route('playlist', {id: item.id, title: item.title, subtitle: item.subtitle, img: item.img});
+                    route('playlist', { id: item.id, title: item.title, subtitle: item.subtitle, img: item.img });
                 });
             });
         }
@@ -155,11 +165,6 @@ function route(id, i = null) {
     xhttp.send();
 }
 
-function loadPlaylist(id) {
-
-
-}
-
 function loadData() {
     const xhttp = new XMLHttpRequest();
     xhttp.open("POST", host + path + "getPlaylistForHome.php?id=18", true);
@@ -174,17 +179,21 @@ function loadData() {
                     id: element.pid,
                     title: element.ptitle,
                     subtitle: element.psubtitle,
-                    img:  element.pimg_path.replace("./", "")
+                    img: element.pimg_path.replace("./", "")
                 });
             });
         }
     };
     xhttp.onload = function () {
         setTimeout(route('home', homeData), 1000);
-
     }
 
 }
+
+const sbr = document.getElementById("sbr");
+sbr.addEventListener("input", () => {
+    getSongs(sbr.value);
+});
 
 function getSongs(s) {
     const catCtnr = document.querySelector('.categoryCtnr');
@@ -207,8 +216,18 @@ function getSongs(s) {
             var obj = JSON.parse(this.responseText);
             const sDiv = document.querySelector('.songCtnr');
             sDiv.innerHTML = '<h2>Songs</h2>';
+
+            if (obj.length > 0){
+                document.querySelector(".topResultCtnr > .cardCtnr").style = 'display: block;';
+                document.querySelector(".topResultCtnr > .cardCtnr > img").src = obj[0].simgpath.replace("./", "");
+                document.querySelector(".topResultCtnr > .cardCtnr > h1").textContent = obj[0].sname;
+                document.querySelector(".topResultCtnr > .cardCtnr > div > h4").textContent = obj[0].sartist;
+            }else{
+                document.querySelector(".topResultCtnr > .cardCtnr").style = 'display: none;';
+            }
+
             obj.forEach(element => {
-                let imgPath = host + element.simgpath.replace("./", "/");
+                let imgPath = element.simgpath.replace("./", "");
                 searchSongData.push({
                     sId: element.sid,
                     sName: element.sname,
@@ -240,10 +259,3 @@ function getSongs(s) {
     }
 
 }
-
-/* let audio = new Audio("http://21273.live.streamtheworld.com/LOS40_DANCE.mp3");
-
-let volume = document.querySelector("#volume");
-volume.addEventListener("change", function(e) {
-audio.volume = e.currentTarget.value / 100;
-}) */
