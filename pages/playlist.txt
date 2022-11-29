@@ -11,8 +11,8 @@
     <!-- body -->
     <div>
         <div class="playlistNavbar">
-            <div class="pausegreen" onclick="togglePlayPause()">
-                <img src="./assets/ic_play.svg" alt="PlayPause" id="pppImg">
+            <div class="pausegreen">
+                <img src="./assets/ic_play.svg" alt="PlayPause" >
             </div>
             <div>
                 <svg class="like" xmlns="http://www.w3.org/2000/svg" role="img" height="16" width="16"
