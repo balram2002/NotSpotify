@@ -13,7 +13,16 @@ if (uid != null) {
     document.querySelector('.navBtns').style = 'display: none;';
     document.querySelector('.navUName>h3').textContent = uEmail;
 }
-else document.querySelector('.navUName>h3').style = 'display: none';
+else { 
+    document.querySelector('.navUName').style = 'display: none'; 
+};
+
+document.querySelector(".logout").addEventListener("click", () => {
+    sessionStorage.removeItem("uid");
+    sessionStorage.removeItem("email");
+    location.href = "index.html";
+    /* alert('logout'); */
+});
 
 
 /* Session uid & email */
@@ -55,15 +64,6 @@ function random_bg_color() {
     let green = Math.floor(Math.random() * 176) + 10;
     let blue = Math.floor(Math.random() * 176) + 10;
     return "rgb(" + red + ", " + green + ", " + blue + ")";
-}
-
-function togglePPIcon(id) {
-    const img = document.getElementById(id).src;
-    if (img.indexOf('assets/ic_play.svg') != -1)
-        document.getElementById(id).src = 'assets/ic_pause.svg';
-    else
-        document.getElementById(id).src = 'assets/ic_play.svg';
-
 }
 
 function route(id, i = null) {
@@ -217,12 +217,12 @@ function getSongs(s) {
             const sDiv = document.querySelector('.songCtnr');
             sDiv.innerHTML = '<h2>Songs</h2>';
 
-            if (obj.length > 0){
+            if (obj.length > 0) {
                 document.querySelector(".topResultCtnr > .cardCtnr").style = 'display: block;';
                 document.querySelector(".topResultCtnr > .cardCtnr > img").src = obj[0].simgpath.replace("./", "");
                 document.querySelector(".topResultCtnr > .cardCtnr > h1").textContent = obj[0].sname;
                 document.querySelector(".topResultCtnr > .cardCtnr > div > h4").textContent = obj[0].sartist;
-            }else{
+            } else {
                 document.querySelector(".topResultCtnr > .cardCtnr").style = 'display: none;';
             }
 

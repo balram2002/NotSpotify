@@ -1,7 +1,7 @@
 import host from "./Server.js";
 
 const path = "Api's/";
-import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js'
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js'
 import firebaseConfig from "./firebase-config.js";
 import {
     getAuth, createUserWithEmailAndPassword,
@@ -27,19 +27,19 @@ function validation(elements) {
     elements.forEach((e) => {
         const reg = /^((([a-z]|\d|[!#\$%&'*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i;
         switch (e.name) {
-            case "email" :
+            case "email":
                 if (e.value === "" || !reg.test(e.value)) setError(c = e);
                 break;
-            case "cEmail" :
+            case "cEmail":
                 if (e.value === "" || e.value !== elements.at(0).value) setError(c = e);
                 break;
-            case "userName" :
+            case "userName":
                 if (e.value === "") setError(c = e);
                 break;
-            case "password" :
+            case "password":
                 if (e.value.length < 8) setError(c = e);
                 break;
-            case "DOB" :
+            case "DOB":
                 if (e.value === "") setError(c = e);
                 break;
         }
@@ -143,7 +143,11 @@ if (document.title === "Login - Spotify") {
                         else alert("Please Verify Your Email")
                     })
                     .catch((error) => {
-                        if (error.code === "auth/wrong-password") alert("Invalid Email & Password");
+                        if (error.code === "auth/wrong-password") {
+                            alert("Invalid Email & Password"); 
+                            btn.disabled = false;
+                            btn.lastElementChild.innerHTML = "LOG IN";
+                        }
                         else alert("Login Failed Try Again");
                         btn.disabled = false;
                         btn.lastElementChild.innerHTML = "LOG IN";

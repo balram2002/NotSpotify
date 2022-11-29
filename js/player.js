@@ -5,13 +5,15 @@ let track_artist = document.querySelectorAll(".songDetailsCtnr>.texts>.sArtist")
 let playpause_btn = document.querySelectorAll(".play_pause");
 let next_btn = document.querySelector(".controlerCtnr>.btnsCtnr>.forward");
 let prev_btn = document.querySelector(".controlerCtnr>.btnsCtnr>.backward");
+let loader = document.querySelectorAll(".ppbCtnr>.loader");
+let ppb = document.querySelectorAll(".ppbCtnr>.playPauseBtn");
 
 let seek_slider = document.querySelector(".controlerCtnr>.progressCtnr>.slider");
 let volume_slider = document.querySelector(".volumeCtnr>#volume");
 let curr_time = document.querySelector(".controlerCtnr>.progressCtnr>.currentTime");
 let total_duration = document.querySelector(".controlerCtnr>.progressCtnr>.totalTime");
 let updateSeek = false;
-document.querySelector(".volumeCtnr>.muteBtn").onclick = function (){
+document.querySelector(".volumeCtnr>.muteBtn").onclick = function () {
     if (volume_slider.value !== 0) {
         curr_track.volume = 0
         volume_slider.value = 0;
@@ -43,6 +45,25 @@ function loadTrack(i, list = playList) {
     updateTimer = setInterval(seekUpdate, 1000);
     curr_track.addEventListener("ended", nextTrack);
     updateSeek = true;
+
+    curr_track.onloadstart = function () {
+        loader.forEach(ldr => {
+            ldr.style = 'display: inline-block;';
+        });
+        ppb.forEach(btn => {
+            btn.style = 'position: absolute;';
+        });
+    };
+
+    curr_track.oncanplay = function () {
+        loader.forEach(ldr => {
+            ldr.style = 'display: none;';
+        });
+        ppb.forEach(btn => {
+            btn.style = 'position: relative;';
+        });
+    };
+
     playTrack();
 }
 
@@ -53,12 +74,12 @@ function resetValues() {
     seek_slider.value = 0;
 }
 
-playpause_btn.forEach( btn => {
+playpause_btn.forEach(btn => {
     btn.onclick = function () {
         if (!isPlaying) playTrack();
         else pauseTrack();
     }
- });
+});
 
 
 function playTrack() {
