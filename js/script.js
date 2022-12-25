@@ -167,9 +167,12 @@ function route(id, i = null) {
 
 function loadData() {
     const xhttp = new XMLHttpRequest();
-    xhttp.open("POST", host + path + "getPlaylistForHome.php?id=18", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send();
+    xhttp.open("POST", host + path + "getPlaylistForHome.php", true);
+    //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    //xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+    //xhttp.setRequestHeader("Access-Control-Allow-Credentials", "true");
+    //xhttp.setRequestHeader("cache-control"," max-age=0");
+    xhttp.send("id=18");
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
