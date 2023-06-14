@@ -1,0 +1,7 @@
+/*
+Tailwind Build Command
+npx tailwindcss -i ./Admin-Panel/style/style.css -o ./Admin-Panel/dist/output.css --watch
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

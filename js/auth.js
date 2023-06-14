@@ -1,26 +1,38 @@
-import host from "./Server.js";
-
-const path = "Api's/";
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js'
-import firebaseConfig from "./firebase-config.js";
+import {app, db, storage, auth} from "../../js/firebase-config.mjs";
 import {
-    getAuth, createUserWithEmailAndPassword,
-    signInWithEmailAndPassword, sendEmailVerification, updateProfile
-}
-    from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js';
+    getAuth,
+    createUserWithEmailAndPassword,
+    updateProfile,
+    sendEmailVerification,
+    signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+import {
+    getStorage,
+    ref,
+    uploadBytes,
+    uploadBytesResumable,
+    getDownloadURL
+} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-storage.js";
+import {
+    getFirestore,
+    getDocs,
+    doc,
+    setDoc,
+    collection,
+    where,
+    query,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-console.log("Auth.js :" + document.title);
 
 function getData(elements) {
-    const obj = {};
+    const obj = {userId: null};
     elements.forEach((e) => obj[e.name] = e.value);
     return obj;
 }
 
 const setError = (element) => element.style.borderColor = "red";
-
 
 function validation(elements) {
     let c = null;
@@ -49,9 +61,18 @@ function validation(elements) {
 
 }
 
+async function saveInfo(inputFieldsData) {
+    await setDoc(doc(db, "user", inputFieldsData.userId), {
+        name: inputFieldsData.userName,
+        email: inputFieldsData.email,
+        password: inputFieldsData.password,
+        gender: inputFieldsData.gender,
+        DOB: inputFieldsData.DOB
+    });
+}
+
 /* Signup Using Firebase Email Verification & MySql */
 if (document.title === "Signup - Spotify") {
-    console.log("Working");
     const btn = document.querySelector(".btnDiv>.btn");
     btn.onclick =
         function emailPassword_singUp() {
@@ -63,15 +84,13 @@ if (document.title === "Signup - Spotify") {
             document.querySelectorAll('input[name="gender"]').forEach(g => {
                 if (g.checked) gen = g.value;
             });
-            if (gen == null) {
+            if (gen == null || gen == undefined) {
                 setError(document.querySelector(".genderCtnr"));
                 return;
             } else inputFieldsData["gender"] = gen;
             if (inputFieldsData != null) {
                 btn.disabled = true;
-                console.log(btn.disabled);
                 btn.lastElementChild.innerHTML = "Please Wait";
-                console.log(btn.lastElementChild);
                 createUserWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
                     .then((userCredential) => {
                         let user = userCredential.user;
@@ -89,12 +108,9 @@ if (document.title === "Signup - Spotify") {
                             .then(() => {
                                 alert("Email Verification Link Sent on your Email Address");
                             });
-                        $.post(host + path + "signUpUser.php",
-                            inputFieldsData,
-                            function (data, status) {
-                                location.href = "signin.html";
-                                console.log(data + " : " + status);
-                            });
+                        inputFieldsData.userId = user.uid;
+                        console.log(inputFieldsData);
+                        saveInfo(inputFieldsData).then(r => console.log("Complete"));
                     })
                     .catch((error) => {
                         if (error.code === "auth/email-already-in-use") alert("Email Already in use, \nPlease choose another Email");
@@ -110,53 +126,38 @@ if (document.title === "Signup - Spotify") {
 
 /* Login Using Firebase Email Verification & MySql */
 if (document.title === "Login - Spotify") {
-    console.log("Working");
     const btn = document.querySelector(".btnLogin");
-    btn.onclick =
-        function emailPassword_singIn() {
-            console.log("Sign IN");
-            const elements = document.querySelectorAll(".login>.inputCtnr");
-            const ele = [];
-            elements.forEach((element) => ele.push(element.getElementsByTagName("input")[0]));
-            let inputFieldsData = validation(ele);
-            console.log(inputFieldsData);
-            if (inputFieldsData != null) {
-                btn.disabled = true;
-                btn.lastElementChild.innerHTML = "Please Wait";
+    btn.addEventListener("click", emailPassword_singIn);
 
-                signInWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
-                    .then((userCredential) => {
-                        if (userCredential.user.emailVerified)
-                            $.post(host + path + "signInUser.php",
-                                inputFieldsData,
-                                function (data, status) {
-                                    if (data !== "Login Failed") {
-                                        sessionStorage.setItem("uid", data);
-                                        sessionStorage.setItem("email", inputFieldsData.email);
-                                        location.href = "index.html";
-                                    } else {
-                                        alert("Login Failed Try Again");
-                                        btn.disabled = false;
-                                        btn.lastElementChild.innerHTML = "LOG IN";
-                                    }
-                                });
-                        else alert("Please Verify Your Email")
-                    })
-                    .catch((error) => {
-                        if (error.code === "auth/wrong-password") {
-                            alert("Invalid Email & Password"); 
-                            btn.disabled = false;
-                            btn.lastElementChild.innerHTML = "LOG IN";
-                        }
-                        else alert("Login Failed Try Again");
+    function emailPassword_singIn() {
+        const elements = document.querySelectorAll(".login>.inputCtnr");
+        const ele = [];
+        elements.forEach((element) => ele.push(element.getElementsByTagName("input")[0]));
+        let inputFieldsData = validation(ele);
+        console.log(inputFieldsData);
+        if (inputFieldsData != null) {
+            btn.disabled = true;
+            btn.lastElementChild.innerHTML = "Please Wait";
+            signInWithEmailAndPassword(auth, inputFieldsData.email, inputFieldsData.password)
+                .then((userCredential) => {
+                    if (userCredential.user.emailVerified) {
+                        sessionStorage.setItem("uid", userCredential.uid);
+                        sessionStorage.setItem("email", inputFieldsData.email);
+                        location.href = "index.html";
+                    } else alert("Please Verify Your Email")
+                })
+                .catch((error) => {
+                    if (error.code === "auth/wrong-password") {
+                        alert("Invalid Email & Password");
                         btn.disabled = false;
                         btn.lastElementChild.innerHTML = "LOG IN";
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
-                        console.log(errorCode + "errorCode");
-                        console.log(errorMessage + "errorMessage");
-                    });
-
-            }
+                    } else alert("Login Failed Try Again");
+                    btn.disabled = false;
+                    btn.lastElementChild.innerHTML = "LOG IN";
+                    console.log(error);
+                    console.log(error.code + " errorCode");
+                    console.log(error.message + " errorMessage");
+                });
         }
+    }
 }

@@ -1,6 +1,32 @@
-import host from "./Server.js";
+import {app, db, storage, auth} from "../../js/firebase-config.mjs";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    updateProfile,
+    sendEmailVerification,
+    signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+import {
+    getStorage,
+    ref,
+    uploadBytes,
+    uploadBytesResumable,
+    getDownloadURL
+} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-storage.js";
+import {
+    getFirestore,
+    getDocs,
+    doc,
+    setDoc,
+    collection,
+    where,
+    query,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+
 const homeData = new Array();
-const path = "Api's/";
 let playList = new Array();
 let searchSongData = new Array();
 let track_index = 0;
@@ -8,14 +34,13 @@ const uid = sessionStorage.getItem("uid");
 const uEmail = sessionStorage.getItem("email");
 
 
-
 if (uid != null) {
     document.querySelector('.navBtns').style = 'display: none;';
     document.querySelector('.navUName>h3').textContent = uEmail;
+} else {
+    document.querySelector('.navUName').style = 'display: none';
 }
-else { 
-    document.querySelector('.navUName').style = 'display: none'; 
-};
+;
 
 document.querySelector(".logout").addEventListener("click", () => {
     sessionStorage.removeItem("uid");
@@ -29,7 +54,7 @@ document.querySelector(".logout").addEventListener("click", () => {
 console.log("uid: " + uid + ", Email: " + uEmail);
 document.body.onload = () => {
     route('shimmer');
-    loadData();
+    loadData().then(r => setTimeout(route('home', homeData), 1000));
 }
 
 /*document.querySelectorAll('.playPauseBtn').forEach((btn) => {
@@ -75,8 +100,7 @@ function route(id, i = null) {
             document.getElementById("content").innerHTML = this.responseText;
         }
     };
-
-    xhttp.onload = function () {
+    xhttp.onload = async function () {
         if (id === 'search') {
             document.querySelector('.searchbar').style = "display: flex;";
             document.querySelectorAll('.catCard').forEach((card) => {
@@ -99,106 +123,106 @@ function route(id, i = null) {
                 cards[idx].querySelector("p").textContent = item.subtitle;
                 cards[idx].querySelector("img").src = item.img;
                 cards[idx].addEventListener("click", function () {
-                    route('playlist', { id: item.id, title: item.title, subtitle: item.subtitle, img: item.img });
+                    route('playlist', {id: item.id, title: item.title, subtitle: item.subtitle, img: item.img});
                 });
             });
         }
         if (id === 'playlist' && i != null) {
-            const xhttp = new XMLHttpRequest();
-            xhttp.open("POST", host + path + "getPlaylistSongs.php?id=" + i.id, true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("id=" + i.id);
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    const obj = JSON.parse(this.responseText);
-                    if (playList.length !== 0) playList = [];
-                    obj.forEach(element => {
-                        playList.push({
-                            id: element.sid,
-                            title: element.sname,
-                            path: element.spath,
-                            sImgPath: element.simgpath.replace("./", "/"),
-                            artist: element.sartist,
-                            duration: element.sduration,
-                            cid: element.cid,
-                            sadded: element.psong_added
-                        });
-                    });
-                }
-            };
-            xhttp.onload = function () {
-                document.querySelector(".tophead>.ctnr .title").textContent = i.title;
-                document.querySelector(".tophead>.ctnr .subtitle").textContent = i.subtitle;
-                document.querySelector(".parent>.tophead").style.backgroundImage = "url(" + i.img + ")";
-                const sList = document.querySelector('.tableList').getElementsByTagName('tbody')[0];
-                playList.forEach((e, i) => {
-                    let row = sList.insertRow();
-                    row.addEventListener("click", function () {
-                        track_index = i;
-                        loadTrack(i, playList)
-                    });
-                    let cell1 = row.insertCell(0);
-                    let cell3 = row.insertCell(1);
-                    let cell4 = row.insertCell(2);
 
-                    cell1.innerHTML = "<div class='title'>\n" +
-                        "                            <p class='number'> " + (i + 1) + " </p><img src='" + e.sImgPath + "' alt='cover'\n" +
-                        "                                class='img'>\n" +
-                        "                            <div class='songdetails'>\n" +
-                        "                                <p class='songname' value='" + i + "' >" + e.title + "</p>\n" +
-                        "                                <p class='artistname'>" + e.artist + "</p>\n" +
-                        "                            </div>\n" +
-                        "                        </div>";
 
-                    cell3.innerHTML = "<div>\n" +
-                        "                            <p class='dateadded'>" + e.sadded + "</p>\n" +
-                        "                        </div>";
-                    cell4.innerHTML = "<div>\n" +
-                        "                            <p class='time'>" + e.duration.replace("00:", "") + "</p>\n" +
-                        "                        </div>";
+            if (playList.length !== 0) playList = [];
+            console.log("getDocs " + i.id);
+            const snapshot1 = await getDocs(collection(db, "songs"));
+            const songs = [];
+            snapshot1.forEach(doc => {
+                const data = doc.data();
+                songs.push({
+                    id: doc.id,
+                    title: data.name,
+                    path: data.songAddress,
+                    sImgPath: data.imageAddress,
+                    artist: data.artist,
+                    duration: data.duration,
+                    cid: data.category,
+                    sadded: undefined
                 });
+            });
+            const docRef = doc(db, "list/" + i.id);
+            const colRef = collection(docRef, "songs");
+            const snapshot = await getDocs(colRef);
+            snapshot.forEach(doc => {
+                const obj = songs.find(o => o.id == doc.data().sid);
+                const tStamp = doc.data().timestamp.toMillis();
+                const date = new Date(tStamp);
+                obj["sadded"] = date.toLocaleDateString("en-US");
+                console.log(obj.sImgPath);
+                playList.push(obj)
+            })
 
-            }
+
+            /*obj.forEach(element => {
+
+            });*/
+
+
+            document.querySelector(".tophead>.ctnr .title").textContent = i.title;
+            document.querySelector(".tophead>.ctnr .subtitle").textContent = i.subtitle;
+            document.querySelector(".parent>.tophead").style.backgroundImage = "url(" + i.img + ")";
+            const sList = document.querySelector('.tableList').getElementsByTagName('tbody')[0];
+            playList.forEach((e, i) => {
+                let row = sList.insertRow();
+                row.addEventListener("click", function () {
+                    track_index = i;
+                    loadTrack(i, playList)
+                });
+                let cell1 = row.insertCell(0);
+                let cell3 = row.insertCell(1);
+                let cell4 = row.insertCell(2);
+
+                cell1.innerHTML = "<div class='title'>\n" +
+                    "                            <p class='number'> " + (i + 1) + " </p><img src='" + e.sImgPath + "' alt='cover'\n" +
+                    "                                class='img'>\n" +
+                    "                            <div class='songdetails'>\n" +
+                    "                                <p class='songname' value='" + i + "' >" + e.title + "</p>\n" +
+                    "                                <p class='artistname'>" + e.artist + "</p>\n" +
+                    "                            </div>\n" +
+                    "                        </div>";
+
+                cell3.innerHTML = "<div>\n" +
+                    "                            <p class='dateadded'>" + e.sadded + "</p>\n" +
+                    "                        </div>";
+                cell4.innerHTML = "<div>\n" +
+                    "                            <p class='time'>" + e.duration.replace("00:", "") + "</p>\n" +
+                    "                        </div>";
+            });
+
+
         }
     }
-    xhttp.open("GET", "pages/" + id + ".txt", true);
+    xhttp.open("GET", "pages/" + id + ".txt", false);
     xhttp.send();
 }
 
-function loadData() {
-    const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", host + path + "getPlaylistForHome.php?id=18", true);
-    //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    //xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-    //xhttp.setRequestHeader("Access-Control-Allow-Credentials", "true");
-    //xhttp.setRequestHeader("cache-control"," max-age=0");
-    xhttp.send();
-
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            const obj = JSON.parse(this.responseText);
-            obj.forEach(element => {
-                homeData.push({
-                    id: element.pid,
-                    title: element.ptitle,
-                    subtitle: element.psubtitle,
-                    img: element.pimg_path.replace("./", "")
-                });
-            });
-        }
-    };
-    xhttp.onload = function () {
-        setTimeout(route('home', homeData), 1000);
-    }
-
+async function loadData() {
+    const snapshot = await getDocs(query(collection(db, "list"), where("isPlaylist", "==", true)));
+    snapshot.forEach(doc => {
+        const data = doc.data();
+        homeData.push({
+            id: doc.id,
+            title: data["name"],
+            subtitle: data["description"],
+            img: data["imageAddress"]
+        });
+    });
 }
 
 const sbr = document.getElementById("sbr");
 sbr.addEventListener("input", () => {
-    getSongs(sbr.value);
+    getSongs(sbr.value).then(r => {
+    });
 });
 
-function getSongs(s) {
+async function getSongs(s) {
     const catCtnr = document.querySelector('.categoryCtnr');
     const parCtnr = document.querySelector('.parentCtnr');
     if (s.length != 0) {
@@ -209,56 +233,43 @@ function getSongs(s) {
         parCtnr.style = 'display: none';
     }
 
-    const xhttp = new XMLHttpRequest();
-    xhttp.open("POST", host + path + "search.php?sname=" + s, true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("sname=" + s);
-
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(this.responseText);
-            const sDiv = document.querySelector('.songCtnr');
-            sDiv.innerHTML = '<h2>Songs</h2>';
-
-            if (obj.length > 0) {
-                document.querySelector(".topResultCtnr > .cardCtnr").style = 'display: block;';
-                document.querySelector(".topResultCtnr > .cardCtnr > img").src = obj[0].simgpath.replace("./", "");
-                document.querySelector(".topResultCtnr > .cardCtnr > h1").textContent = obj[0].sname;
-                document.querySelector(".topResultCtnr > .cardCtnr > div > h4").textContent = obj[0].sartist;
-            } else {
-                document.querySelector(".topResultCtnr > .cardCtnr").style = 'display: none;';
-            }
-
-            obj.forEach(element => {
-                let imgPath = element.simgpath.replace("./", "");
-                searchSongData.push({
-                    sId: element.sid,
-                    sName: element.sname,
-                    sArtist: element.sartist,
-                    sDuration: element.sduration,
-                    sPath: element.spath,
-                    sImg: imgPath
-                });
-                const ele = document.createElement("div");
-                ele.innerHTML = "<div class='songItem'>" +
-                    "<div class='imgCtnr'>" +
-                    "<img src='" + imgPath + "'>" +
-                    "</div>" +
-                    "<div class='textCtnr'>" +
-                    "<div class='left'>" +
-                    "<h3>" + element.sname + "</h3>" +
-                    "<p>" + element.sartist + "</p>" +
-                    "</div>" +
-                    "<div class='right'>" +
-                    "<h4>" + element.sduration.replace("00:", "") + "</h4>" +
-                    "</div>" +
-                    "</div>" +
-                    "</div>";
-                sDiv.appendChild(ele);
-            });
-        }
-    };
-    xhttp.onload = function () {
-    }
-
+    const snapshot = await getDocs(query(collection(db, "songs"), where("name", ">=", s)));
+    console.log();
+    const sDiv = document.querySelector('.songCtnr');
+    sDiv.innerHTML = '<h2/>Songs</h2>';
+    if (Object.keys(snapshot).length > 0) {
+        console.log(snapshot.docs[0].data());
+        document.querySelector(".topResultCtnr > .cardCtnr").style = 'display: block;';
+        document.querySelector(".topResultCtnr > .cardCtnr > img").src = snapshot.docs[0].data().imageAddress;
+        document.querySelector(".topResultCtnr > .cardCtnr > h1").textContent = snapshot.docs[0].data().name;
+        document.querySelector(".topResultCtnr > .cardCtnr > div > h4").textContent = snapshot.docs[0].data().artist;
+    } else document.querySelector(".topResultCtnr > .cardCtnr").style = 'display: none;';
+    snapshot.forEach((doc) => {
+        const data = doc.data();
+        let imgPath = data.imageAddress;
+        searchSongData.push({
+            sId: doc.id,
+            sName: data.name,
+            sArtist: data.artist,
+            sDuration: data.duration,
+            sPath: data.songAddress,
+            sImg: data.imageAddress
+        });
+        const ele = document.createElement("div");
+        ele.innerHTML = "<div class='songItem'>" +
+            "<div class='imgCtnr'>" +
+            "<img src='" + imgPath + "'>" +
+            "</div>" +
+            "<div class='textCtnr'>" +
+            "<div class='left'>" +
+            "<h3>" + data.name + "</h3>" +
+            "<p>" + data.artist + "</p>" +
+            "</div>" +
+            "<div class='right'>" +
+            "<h4>" + data.duration + "</h4>" +
+            "</div>" +
+            "</div>" +
+            "</div>";
+        sDiv.appendChild(ele);
+    });
 }
