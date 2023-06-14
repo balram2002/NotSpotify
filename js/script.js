@@ -1,19 +1,5 @@
 import {app, db, storage, auth} from "../../js/firebase-config.mjs";
 import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    updateProfile,
-    sendEmailVerification,
-    signInWithEmailAndPassword
-} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-import {
-    getStorage,
-    ref,
-    uploadBytes,
-    uploadBytesResumable,
-    getDownloadURL
-} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-storage.js";
-import {
     getFirestore,
     getDocs,
     doc,
