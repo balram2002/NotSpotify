@@ -72,7 +72,7 @@ async function saveInfo(inputFieldsData) {
 }
 
 /* Signup Using Firebase Email Verification & MySql */
-if (document.title === "Signup - Spotify") {
+if (document.title === "Signup - Musify") {
     const btn = document.querySelector(".btnDiv>.btn");
     btn.onclick =
         function emailPassword_singUp() {
@@ -125,7 +125,7 @@ if (document.title === "Signup - Spotify") {
 }
 
 /* Login Using Firebase Email Verification & MySql */
-if (document.title === "Login - Spotify") {
+if (document.title === "Login - Musify") {
     const btn = document.querySelector(".btnLogin");
     btn.addEventListener("click", emailPassword_singIn);
 

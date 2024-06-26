@@ -38,18 +38,30 @@
 
 /* Fonts End*/
 
+:root {
+    --background: #050514;
+    --backgroundRGB: 5, 5, 20;
+    --primary: #4E4FEB;
+    --secondary: #7272ec;
+    --border-color: #a5a5c9b7;
+    --txt-heading: #e6e6ff;
+    --txt-sub-heading: #d0d0e6;
+    --txt-normal: #c0c0ce;
+    --placeholder: #c0c0ce80;
+}
+
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    color: rgba(255, 255, 255, 0.5);
     font-family: 'Circular Std';
     transition: all .2s ease;
     -webkit-tap-highlight-color: transparent;
 }
 
 a:focus {
-    color: #40a97b;
+    color: var(--primary);
 }
 
 ::selection {
@@ -65,7 +77,7 @@ a:focus {
 
 
 body {
-    background-color: black;
+    background-color: var(--background);
 }
 
 .mainDiv {
@@ -79,7 +91,7 @@ body {
 
 /* Side NavigationBar Start */
 .sidebar {
-    background-color: black;
+    background-color: var(--background);
     max-width: 240px;
     width: 17.5%;
 }
@@ -110,15 +122,15 @@ body {
 .navItem2 a {
     text-decoration: none;
     font-size: 14px;
-    color: white;
+    color: var(--txt-heading);
     font-weight: 600;
 }
 
 .navItem img,
-.navItem svg,
+.navItem i,
 .navItem2 img,
-.navItem2 svg {
-    fill: white;
+.navItem2 i {
+    fill: var(--txt-heading);
     margin-right: 16px;
 }
 
@@ -138,11 +150,11 @@ body {
 }
 
 .navItem2 .createPlaylist {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--txt-heading);
 }
 
 .navItem2 .likedSongs {
-    background-image: linear-gradient(135deg, #450af5, #c4efd9);
+    background-image: linear-gradient(135deg, #125e9c, #b75ee0);
 }
 
 .navItem:hover,
@@ -165,7 +177,7 @@ body {
     padding: 20px 16px;
     justify-content: center;
     align-items: center;
-    background-color: #181818;
+    background-color: var(--background);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 10;
 }
@@ -186,6 +198,7 @@ body {
 .songDetailsCtnr img {
     height: 56px;
     width: 56px;
+    border-radius: 6px;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
@@ -195,7 +208,7 @@ body {
 
 .songDetailsCtnr .texts h3 {
     cursor: pointer;
-    color: white;
+    color: var(--txt-heading);
     font-weight: 400;
     font-size: 14px;
     -webkit-line-clamp: 1;
@@ -304,13 +317,14 @@ body {
     width: 70%;
     height: 4px;
     margin: 0 8px;
-    accent-color: #1db954;
+    accent-color: var(--primary);
     border-radius: 2px;
     outline: none;
     border: none;
 }
 
 .volumeCtnr input[type="range"] {
+    border-radius: 2px;
     width: 93px;
 }
 
@@ -371,7 +385,7 @@ body {
 }
 
 .mobPlayer .songDetailsCtnr:nth-child(1) h4 {
-    color: white;
+    color: var(--txt-heading);
     font-size: 13px;
     font-weight: 500;
     -webkit-line-clamp: 1;
@@ -384,7 +398,7 @@ body {
 .mobPlayer .songDetailsCtnr:nth-child(1) p {
     font-weight: 300;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--txt-normal);
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     display: -webkit-box;
@@ -401,7 +415,7 @@ body {
 }
 
 .mobPlayer .mobRightBtns button svg {
-    fill: white;
+    fill: var(--txt-heading);
 }
 
 .mobPlayer .mobRightBtns img {
@@ -417,7 +431,8 @@ body {
 
 /* Available Area Start */
 .availArea {
-    background: linear-gradient(162deg, rgba(33, 33, 33, 1) 0%, rgba(18, 18, 18, 1) 50%);
+    /*background: linear-gradient(162deg, rgba(33, 33, 33, 1) 0%, rgba(18, 18, 18, 1) 50%);*/
+    background: linear-gradient(144deg, rgba(12, 12, 31, 1) 0%, rgba(5, 5, 20, 1) 100%);
     width: 85.5%;
     height: auto;
     position: relative;
@@ -439,7 +454,7 @@ body {
     min-height: 64px;
     height: auto;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.50);
+    background-color: rgba(var(--backgroundRGB), 0.8);
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -448,6 +463,7 @@ body {
     justify-content: space-between;
     padding: 0 32px;
     z-index: 10;
+    backdrop-filter: blur(12px);
 }
 
 .nav .arrowCtnr {
@@ -457,16 +473,18 @@ body {
 .nav .arrowCtnr .left,
 .nav .arrowCtnr .right {
     display: flex;
+    width: 36px;
+    height: 36px;
     justify-content: center;
     align-items: center;
     padding: 3.3px;
     border-radius: 24px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(var(--backgroundRGB), 0.8);
 }
 
 .nav .arrowCtnr svg,
 .nav .arrowCtnr svg {
-    fill: white;
+    fill: var(--txt-heading);
     opacity: .6;
     padding: 1px;
 }
@@ -483,17 +501,16 @@ body {
     padding: 8px 32px;
     border-radius: 24px;
     background-color: transparent;
-    color: rgb(167, 167, 167);
+    color: var(--txt-heading);
     transition: all .2s ease-in-out;
 }
 
 .navBtns .whiteBG {
-    color: black;
-    background-color: white;
+    color: var(--txt-heading);
+    background-color: var(--primary);
 }
 
 .navBtns .whiteBG:hover {
-    color: black;
     transform: scale(1.04);
 }
 
@@ -538,7 +555,8 @@ body {
     align-items: center;
     width: 364px;
     max-height: 40px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(2px);
     padding: 12px;
     border-radius: 20px;
 }
@@ -550,12 +568,18 @@ body {
     outline: none;
     font-weight: 500;
     border: none;
-    color: #000000;
+    background-color: transparent;
+    color: var(--txt-heading);
     text-align: start;
+
+}
+
+::placeholder {
+    color: var(--placeholder);
 }
 
 .nav .searchbar svg {
-    fill: black;
+    fill: var(--txt-heading);
     opacity: .8;
     margin-right: 10px;
 }
@@ -567,16 +591,16 @@ body {
 
 .navUName h3,
 .navUName .logout {
-    color: white;
+    color: var(--txt-heading);
     padding: 6px 18px;
-    background-color: #181818;
+    background-color: var(--background);
     border-radius: 30px;
     transition: all ease .3s;
 }
 
 .navUName h3:hover,
 .navUName .logout:hover {
-    background-color: #2b2b2b;
+    background-color: var(--secondary)
 }
 
 
@@ -594,12 +618,12 @@ body {
 }
 
 .navUName .logout span {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--txt-heading);
     margin-right: 12px;
 }
 
 .navUName .logout i {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--txt-heading);
 }
 
 /* Top Navbar Start */
@@ -612,16 +636,6 @@ body {
     max-width: 1955px;
     padding: 20px 38px 100px 20px;
     z-index: 9;
-}
-
-
-.demo {
-    width: 100%;
-    height: 200px;
-    margin: 20px 0;
-    background: rgb(34, 193, 195);
-    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
-    border-radius: 12px;
 }
 
 /* Content Area End */
@@ -656,7 +670,7 @@ body {
 
 .brAll {
     margin: 0 0 10px 10px;
-    color: white;
+    color: var(--txt-heading);
     font-size: 24px;
 }
 
@@ -672,7 +686,7 @@ body {
 
 .catCard h3 {
     background-position: 0% 0%;
-    color: #FFFFFF;
+    color: var(--txt-heading);
     padding: 16px;
     top: 0px;
     left: 0;
@@ -889,7 +903,7 @@ body {
 
 
 /* Pulkit CSS Start */
-:root {
+/* :root {
     --color-body: #000000;
     --color-heading: #ffffff;
     --color-background: #252525;
@@ -897,10 +911,10 @@ body {
     --color-base: #1fdf64;
     --color-brand2: #181818;
     --color-bordor: #50505050;
-}
+} */
 
 .spotify-playlist h2 {
-    color: var(--color-heading);
+    color: var(--txt-heading);
     font-size: 22px;
     margin-top: 40px;
     margin-bottom: 16px;
@@ -919,20 +933,21 @@ body {
     min-width: 190px;
     width: 190px;
     padding: 14px;
-    background-color: var(--color-brand2);
-    border-radius: 6px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all ease 0.4s;
 }
 
 .spotify-playlist .list .item:hover {
-    background-color: var(--color-bordor);
+    background-color: rgba(130, 130, 212, 0.3);
+
 }
 
 .spotify-playlist .list .item img {
     width: 100%;
-    border-radius: 6px;
-    margin-bottom: 10px;
+    min-height: 162px;
+    border-radius: 12px;
+    margin-bottom: 6px;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -948,8 +963,8 @@ body {
     right: 10px;
     top: -70px;
     padding: 18px;
-    color: var(--color-body);
-    background-color: var(--color-base);
+    color: var(--txt-heading);
+    background-color: var(--primary);
     border-radius: 50%;
     opacity: 0;
     transition: all ease 0.4s;
@@ -961,9 +976,9 @@ body {
 }
 
 .spotify-playlist .list .item>h4 {
-    color: var(--color-heading);
+    color: var(--txt-heading);
     font-size: 16px;
-    margin: 6px 0 10px 0;
+    margin: 6px 0 ;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     display: -webkit-box;
@@ -972,10 +987,11 @@ body {
 }
 
 .spotify-playlist .list .item>p {
-    color: var(--color-p);
+    color: var(--txt-normal);
+    opacity: .7;
     font-size: 14px;
     line-height: 20px;
-    font-weight: 500;
+    font-weight: 300;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     display: -webkit-box;

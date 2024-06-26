@@ -10,13 +10,26 @@ a {
    text-decoration: underline;
 }
 
+:root {
+   --background: #050514;
+   --primary: #4E4FEB;
+   --secondary: #7272ec;
+   --border-color: #a5a5c9b7;
+   --txt-heading: #e6e6ff;
+   --txt-sub-heading: #d0d0e6;
+   --txt-normal: #c0c0ce;
+   --placeholder: #c0c0ce80;
+}
+
 .main {
    height: 100vh;
    width: 100%;
    padding: 20px;
    display: flex;
    justify-content: center;
-   background-color: #ffffff;
+   background-color: var(--background);
+   overflow-y: auto;
+   overflow-x: hidden;
 }
 
 .center {
@@ -25,8 +38,7 @@ a {
    padding: 0 0 130px 0;
 }
 
-.header,
-.ctnrAuthBtns {
+.header {
    width: 100%;
    display: flex;
    margin: 12px 0;
@@ -40,39 +52,6 @@ a {
    width: auto;
    height: 40px;
    margin: 10px 0 40px 0;
-}
-
-.AuthBtn {
-   height: 48px;
-   width: 100%;
-   background-color: white;
-   border-radius: 24px;
-   padding: 13px 31px;
-   font-weight: bold;
-   color: #535353;
-   font-size: 16px;
-   border: 1px solid #878787;
-   transition: all .2s ease;
-   cursor: pointer;
-   margin: 8px 0;
-}
-
-.facebook {
-   background-color: #3b5998;
-   color: #ffffff;
-}
-
-.apple {
-   background-color: #000000E6;
-   color: #ffffff;
-}
-
-.google {
-   border: 2px solid #535353;
-}
-
-.AuthBtn:hover {
-   border-color: black;
 }
 
 .dividerCtnr {
@@ -110,17 +89,32 @@ a {
    padding: 14px;
    font-size: 16;
    margin: 6px 0;
-   outline-color: black;
-   border: 1px solid rgba(0, 0, 0, 0.6);
-   border-radius: 4px;
+   outline: none;
+   background-color: transparent;
+   color: var(--txt-normal);
+   border: 1px solid var(--border-color);
+   border-radius: 12px;
 }
 
-.inputCtnr>input:hover {
-   border: 1px solid rgba(0, 0, 0, 1);
+.inputCtnr>input::placeholder {
+   color: var(--placeholder);
+}
+
+.inputCtnr>input:hover,
+.inputCtnr>input:focus {
+   border: 2px solid var(--primary);
+}
+
+.inputCtnr label,
+.signUpCtnr p,
+.header h1,
+.genderCtnr label,
+.ctnrLogin p {
+   color: var(--txt-heading);
 }
 
 .inputCtnr>a {
-   color: #117A37;
+   color: var(--primary);
    cursor: pointer;
 }
 
@@ -134,11 +128,12 @@ a {
    display: flex;
    height: fit-content;
    font-size: 12px;
+   color: var(--txt-normal);
 }
 
 .checkBoxCtnr>label input {
    margin-right: 10px;
-   accent-color: #1ED760;
+   accent-color: var(--primary);
 }
 
 .genderCtnr {
@@ -156,7 +151,8 @@ a {
    margin-top: 14px;
 }
 
-form {
+form,
+.login {
    padding: 50px 0;
 }
 
@@ -170,7 +166,7 @@ form {
 
 .checBoxCtnr>div input[type=checkbox],
 .genderCtnr>div input[type=radio] {
-   accent-color: #1ED760;
+   accent-color: var(--primary);
 }
 
 .links {
@@ -181,7 +177,7 @@ form {
 
 .links>div a,
 .ctnrLogin>p a {
-   color: #1ED760;
+   color: var(--primary);
    cursor: pointer;
 }
 
@@ -202,7 +198,7 @@ form {
 
 .btnDiv button,
 .btnLogin {
-   background-color: #1fdf64;
+   background-color: var(--primary);
    border: none;
    height: 56px;
    font-weight: 700;
@@ -210,6 +206,7 @@ form {
    font-size: 16px;
    padding: 16px 48px;
    transition: all .1s ease;
+   color: var(--txt-heading);
 }
 
 .btnLogin {
@@ -226,7 +223,7 @@ form {
 .btnDiv button:hover,
 .btnLogin:hover {
    outline: 3px solid black;
-   border: 3px solid #ffffff;
+   border: 3px solid var(--background);
 }
 
 .ctnrLogin {
@@ -252,10 +249,15 @@ form {
    width: 100%;
 }
 
-.signUpCtnr>a button {
+.signUpCtnr>a {
    font-size: 14px;
-   color: #6a6a6a;
+   color: var(--secondary);
    font-weight: 700;
+   padding: 16px;
+   border: 1.8px solid var(--primary);
+   border-radius: 500px;
+   text-decoration: none;
+   text-align: center;
 }
 
 

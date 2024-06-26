@@ -71,9 +71,12 @@ document.getElementById("SvgMenu").onclick = () => {
 
 
 function random_bg_color() {
-    let red = Math.floor(Math.random() * 176) + 10
+    /* let red = Math.floor(Math.random() * 176) + 10
     let green = Math.floor(Math.random() * 176) + 10;
-    let blue = Math.floor(Math.random() * 176) + 10;
+    let blue = Math.floor(Math.random() * 176) + 10; */
+    let red = Math.floor(Math.random() * 186) + 10;
+    let green = Math.floor(Math.random() *186) + 10;
+    let blue = Math.floor(Math.random() * 186) + 10;
     return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
 
